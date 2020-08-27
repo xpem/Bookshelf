@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bookshelf.Acessa"
+             Title="Minha Estante"  
+             StyleClass="contentpage"
+             >
+    <!--<ContentPage.Resources>
+        <StyleSheet Source="Styles.css"/>
+    </ContentPage.Resources>-->
+    <ContentPage.Content>
+        <StackLayout StyleClass="card" Orientation="Vertical"  VerticalOptions="FillAndExpand">
+            <Frame StyleClass="card-body" VerticalOptions="CenterAndExpand">
+                <StackLayout Orientation="Vertical" >
+                    <Entry Placeholder="Nome de Acesso" 
+                HorizontalOptions="CenterAndExpand" StyleClass="entry" x:Name="EntNomeAcesso">
+                    </Entry>
+                    <Entry Placeholder="Senha" IsPassword="True"
+                HorizontalOptions="CenterAndExpand"
+                x:Name="EntSenha"  StyleClass="entry">
+                    </Entry>
+                    <Button Text="Acessar" x:Name="BtnAcessa" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand" StyleClass="button_primary"  Clicked="BtnAcessa_Clicked" />
+                    <Button Text="Cadastre-se" x:Name="BtnCadAcesso" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand"  StyleClass="button_secundary" Clicked="BtnCadAcesso_Clicked"/>
+                    <Button Text="Recuperar Senha" x:Name="BtnRecSenha" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand" StyleClass="button_secundary" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

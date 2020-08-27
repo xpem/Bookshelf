@@ -1,0 +1,1 @@
+C:\Users\Emanuel Martins\source\repos\Bookshelf\Bookshelf.UWP\Bookshelf.UWP.csproj;x86

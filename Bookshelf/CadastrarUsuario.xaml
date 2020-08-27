@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bookshelf.CadastrarUsuario"
+              Title="Minha Estante"              
+           StyleClass="contentpage"
+             >
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical" StyleClass="card" >
+            <Frame  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" StyleClass="card-body">
+                <StackLayout Orientation="Vertical" >
+                    <Label Text="Cadastro de Usuário"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="Start" TextColor="Black" FontSize="20" FontAttributes="Bold"/>
+                    <Entry Placeholder="Nome"
+                HorizontalOptions="CenterAndExpand" StyleClass="entry" x:Name="EntNome" MaxLength="100"/>
+                    <Entry Placeholder="Email"    WidthRequest="250"
+                HorizontalOptions="CenterAndExpand" StyleClass="entry"  x:Name="EntEmail" MaxLength="150" Keyboard="Email"  />
+                    <Entry Placeholder="Nome de Acesso"    WidthRequest="250" StyleClass="entry" 
+                HorizontalOptions="CenterAndExpand" x:Name="EntNomeAcesso" MaxLength="50" />
+                    <Entry Placeholder="Senha" IsPassword="True" StyleClass="entry" 
+                VerticalOptions="Center" 
+                HorizontalOptions="CenterAndExpand"
+                 WidthRequest="250"  x:Name="EntSenha" MaxLength="10" />
+                    <Entry Placeholder="Confirmação da senha" IsPassword="True" StyleClass="entry" 
+                VerticalOptions="Center" 
+                HorizontalOptions="CenterAndExpand"
+                 WidthRequest="250"  x:Name="EntConfSenha" MaxLength="10">
+                    </Entry>
+                    <Button Text="Cadastrar" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand" BackgroundColor="#5b3f36" TextColor="White"  WidthRequest="250" x:Name="BtnCadastrar" Clicked="BtnCadastrar_Clicked" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

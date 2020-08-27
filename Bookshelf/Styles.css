@@ -1,0 +1,46 @@
+﻿
+.contentpage {
+    padding: 0 10 0 0;
+    background-color: #5b3f36;
+}
+
+.button_secundary {
+    background-color: #5b3f36;
+    color: white;
+    border-radius: 5;
+    font-style: bold;
+    width: 250;
+}
+
+.button_primary {
+    background-color: #00838e;
+    color: white;
+    border-radius: 5;
+    font-style: bold;
+    width: 250;
+}
+
+.card {
+    padding: 10 5 10 5;
+    align-items: center;
+    /*
+    Padding ="10,5,10,5" VerticalOptions="FillAndExpand" Orientation="Vertical"*/
+}
+
+.card-body {
+    margin: 10;
+    border-color: wheat;
+    background-color: #E1E2E1;
+    align-content: center;
+    box-shadow: 0 4 4 rgba(0, 0, 0, 0.25);
+    border-radius: 10;
+    vertical-align: bottom;
+    /*
+    Margin ="10" BorderColor="Wheat" BackgroundColor="#E1E2E1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HasShadow="True" CornerRadius="10"*/
+}
+
+.entry {
+    background-color: #a3a3a3;
+    -xf-placeholder-color: #606060;
+    width: 250;
+}
