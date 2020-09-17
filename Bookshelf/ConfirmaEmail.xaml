@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bookshelf.ConfirmaEmail"
+             
+                  Title="Minha Estante"              
+               StyleClass="contentpage">
+    <ContentPage.Content>
+
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" 
+                     Orientation="Vertical" StyleClass="card" >
+            <Frame  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                    StyleClass="card_body">
+                <StackLayout Orientation="Vertical" >
+                    <Label Text="Recuperar Acesso"
+                VerticalOptions="Fill" 
+                HorizontalOptions="Center" TextColor="Black" FontSize="Large" FontAttributes="Bold"/>
+                    <Entry Placeholder="Digite o email do seu usuário"  WidthRequest="250"
+                HorizontalOptions="CenterAndExpand" x:Name="EntEmail" MaxLength="400" StyleClass="entry"/>
+                    <Button Text="Confirmar" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand"  x:Name="BtnConfirmar"
+                            StyleClass="button_primary" Clicked="BtnConfirmar_Clicked"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

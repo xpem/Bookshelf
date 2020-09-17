@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\Bookshelf.Android\\Bookshelf.Android.csproj": {}
+    "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\Bookshelf.Android\\Bookshelf.Android.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\AcessLayer\\AcessLayer.csproj": {
+    "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\AcessLayer\\AcessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\AcessLayer\\AcessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\AcessLayer\\AcessLayer.csproj",
         "projectName": "AcessLayer",
-        "projectPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\AcessLayer\\AcessLayer.csproj",
-        "packagesPath": "C:\\Users\\Emanuel Martins\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\AcessLayer\\obj\\",
+        "projectPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\AcessLayer\\AcessLayer.csproj",
+        "packagesPath": "C:\\Users\\Emanuel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\AcessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Emanuel Martins\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Emanuel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,8 +31,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\ModelLayer\\ModelLayer.csproj": {
-                "projectPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\ModelLayer\\ModelLayer.csproj"
+              "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\ModelLayer\\ModelLayer.csproj": {
+                "projectPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\ModelLayer\\ModelLayer.csproj"
               }
             }
           }
@@ -72,25 +71,25 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\Bookshelf.Android\\Bookshelf.Android.csproj": {
+    "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\Bookshelf.Android\\Bookshelf.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\Bookshelf.Android\\Bookshelf.Android.csproj",
+        "projectUniqueName": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\Bookshelf.Android\\Bookshelf.Android.csproj",
         "projectName": "Bookshelf.Android",
-        "projectPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\Bookshelf.Android\\Bookshelf.Android.csproj",
-        "packagesPath": "C:\\Users\\Emanuel Martins\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\Bookshelf.Android\\obj\\",
+        "projectPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\Bookshelf.Android\\Bookshelf.Android.csproj",
+        "packagesPath": "C:\\Users\\Emanuel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\Bookshelf.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Emanuel Martins\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Emanuel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -104,8 +103,8 @@
         "frameworks": {
           "monoandroid90": {
             "projectReferences": {
-              "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\Bookshelf\\Bookshelf.csproj": {
-                "projectPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\Bookshelf\\Bookshelf.csproj"
+              "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\Bookshelf\\Bookshelf.csproj": {
+                "projectPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\Bookshelf\\Bookshelf.csproj"
               }
             }
           }
@@ -114,33 +113,48 @@
       "frameworks": {
         "monoandroid90": {
           "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "Xam.Plugin.Connectivity": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "Xamarin.Android.Support.Design": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.5.3.2, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.6.0.1141, )"
+              "version": "[4.8.0.1269, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.7.335, )"
             }
           }
         }
       }
     },
-    "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\Bookshelf\\Bookshelf.csproj": {
+    "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\Bookshelf\\Bookshelf.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\Bookshelf\\Bookshelf.csproj",
+        "projectUniqueName": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\Bookshelf\\Bookshelf.csproj",
         "projectName": "Bookshelf",
-        "projectPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\Bookshelf\\Bookshelf.csproj",
-        "packagesPath": "C:\\Users\\Emanuel Martins\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\Bookshelf\\obj\\",
+        "projectPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\Bookshelf\\Bookshelf.csproj",
+        "packagesPath": "C:\\Users\\Emanuel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\Bookshelf\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Emanuel Martins\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Emanuel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -154,11 +168,11 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj": {
-                "projectPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj"
+              "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj": {
+                "projectPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj"
               },
-              "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\ModelLayer\\ModelLayer.csproj": {
-                "projectPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\ModelLayer\\ModelLayer.csproj"
+              "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\ModelLayer\\ModelLayer.csproj": {
+                "projectPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\ModelLayer\\ModelLayer.csproj"
               }
             }
           }
@@ -172,6 +186,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "FirebaseDatabase.net": {
+              "target": "Package",
+              "version": "[4.0.4, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -188,7 +206,7 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.6.0.1141, )"
+              "version": "[4.8.0.1269, )"
             }
           },
           "imports": [
@@ -201,25 +219,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj": {
+    "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj",
         "projectName": "BusinessLayer",
-        "projectPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj",
-        "packagesPath": "C:\\Users\\Emanuel Martins\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\BusinessLayer\\obj\\",
+        "projectPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj",
+        "packagesPath": "C:\\Users\\Emanuel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Emanuel Martins\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Emanuel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -233,8 +250,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\AcessLayer\\AcessLayer.csproj": {
-                "projectPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\AcessLayer\\AcessLayer.csproj"
+              "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\AcessLayer\\AcessLayer.csproj": {
+                "projectPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\AcessLayer\\AcessLayer.csproj"
               }
             }
           }
@@ -248,6 +265,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "FirebaseDatabase.net": {
+              "target": "Package",
+              "version": "[4.0.4, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -265,25 +286,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\ModelLayer\\ModelLayer.csproj": {
+    "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\ModelLayer\\ModelLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\ModelLayer\\ModelLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\ModelLayer\\ModelLayer.csproj",
         "projectName": "ModelLayer",
-        "projectPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\ModelLayer\\ModelLayer.csproj",
-        "packagesPath": "C:\\Users\\Emanuel Martins\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\ModelLayer\\obj\\",
+        "projectPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\ModelLayer\\ModelLayer.csproj",
+        "packagesPath": "C:\\Users\\Emanuel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\ModelLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Emanuel Martins\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Emanuel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -325,7 +345,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

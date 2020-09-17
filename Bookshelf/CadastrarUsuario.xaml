@@ -7,7 +7,7 @@
              >
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical" StyleClass="card" >
-            <Frame  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" StyleClass="card-body">
+            <Frame  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" StyleClass="card_body">
                 <StackLayout Orientation="Vertical" >
                     <Label Text="Cadastro de Usuário"
                 VerticalOptions="CenterAndExpand" 
@@ -27,7 +27,7 @@
                 HorizontalOptions="CenterAndExpand"
                  WidthRequest="250"  x:Name="EntConfSenha" MaxLength="10">
                     </Entry>
-                    <Button Text="Cadastrar" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand" BackgroundColor="#5b3f36" TextColor="White"  WidthRequest="250" x:Name="BtnCadastrar" Clicked="BtnCadastrar_Clicked" />
+                    <Button Text="Cadastrar" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand"  x:Name="BtnCadastrar" StyleClass="button_primary" Clicked="BtnCadastrar_Clicked" />
                 </StackLayout>
             </Frame>
         </StackLayout>

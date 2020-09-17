@@ -77,7 +77,6 @@
     <RootPropertyPathName Name="CompactPaneLength" />
     <RootPropertyPathName Name="FlyoutBackgroundColor" />
     <RootPropertyPathName Name="LeftPaneVisibility" />
-    <RootPropertyPathName Name="SingleSelectionFollowsFocus" />
     <RootPropertyPathName Name="TopPadding" />
     <RootPropertyPathName Name="TopPaneVisibility" />
     <RootPropertyPathName Name="OverflowButtonVisibility" />
@@ -86,7 +85,6 @@
     <RootPropertyPathName Name="BackButtonVisibility" />
     <RootPropertyPathName Name="Command" />
     <RootPropertyPathName Name="CommandParameter" />
-    <RootPropertyPathName Name="Icon" />
     <RootPropertyPathName Name="IsSelected" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
@@ -163,7 +161,7 @@
       <RootProperty Name="IsVerticalScrollChainingEnabled" />
       <RootProperty Name="BringIntoViewOnFocusChange" />
       <RootProperty Name="Content" />
-      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="VerticalContentAlignment" />
       <RootProperty Name="Foreground" />
       <RootProperty Name="MinWidth" />
       <RootProperty Name="VerticalSnapPointsType" />
@@ -171,7 +169,6 @@
       <RootProperty Name="HorizontalSnapPointsAlignment" />
       <RootProperty Name="HorizontalSnapPointsType" />
       <RootProperty Name="Template" />
-      <RootProperty Name="VerticalContentAlignment" />
       <RootMethod Name="GetHorizontalScrollBarVisibility" />
       <RootMethod Name="SetHorizontalScrollBarVisibility" />
       <RootMethod Name="GetVerticalScrollBarVisibility" />
@@ -629,11 +626,6 @@
       <RootProperty Name="DisplayMode" />
       <RootProperty Name="Pane" />
       <RootProperty Name="Content" />
-      <RootProperty Name="Background" />
-      <RootProperty Name="CompactPaneLength" />
-      <RootProperty Name="IsTabStop" />
-      <RootProperty Name="OpenPaneLength" />
-      <RootProperty Name="PaneBackground" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Thickness" />
     <RootType FullName="System.Double" />
@@ -646,7 +638,6 @@
       <RootProperty Name="Height" />
       <RootProperty Name="Visibility" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="MaxHeight" />
     </RootType>
     <RootType FullName="Xamarin.Forms.Platform.UWP.PageControl">
       <RootProperty Name="ContentMargin" />
@@ -693,6 +684,7 @@
     <RootType FullName="Xamarin.Forms.Platform.UWP.BoolToVisibilityConverter">
       <RootProperty Name="FalseIsVisible" />
     </RootType>
+    <RootType FullName="Xamarin.Forms.Platform.UWP.BrushConverter" />
     <RootType FullName="Xamarin.Forms.Platform.UWP.PageToRenderedElementConverter" />
     <RootType FullName="Xamarin.Forms.Platform.UWP.ImageConverter" />
     <RootType FullName="Xamarin.Forms.Platform.UWP.ViewToRendererConverter" />
@@ -825,25 +817,33 @@
       <RootProperty Name="PaneToggleButtonStyle" />
       <RootProperty Name="CompactPaneLength" />
     </RootType>
-    <RootType FullName="Microsoft.UI.Xaml.Controls.NavigationViewList">
+    <RootType FullName="Xamarin.Forms.Platform.UWP.ShellSplitView">
+      <RootProperty Name="Background" />
+      <RootProperty Name="CompactPaneLength" />
+      <RootProperty Name="DisplayMode" />
+      <RootProperty Name="IsPaneOpen" />
+      <RootProperty Name="IsTabStop" />
+      <RootProperty Name="OpenPaneLength" />
+      <RootProperty Name="PaneBackground" />
+      <RootProperty Name="Pane" />
+      <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="Microsoft.UI.Xaml.Controls.ItemsRepeaterScrollHost">
       <RootProperty Name="Margin" />
-      <RootProperty Name="SelectionMode" />
-      <RootProperty Name="IsItemClickEnabled" />
       <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="SelectedItem" />
-      <RootProperty Name="ItemTemplate" />
-      <RootProperty Name="ItemTemplateSelector" />
-      <RootProperty Name="ItemContainerStyle" />
-      <RootProperty Name="ItemContainerStyleSelector" />
-      <RootProperty Name="SingleSelectionFollowsFocus" />
-      <RootProperty Name="ItemsPanel" />
-      <RootProperty Name="ItemContainerTransitions" />
-      <RootProperty Name="ElementSoundMode" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="ScrollViewer" />
     </RootType>
     <RootType FullName="Microsoft.UI.Xaml.Controls.NavigationViewItem">
       <RootProperty Name="Icon" />
       <RootProperty Name="Style" />
       <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="Microsoft.UI.Xaml.Controls.ItemsRepeater">
+      <RootProperty Name="Layout" />
+    </RootType>
+    <RootType FullName="Microsoft.UI.Xaml.Controls.StackLayout">
+      <RootProperty Name="Orientation" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Flyout">
       <RootProperty Name="Placement" />

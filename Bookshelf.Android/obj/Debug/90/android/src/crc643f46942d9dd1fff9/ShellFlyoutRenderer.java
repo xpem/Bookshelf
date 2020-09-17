@@ -12,6 +12,7 @@ public class ShellFlyoutRenderer
 	static {
 		__md_methods = 
 			"n_onInterceptTouchEvent:(Landroid/view/MotionEvent;)Z:GetOnInterceptTouchEvent_Landroid_view_MotionEvent_Handler\n" +
+			"n_drawChild:(Landroid/graphics/Canvas;Landroid/view/View;J)Z:GetDrawChild_Landroid_graphics_Canvas_Landroid_view_View_JHandler\n" +
 			"n_onDrawerClosed:(Landroid/view/View;)V:GetOnDrawerClosed_Landroid_view_View_Handler:Android.Support.V4.Widget.DrawerLayout/IDrawerListenerInvoker, Xamarin.Android.Support.DrawerLayout\n" +
 			"n_onDrawerOpened:(Landroid/view/View;)V:GetOnDrawerOpened_Landroid_view_View_Handler:Android.Support.V4.Widget.DrawerLayout/IDrawerListenerInvoker, Xamarin.Android.Support.DrawerLayout\n" +
 			"n_onDrawerSlide:(Landroid/view/View;F)V:GetOnDrawerSlide_Landroid_view_View_FHandler:Android.Support.V4.Widget.DrawerLayout/IDrawerListenerInvoker, Xamarin.Android.Support.DrawerLayout\n" +
@@ -51,6 +52,14 @@ public class ShellFlyoutRenderer
 	}
 
 	private native boolean n_onInterceptTouchEvent (android.view.MotionEvent p0);
+
+
+	public boolean drawChild (android.graphics.Canvas p0, android.view.View p1, long p2)
+	{
+		return n_drawChild (p0, p1, p2);
+	}
+
+	private native boolean n_drawChild (android.graphics.Canvas p0, android.view.View p1, long p2);
 
 
 	public void onDrawerClosed (android.view.View p0)

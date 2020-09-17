@@ -29,7 +29,7 @@
           "lib/netstandard2.0/LiteDB.dll": {}
         }
       },
-      "Newtonsoft.Json/11.0.2": {
+      "Newtonsoft.Json/12.0.3": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
@@ -935,7 +935,7 @@
           "lib/monoandroid90/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.6.0.1141": {
+      "Xamarin.Forms/4.8.0.1269": {
         "type": "package",
         "dependencies": {
           "Xamarin.Android.Support.CustomTabs": "28.0.0.3",
@@ -983,10 +983,11 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "BusinessLayer": "1.0.0",
+          "FirebaseDatabase.net": "4.0.4",
           "ModelLayer": "1.0.0",
           "Xam.Plugin.Connectivity": "3.2.0",
           "Xamarin.Essentials": "1.5.3.2",
-          "Xamarin.Forms": "4.6.0.1141"
+          "Xamarin.Forms": "4.8.0.1269"
         },
         "compile": {
           "bin/placeholder/Bookshelf.dll": {}
@@ -999,7 +1000,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "AcessLayer": "1.0.0"
+          "AcessLayer": "1.0.0",
+          "FirebaseDatabase.net": "4.0.4"
         },
         "compile": {
           "bin/placeholder/BusinessLayer.dll": {}
@@ -1053,10 +1055,10 @@
         "litedb.nuspec"
       ]
     },
-    "Newtonsoft.Json/11.0.2": {
-      "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+    "Newtonsoft.Json/12.0.3": {
+      "sha512": "6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
       "type": "package",
-      "path": "newtonsoft.json/11.0.2",
+      "path": "newtonsoft.json/12.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1079,8 +1081,9 @@
         "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.11.0.2.nupkg.sha512",
-        "newtonsoft.json.nuspec"
+        "newtonsoft.json.12.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
       ]
     },
     "sqlite-net-pcl/1.7.335": {
@@ -2311,13 +2314,14 @@
         "xamarin.essentials.nuspec"
       ]
     },
-    "Xamarin.Forms/4.6.0.1141": {
-      "sha512": "SltuAt48A9qfC7pEo9zdQ5/IExdLkGttVAtv9bZw4IWA1SBbRpR2xbeduvowW9DQ/PjJD9HM7aSzxt0Spkwrkw==",
+    "Xamarin.Forms/4.8.0.1269": {
+      "sha512": "3UFTlfJvF9l8HB+gWVmYUEVRSPU+c3H0G/h09RVG8/P5i/QRiDBg/YHEGfPR3HNuWlJ9S9TgZjrFruTUS1ZYiQ==",
       "type": "package",
-      "path": "xamarin.forms/4.6.0.1141",
+      "path": "xamarin.forms/4.8.0.1269",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Assets/xamarin_128x128.png",
         "build/MonoAndroid10/proguard.cfg",
         "build/XCODE10/Xamarin.Forms.Platform.iOS.dll",
         "build/XCODE10/Xamarin.Forms.Platform.iOS.pdb",
@@ -2397,8 +2401,8 @@
         "lib/MonoAndroid10.0/ja/Xamarin.Forms.Xaml.xml",
         "lib/MonoAndroid10.0/ko/Xamarin.Forms.Core.xml",
         "lib/MonoAndroid10.0/ko/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid10.0/pt-br/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid10.0/pt-br/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid10.0/pt-BR/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid10.0/pt-BR/Xamarin.Forms.Xaml.xml",
         "lib/MonoAndroid10.0/ru/Xamarin.Forms.Core.xml",
         "lib/MonoAndroid10.0/ru/Xamarin.Forms.Xaml.xml",
         "lib/MonoAndroid10.0/zh-Hans/Xamarin.Forms.Core.xml",
@@ -2430,8 +2434,8 @@
         "lib/MonoAndroid90/ja/Xamarin.Forms.Xaml.xml",
         "lib/MonoAndroid90/ko/Xamarin.Forms.Core.xml",
         "lib/MonoAndroid90/ko/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid90/pt-br/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid90/pt-br/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid90/pt-BR/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid90/pt-BR/Xamarin.Forms.Xaml.xml",
         "lib/MonoAndroid90/ru/Xamarin.Forms.Core.xml",
         "lib/MonoAndroid90/ru/Xamarin.Forms.Xaml.xml",
         "lib/MonoAndroid90/zh-Hans/Xamarin.Forms.Core.xml",
@@ -2485,9 +2489,9 @@
         "lib/Xamarin.iOS10/nb/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/nl/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/pl/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/pt-br/Xamarin.Forms.Core.xml",
-        "lib/Xamarin.iOS10/pt-br/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/pt-br/Xamarin.Forms.Xaml.xml",
+        "lib/Xamarin.iOS10/pt-BR/Xamarin.Forms.Core.xml",
+        "lib/Xamarin.iOS10/pt-BR/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/pt-BR/Xamarin.Forms.Xaml.xml",
         "lib/Xamarin.iOS10/pt/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/ro/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/ru/Xamarin.Forms.Core.xml",
@@ -2536,8 +2540,8 @@
         "lib/netstandard2.0/ja/Xamarin.Forms.Xaml.xml",
         "lib/netstandard2.0/ko/Xamarin.Forms.Core.xml",
         "lib/netstandard2.0/ko/Xamarin.Forms.Xaml.xml",
-        "lib/netstandard2.0/pt-br/Xamarin.Forms.Core.xml",
-        "lib/netstandard2.0/pt-br/Xamarin.Forms.Xaml.xml",
+        "lib/netstandard2.0/pt-BR/Xamarin.Forms.Core.xml",
+        "lib/netstandard2.0/pt-BR/Xamarin.Forms.Xaml.xml",
         "lib/netstandard2.0/ru/Xamarin.Forms.Core.xml",
         "lib/netstandard2.0/ru/Xamarin.Forms.Xaml.xml",
         "lib/netstandard2.0/zh-Hans/Xamarin.Forms.Core.xml",
@@ -2620,7 +2624,7 @@
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.4.6.0.1141.nupkg.sha512",
+        "xamarin.forms.4.8.0.1269.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -2648,29 +2652,33 @@
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v9.0": [
       "Bookshelf >= 1.0.0",
+      "Newtonsoft.Json >= 12.0.3",
+      "Xam.Plugin.Connectivity >= 3.2.0",
+      "Xamarin.Android.Support.Design >= 28.0.0.3",
       "Xamarin.Essentials >= 1.5.3.2",
-      "Xamarin.Forms >= 4.6.0.1141"
+      "Xamarin.Forms >= 4.8.0.1269",
+      "sqlite-net-pcl >= 1.7.335"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Emanuel Martins\\.nuget\\packages\\": {},
+    "C:\\Users\\Emanuel\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\Bookshelf.Android\\Bookshelf.Android.csproj",
+      "projectUniqueName": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\Bookshelf.Android\\Bookshelf.Android.csproj",
       "projectName": "Bookshelf.Android",
-      "projectPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\Bookshelf.Android\\Bookshelf.Android.csproj",
-      "packagesPath": "C:\\Users\\Emanuel Martins\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\Bookshelf.Android\\obj\\",
+      "projectPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\Bookshelf.Android\\Bookshelf.Android.csproj",
+      "packagesPath": "C:\\Users\\Emanuel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\Bookshelf.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Emanuel Martins\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Emanuel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -2684,8 +2692,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\Bookshelf\\Bookshelf.csproj": {
-              "projectPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\Bookshelf\\Bookshelf.csproj"
+            "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\Bookshelf\\Bookshelf.csproj": {
+              "projectPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\Bookshelf\\Bookshelf.csproj"
             }
           }
         }
@@ -2694,13 +2702,29 @@
     "frameworks": {
       "monoandroid90": {
         "dependencies": {
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[12.0.3, )"
+          },
+          "Xam.Plugin.Connectivity": {
+            "target": "Package",
+            "version": "[3.2.0, )"
+          },
+          "Xamarin.Android.Support.Design": {
+            "target": "Package",
+            "version": "[28.0.0.3, )"
+          },
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.5.3.2, )"
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[4.6.0.1141, )"
+            "version": "[4.8.0.1269, )"
+          },
+          "sqlite-net-pcl": {
+            "target": "Package",
+            "version": "[1.7.335, )"
           }
         }
       }

@@ -3,15 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Bookshelf.Acessa"
              Title="Minha Estante"  
-             StyleClass="contentpage"
-             >
-    <!--<ContentPage.Resources>
-        <StyleSheet Source="Styles.css"/>
-    </ContentPage.Resources>-->
+             StyleClass="contentpage">
     <ContentPage.Content>
         <StackLayout StyleClass="card" Orientation="Vertical"  VerticalOptions="FillAndExpand">
-            <Frame StyleClass="card-body" VerticalOptions="CenterAndExpand">
-                <StackLayout Orientation="Vertical" >
+            <Frame StyleClass="card_body" VerticalOptions="CenterAndExpand">
+                <StackLayout Orientation="Vertical"  >
                     <Entry Placeholder="Nome de Acesso" 
                 HorizontalOptions="CenterAndExpand" StyleClass="entry" x:Name="EntNomeAcesso">
                     </Entry>
@@ -21,7 +17,7 @@
                     </Entry>
                     <Button Text="Acessar" x:Name="BtnAcessa" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand" StyleClass="button_primary"  Clicked="BtnAcessa_Clicked" />
                     <Button Text="Cadastre-se" x:Name="BtnCadAcesso" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand"  StyleClass="button_secundary" Clicked="BtnCadAcesso_Clicked"/>
-                    <Button Text="Recuperar Senha" x:Name="BtnRecSenha" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand" StyleClass="button_secundary" />
+                    <Button Text="Recuperar Senha" x:Name="BtnRecSenha" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand" StyleClass="button_secundary" Clicked="BtnRecSenha_Clicked"/>
                 </StackLayout>
             </Frame>
         </StackLayout>

@@ -2,31 +2,51 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Bookshelf.MainPage"
-               Title="Minha Estante"              
-             Padding="0,10,0,0" BackgroundColor="#5d4037" >
+             Title="Minha Estante" StyleClass="contentpage" >
     <ContentPage.ToolbarItems>
         <ToolbarItem Name="TbiSair" Order="Secondary"  Text="Sair" Priority="0" Clicked="TbiSair_Clicked" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout Padding="10,5,10,5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical"  >
-            <Frame Margin="10" BorderColor="Wheat" BackgroundColor="#E1E2E1" HorizontalOptions="FillAndExpand" HasShadow="True" CornerRadius="10" >
+        <StackLayout StyleClass="card" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical"  >
+            <Frame  HorizontalOptions="FillAndExpand" StyleClass="card_body">
                 <StackLayout Orientation="Vertical" >
                     <Button Text="Cadastrar Livro" VerticalOptions="Fill" HorizontalOptions="FillAndExpand" 
-                            BackgroundColor="#5b3f36"  TextColor="White"  x:Name="BtnRegisterBook" FontAttributes="Bold" FontSize="Medium" Margin="10, 10, 10, 10" Clicked="BtnRegisterBook_Clicked"/>
+                             x:Name="BtnRegisterBook"  Clicked="BtnRegisterBook_Clicked" StyleClass="button_secundary"  Margin="10" FontSize="Medium" />
                 </StackLayout>
             </Frame>
             <ScrollView>
-                <Frame Margin="10" BorderColor="Wheat" BackgroundColor="#E1E2E1" HorizontalOptions="FillAndExpand" HasShadow="True" CornerRadius="10" >
+                <Frame  HorizontalOptions="FillAndExpand" StyleClass="card_body" >
                     <StackLayout Orientation="Vertical" >
                         <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" Color="#2196F3" VerticalOptions="Center"    HorizontalOptions="Center"/>
-                        <Button Text="{Binding VVouLer,StringFormat='Vou Ler ({0})'}" VerticalOptions="Fill" HorizontalOptions="FillAndExpand" BackgroundColor="#00838e" TextColor="White"  CornerRadius="5" FontAttributes="Bold" 
-                            x:Name="BtnVouLer" FontSize="Medium" Margin="10, 10, 10, 10" />
-                        <Button Text="{Binding VLendo,StringFormat='Lendo ({0})'}" VerticalOptions="Fill" HorizontalOptions="FillAndExpand" BackgroundColor="#00838e" TextColor="White"  CornerRadius="5" FontAttributes="Bold"
-                            x:Name="BtnLendo" FontSize="Medium" Margin="10, 10, 10, 10"  />
-                        <Button Text="{Binding VLido,StringFormat='Lido ({0})'}" VerticalOptions="Fill" HorizontalOptions="FillAndExpand" BackgroundColor="#00838e" TextColor="White"  CornerRadius="5" FontAttributes="Bold"
-                            x:Name="BtnLidos" FontSize="Medium" Margin="10, 10, 10, 10"/>
-                        <Button Text="{Binding VInterrompido,StringFormat='Interrompido ({0})'}" VerticalOptions="Fill" HorizontalOptions="FillAndExpand" BackgroundColor="#00251a" TextColor="White"
-                            x:Name="BtnInterrompido" FontSize="Medium" Margin="10, 10, 10, 10" CornerRadius="10" />
+                        <Button Text="{Binding VVouLer,StringFormat='Vou Ler ({0})'}" 
+                                VerticalOptions="Fill" HorizontalOptions="FillAndExpand"
+                                StyleClass="button_primary" x:Name="BtnIllRead"
+                                FontSize="Medium"  Margin="10" 
+                                Clicked="BtnVouLer_Clicked" />
+                        <Button Text="{Binding VLendo,StringFormat='Lendo ({0})'}"
+                                VerticalOptions="Fill" HorizontalOptions="FillAndExpand"
+                                StyleClass="button_primary" x:Name="BtnReading" 
+                                FontSize="Medium"  Margin="10"
+                                Clicked="BtnReading_Clicked"
+                                />
+                        <Button Text="{Binding VLido,StringFormat='Lido ({0})'}"
+                                VerticalOptions="Fill" HorizontalOptions="FillAndExpand" 
+                                StyleClass="button_primary" x:Name="BtnRead" 
+                                FontSize="Medium"  Margin="10"
+                                Clicked="BtnRead_Clicked"
+                                />
+                        <Button Text="{Binding VInterrompido,StringFormat='Interrompido ({0})'}" 
+                                VerticalOptions="Fill" HorizontalOptions="FillAndExpand"  
+                                StyleClass="button_primary" x:Name="BtnInterrupted" 
+                                FontSize="Medium"  Margin="10"
+                                Clicked="BtnInterrupted_Clicked"
+                                />
+                        <Button Text="Arquivo" VerticalOptions="Fill"
+                                HorizontalOptions="FillAndExpand" 
+                             x:Name="BtnArchive" StyleClass="button_secundary" 
+                                FontSize="Small" Margin="10" 
+                                Clicked="BtnArchive_Clicked"
+                                />
                     </StackLayout>
                 </Frame>
             </ScrollView>

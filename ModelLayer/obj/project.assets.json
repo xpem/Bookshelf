@@ -179,25 +179,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Emanuel Martins\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Emanuel\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\ModelLayer\\ModelLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\ModelLayer\\ModelLayer.csproj",
       "projectName": "ModelLayer",
-      "projectPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\ModelLayer\\ModelLayer.csproj",
-      "packagesPath": "C:\\Users\\Emanuel Martins\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\ModelLayer\\obj\\",
+      "projectPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\ModelLayer\\ModelLayer.csproj",
+      "packagesPath": "C:\\Users\\Emanuel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\ModelLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Emanuel Martins\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Emanuel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -239,7 +237,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

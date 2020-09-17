@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bookshelf.BooksList"
+              Title="Minha Estante" StyleClass="contentpage"
+             >
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#fff">
+            <Entry Placeholder="Buscar por Título" Margin="10" WidthRequest="250"
+                HorizontalOptions="FillAndExpand" x:Name="EntSearchTitle" MaxLength="400" StyleClass="entry"  TextTransform="Uppercase" TextChanged="EntSearchTitle_TextChanged"  />
+            <ListView x:Name="LstBooks"  HasUnevenRows="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  ItemSelected="LstBooks_ItemSelected" >
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Margin="1" BorderColor="Sienna">
+                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                    <Grid HorizontalOptions="FillAndExpand">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="25"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition  Width ="5*" />
+                                            <ColumnDefinition  Width ="5*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label  Text="{Binding Title}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
+                                                    VerticalTextAlignment="Start" MaxLines="2" LineBreakMode="TailTruncation" 
+                                                    FontSize="Title" FontAttributes="Bold" TextDecorations="Underline"
+                                                    TextColor="Black" VerticalOptions="StartAndExpand"  />
+                                        <Label  Text="{Binding SubTitle}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
+                                                    VerticalTextAlignment="Start" MaxLines="2" LineBreakMode="TailTruncation" 
+                                                    FontSize="Subtitle" FontAttributes="Italic" 
+                                                    TextColor="Black" VerticalOptions="StartAndExpand"  />
+                                        <Label  Text="{Binding AuthorsAndYear}" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" Grid.Row="2" Grid.Column="0"  Grid.ColumnSpan="2" FontSize="Small" LineBreakMode="TailTruncation" FontAttributes="Italic" TextColor="Gray"/>
+                                        <!--<Label  Text="{Binding Genre}" HorizontalTextAlignment="Start"  VerticalTextAlignment="Start" Grid.Row="2" Grid.Column="0" FontSize="Small" LineBreakMode="TailTruncation"  FontAttributes="Bold" TextColor="Black"/>-->
+                                        <Label  Text="{Binding Pages, StringFormat='Páginas: {0:F0}'}" HorizontalTextAlignment="Start"  VerticalTextAlignment="Start" Grid.Row="3" Grid.Column="0" FontSize="Small" LineBreakMode="TailTruncation"  FontAttributes="Bold" TextColor="Black"/>
+                                        <!--<Label  Text="{Binding Year}" HorizontalTextAlignment="Start"  VerticalTextAlignment="Start" Grid.Row="3" Grid.Column="0" FontSize="Small" LineBreakMode="TailTruncation"  FontAttributes="Bold"/>-->
+                                        <Label  Text="{Binding Rate}" HorizontalTextAlignment="Start" HorizontalOptions="Fill" Grid.Row="3" Grid.Column="1"  FontSize="Small" FontAttributes="Bold" TextColor="Black"/>
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Footer>
+                    <Grid Padding="6" IsVisible="{Binding IsLoading}">
+                        <Grid.Triggers>
+                            <Trigger TargetType="Grid" Property="IsVisible" Value="False">
+                                <Setter Property="HeightRequest" Value="0" />
+                            </Trigger>
+                        </Grid.Triggers>
+                        <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" 
+                                       Color="#2196F3" VerticalOptions="Center" 
+                                       HorizontalOptions="Center"/>
+                    </Grid>
+                </ListView.Footer>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

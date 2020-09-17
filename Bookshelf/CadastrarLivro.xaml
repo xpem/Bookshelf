@@ -6,30 +6,56 @@
                StyleClass="contentpage"
              >
     <ContentPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical" StyleClass="card" >
-            <Frame  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" StyleClass="card-body">
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" 
+                     Orientation="Vertical" StyleClass="card" >
+            <Frame  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                    StyleClass="card_body">
                 <StackLayout Orientation="Vertical" >
                     <Label Text="Cadastrar Livro"
                 VerticalOptions="Fill" 
                 HorizontalOptions="Center" TextColor="Black" FontSize="Large" FontAttributes="Bold"/>
-                    <Entry Placeholder="Nome do Livro"    WidthRequest="250"
-                HorizontalOptions="CenterAndExpand" x:Name="EntNome" MaxLength="100" StyleClass="entry"/>
-                    <Entry Placeholder="Autor"    WidthRequest="250"
-                HorizontalOptions="CenterAndExpand" x:Name="EntAutor" MaxLength="150" StyleClass="entry"/>
+                    <Entry Placeholder="Título"  WidthRequest="250" Text="{Binding BTitle}"
+                HorizontalOptions="CenterAndExpand" x:Name="EntTitle" MaxLength="400" StyleClass="entry"/>
+                    <Entry Placeholder="*Subtítulo"  WidthRequest="250" Text="{Binding BSubTitle}"
+                HorizontalOptions="CenterAndExpand" x:Name="EntSubTitle" MaxLength="400" StyleClass="entry"/>
+                    <Entry Placeholder="Autor"  WidthRequest="250" Text="{Binding BAuthors}"
+                HorizontalOptions="CenterAndExpand" x:Name="EntAutor" MaxLength="400" StyleClass="entry"/>
                     <Grid HorizontalOptions="Center"  WidthRequest="250">
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition  Width ="35*" />
                             <ColumnDefinition  Width ="65*" />
                         </Grid.ColumnDefinitions>
-                        <Entry Placeholder="Ano" Grid.Row="0" Grid.Column="0"  WidthRequest="90"
-                HorizontalOptions="EndAndExpand" x:Name="EntAno"  MaxLength="4"  Keyboard="Numeric" StyleClass="entry" />
-                        <Entry Placeholder="*Isbn"   Grid.Row="0" Grid.Column="1"   WidthRequest="180"
-                HorizontalOptions="StartAndExpand" x:Name="EntIsbn" MaxLength="14" StyleClass="entry" />
+                        <Entry Placeholder="Ano" Grid.Row="0" Grid.Column="0" 
+                               WidthRequest="90" Text="{Binding BYear}"
+                HorizontalOptions="EndAndExpand" x:Name="EntAno"  MaxLength="4"  Keyboard="Text" StyleClass="entry"  />
+                        <Entry Placeholder="*Google Id"   Grid.Row="0" Grid.Column="1"
+                               WidthRequest="180" Text="{Binding BGoogleId}"
+                HorizontalOptions="StartAndExpand" x:Name="EntGoogleId" MaxLength="200" StyleClass="entry" />
+                        <!---->
+                        <Entry Placeholder="Páginas" Grid.Row="1" Grid.Column="0"  
+                               WidthRequest="90" Text="{Binding BPages}"
+                HorizontalOptions="EndAndExpand" x:Name="EntPages"  MaxLength="4"  Keyboard="Numeric" StyleClass="entry" />
+                        <Entry Placeholder="Gênero"   Grid.Row="1" Grid.Column="1" 
+                               WidthRequest="180"  Keyboard="Numeric"  Text="{Binding BGenre}"
+                HorizontalOptions="StartAndExpand" x:Name="EntGenrer" MaxLength="15" StyleClass="entry" />
                     </Grid>
-                    <Button Text="Cadastrar" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand" BackgroundColor="#5b3f36" TextColor="White"  WidthRequest="250" x:Name="BtnCadastrar" Clicked="BtnCadastrar_Clicked" />
+                    <Entry Placeholder="*Isbn"   Grid.Row="0" Grid.Column="1" 
+                           WidthRequest="250" Text="{Binding BIsbn}"
+                HorizontalOptions="StartAndExpand" x:Name="EntIsbn" MaxLength="300" StyleClass="entry" />
+                    <BoxView  HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="Black" Color="Black"></BoxView>
+                    <Label Text="Avaliação"
+                VerticalOptions="Fill" 
+                HorizontalOptions="Center" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
+                    <Picker x:Name="PkrSituation"  SelectedIndexChanged="PkrSituation_SelectedIndexChanged" SelectedIndex="{ Binding BSituation }" HorizontalOptions="Center" VerticalOptions="Start" WidthRequest="250" StyleClass="entry" FontSize="15"/>
+                    <Label  x:Name="LblSdlrRate" Text="{Binding Source={x:Reference SldrRate}, Path=Value, StringFormat='Avaliação pessoal: {0:F0} de 5'}" TextColor="#5D4037" HorizontalTextAlignment="Center" Margin="0, 20, 0, 0" />
+                    <Slider x:Name="SldrRate" Minimum="0" Maximum="5" Value="{ Binding BRate }" ThumbColor="#efebeb" BackgroundColor="#5D4037" HorizontalOptions="FillAndExpand" />
+                    <Editor Placeholder="*Comentários"  WidthRequest="250" HeightRequest="100" MaxLength="200"
+                HorizontalOptions="CenterAndExpand"  x:Name="EdtComment" StyleClass="entry"  Keyboard="Chat" />                    
+                    <Button Text="Cadastrar" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand" StyleClass="button_primary" x:Name="BtnCadastrar" Clicked="BtnCadastrar_Clicked" />
                 </StackLayout>
             </Frame>
         </StackLayout>

@@ -16,25 +16,41 @@ namespace ModelLayer
             public int Interrupted { get; set; }//4
         }
 
-        public class BookSiituation
-        {
-            public string Key { get; set; }
-            public string BookKey { get; set; }
-            public string UserKey { get; set; }
-            public int Status { get; set; }
-            public int Rate { get; set; }
-        }
-
         public class Book
         {
             public string Key { get; set; }
             public string UserKey { get; set; }
-            public string BookName { get; set; }
-            public string Author { get; set; }
-            public string Year { get; set; }
+            public string Title { get; set; }
+            public string SubTitle { get; set; }
+            public string Authors { get; set; }
+            public int Year { get; set; }
             public string Isbn { get; set; }
-            public string Pages { get; set; }
+            public string GoogleId { get; set; }
+            public int Pages { get; set; }
             public string Genre { get; set; }
+
+            public BookSituation BooksSituations { get; set; }
+        }
+
+        public class BookSituation
+        {
+            public string Key { get; set; }
+            public int Situation { get; set; }
+            public int Rate { get; set; }
+            public string Comment { get; set; }
+        }
+
+        /// <summary>
+        /// item da UI da lista de livros
+        /// </summary>
+        public class ItemBookList
+        {
+            public string Key { get; set; }
+            public string Title { get; set; }
+            public string SubTitle { get; set; }
+            public string AuthorsAndYear { get; set; }
+            public string Pages { get; set; }
+            public string Rate { get; set; }
         }
     }
 }

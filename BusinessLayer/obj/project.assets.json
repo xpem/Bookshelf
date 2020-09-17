@@ -1373,29 +1373,28 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "AcessLayer >= 1.0.0",
+      "FirebaseDatabase.net >= 4.0.4",
       "NETStandard.Library >= 2.0.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Emanuel Martins\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Emanuel\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj",
       "projectName": "BusinessLayer",
-      "projectPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj",
-      "packagesPath": "C:\\Users\\Emanuel Martins\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\BusinessLayer\\obj\\",
+      "projectPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj",
+      "packagesPath": "C:\\Users\\Emanuel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\BusinessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Emanuel Martins\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Emanuel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -1409,8 +1408,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\AcessLayer\\AcessLayer.csproj": {
-              "projectPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\AcessLayer\\AcessLayer.csproj"
+            "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\AcessLayer\\AcessLayer.csproj": {
+              "projectPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\AcessLayer\\AcessLayer.csproj"
             }
           }
         }
@@ -1424,6 +1423,10 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
+          "FirebaseDatabase.net": {
+            "target": "Package",
+            "version": "[4.0.4, )"
+          },
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
@@ -1441,7 +1444,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

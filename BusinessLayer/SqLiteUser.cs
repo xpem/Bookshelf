@@ -40,7 +40,12 @@ namespace BusinessLayer
         {
             List<Users> res = new List<Users>();
             Task.Run(async () => res = await ASqLite.RecAcesso()).Wait();
-            return res[0];
+            if (res.Count > 0)
+            {
+                return res[0];
+            }
+            else return null;
+
         }
 
         public static void DelAcesso() => ASqLite.DelAcesso();

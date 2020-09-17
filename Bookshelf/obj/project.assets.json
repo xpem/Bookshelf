@@ -353,7 +353,7 @@
           "lib/netstandard2.0/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.6.0.1141": {
+      "Xamarin.Forms/4.8.0.1269": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {},
@@ -389,7 +389,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "AcessLayer": "1.0.0"
+          "AcessLayer": "1.0.0",
+          "FirebaseDatabase.net": "4.0.4"
         },
         "compile": {
           "bin/placeholder/BusinessLayer.dll": {}
@@ -1536,13 +1537,14 @@
         "xamarin.essentials.nuspec"
       ]
     },
-    "Xamarin.Forms/4.6.0.1141": {
-      "sha512": "SltuAt48A9qfC7pEo9zdQ5/IExdLkGttVAtv9bZw4IWA1SBbRpR2xbeduvowW9DQ/PjJD9HM7aSzxt0Spkwrkw==",
+    "Xamarin.Forms/4.8.0.1269": {
+      "sha512": "3UFTlfJvF9l8HB+gWVmYUEVRSPU+c3H0G/h09RVG8/P5i/QRiDBg/YHEGfPR3HNuWlJ9S9TgZjrFruTUS1ZYiQ==",
       "type": "package",
-      "path": "xamarin.forms/4.6.0.1141",
+      "path": "xamarin.forms/4.8.0.1269",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Assets/xamarin_128x128.png",
         "build/MonoAndroid10/proguard.cfg",
         "build/XCODE10/Xamarin.Forms.Platform.iOS.dll",
         "build/XCODE10/Xamarin.Forms.Platform.iOS.pdb",
@@ -1622,8 +1624,8 @@
         "lib/MonoAndroid10.0/ja/Xamarin.Forms.Xaml.xml",
         "lib/MonoAndroid10.0/ko/Xamarin.Forms.Core.xml",
         "lib/MonoAndroid10.0/ko/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid10.0/pt-br/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid10.0/pt-br/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid10.0/pt-BR/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid10.0/pt-BR/Xamarin.Forms.Xaml.xml",
         "lib/MonoAndroid10.0/ru/Xamarin.Forms.Core.xml",
         "lib/MonoAndroid10.0/ru/Xamarin.Forms.Xaml.xml",
         "lib/MonoAndroid10.0/zh-Hans/Xamarin.Forms.Core.xml",
@@ -1655,8 +1657,8 @@
         "lib/MonoAndroid90/ja/Xamarin.Forms.Xaml.xml",
         "lib/MonoAndroid90/ko/Xamarin.Forms.Core.xml",
         "lib/MonoAndroid90/ko/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid90/pt-br/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid90/pt-br/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid90/pt-BR/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid90/pt-BR/Xamarin.Forms.Xaml.xml",
         "lib/MonoAndroid90/ru/Xamarin.Forms.Core.xml",
         "lib/MonoAndroid90/ru/Xamarin.Forms.Xaml.xml",
         "lib/MonoAndroid90/zh-Hans/Xamarin.Forms.Core.xml",
@@ -1710,9 +1712,9 @@
         "lib/Xamarin.iOS10/nb/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/nl/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/pl/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/pt-br/Xamarin.Forms.Core.xml",
-        "lib/Xamarin.iOS10/pt-br/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/pt-br/Xamarin.Forms.Xaml.xml",
+        "lib/Xamarin.iOS10/pt-BR/Xamarin.Forms.Core.xml",
+        "lib/Xamarin.iOS10/pt-BR/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/pt-BR/Xamarin.Forms.Xaml.xml",
         "lib/Xamarin.iOS10/pt/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/ro/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/ru/Xamarin.Forms.Core.xml",
@@ -1761,8 +1763,8 @@
         "lib/netstandard2.0/ja/Xamarin.Forms.Xaml.xml",
         "lib/netstandard2.0/ko/Xamarin.Forms.Core.xml",
         "lib/netstandard2.0/ko/Xamarin.Forms.Xaml.xml",
-        "lib/netstandard2.0/pt-br/Xamarin.Forms.Core.xml",
-        "lib/netstandard2.0/pt-br/Xamarin.Forms.Xaml.xml",
+        "lib/netstandard2.0/pt-BR/Xamarin.Forms.Core.xml",
+        "lib/netstandard2.0/pt-BR/Xamarin.Forms.Xaml.xml",
         "lib/netstandard2.0/ru/Xamarin.Forms.Core.xml",
         "lib/netstandard2.0/ru/Xamarin.Forms.Xaml.xml",
         "lib/netstandard2.0/zh-Hans/Xamarin.Forms.Core.xml",
@@ -1845,7 +1847,7 @@
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.4.6.0.1141.nupkg.sha512",
+        "xamarin.forms.4.8.0.1269.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -1868,33 +1870,32 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "BusinessLayer >= 1.0.0",
+      "FirebaseDatabase.net >= 4.0.4",
       "ModelLayer >= 1.0.0",
       "NETStandard.Library >= 2.0.3",
       "Xam.Plugin.Connectivity >= 3.2.0",
       "Xamarin.Essentials >= 1.5.3.2",
-      "Xamarin.Forms >= 4.6.0.1141"
+      "Xamarin.Forms >= 4.8.0.1269"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Emanuel Martins\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Emanuel\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\Bookshelf\\Bookshelf.csproj",
+      "projectUniqueName": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\Bookshelf\\Bookshelf.csproj",
       "projectName": "Bookshelf",
-      "projectPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\Bookshelf\\Bookshelf.csproj",
-      "packagesPath": "C:\\Users\\Emanuel Martins\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\Bookshelf\\obj\\",
+      "projectPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\Bookshelf\\Bookshelf.csproj",
+      "packagesPath": "C:\\Users\\Emanuel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\Bookshelf\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Emanuel Martins\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Emanuel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -1908,11 +1909,11 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj": {
-              "projectPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj"
+            "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj": {
+              "projectPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj"
             },
-            "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\ModelLayer\\ModelLayer.csproj": {
-              "projectPath": "C:\\Users\\Emanuel Martins\\source\\repos\\Bookshelf\\ModelLayer\\ModelLayer.csproj"
+            "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\ModelLayer\\ModelLayer.csproj": {
+              "projectPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\ModelLayer\\ModelLayer.csproj"
             }
           }
         }
@@ -1926,6 +1927,10 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
+          "FirebaseDatabase.net": {
+            "target": "Package",
+            "version": "[4.0.4, )"
+          },
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
@@ -1942,7 +1947,7 @@
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[4.6.0.1141, )"
+            "version": "[4.8.0.1269, )"
           }
         },
         "imports": [
@@ -1955,7 +1960,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

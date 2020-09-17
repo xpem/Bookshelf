@@ -13,7 +13,7 @@
 }
 
 .button_primary {
-    background-color: #00838e;
+    background-color: #006978;
     color: white;
     border-radius: 5;
     font-style: bold;
@@ -27,10 +27,10 @@
     Padding ="10,5,10,5" VerticalOptions="FillAndExpand" Orientation="Vertical"*/
 }
 
-.card-body {
+.card_body {
     margin: 10;
     border-color: wheat;
-    background-color: #E1E2E1;
+    background-color: #a3a3a3;
     align-content: center;
     box-shadow: 0 4 4 rgba(0, 0, 0, 0.25);
     border-radius: 10;
@@ -40,7 +40,9 @@
 }
 
 .entry {
-    background-color: #a3a3a3;
+    background-color: #E1E2E1;
     -xf-placeholder-color: #606060;
+    color: black;
     width: 250;
 }
+

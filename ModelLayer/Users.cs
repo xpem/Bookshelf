@@ -8,7 +8,7 @@ namespace ModelLayer
         public string Nick { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
-        public string PassWorld { get; set; }
+        public string Passworld { get; set; }
         public string CPassworld { get; set; }
     }
 }

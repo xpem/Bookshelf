@@ -29,11 +29,21 @@ namespace AcessLayer
 
         public async static Task<Users> RecUser(string vLoginNome, string vSenha)
         {
-            return ((Users)(await AcessFirebase.firebase.Child("Users").OnceAsync<Users>()).Where(a => (a.Object.Nick == vLoginNome && a.Object.PassWorld == vSenha)).Select(item => new Users
+            return ((Users)(await AcessFirebase.firebase.Child("Users").OnceAsync<Users>()).Where(a => (a.Object.Nick == vLoginNome && a.Object.Passworld == vSenha)).Select(item => new Users
             {
                 Key = item.Key,
                 Nick = item.Object.Nick,
             }).FirstOrDefault());
         }
+
+        public async static Task<Users> RecUserEmail(string vEmail)
+        {
+            return ((Users)(await AcessFirebase.firebase.Child("Users").OnceAsync<Users>()).Where(a => (a.Object.Email == vEmail)).Select(item => new Users
+            {
+                Key = item.Key,
+                Nick = item.Object.Nick,
+            }).FirstOrDefault());
+        }
+
     }
 }

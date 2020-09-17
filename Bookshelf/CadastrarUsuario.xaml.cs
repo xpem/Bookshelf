@@ -93,7 +93,7 @@ namespace Bookshelf
                     UserName = EntNome.Text,
                     Nick = EntNomeAcesso.Text,
                     Email = EntEmail.Text,
-                    PassWorld = BUser.CPEncrypt(EntSenha.Text, EntSenha.Text.Length)
+                    Passworld = BUser.CPEncrypt(EntSenha.Text, EntSenha.Text.Length)
 
                 };
                 //

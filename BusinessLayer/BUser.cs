@@ -30,6 +30,25 @@ namespace BusinessLayer
             else return false;
         }
 
+
+        public static bool RecoverUserEmail(string Email, out string UserNick, out string UserKey)
+        {
+            Users user = new Users();
+            UserNick = UserKey = "";
+
+
+            Task.Run(async () => user = await AcessLayer.AUsers.RecUserEmail(Email)).Wait();
+
+            if (user == null) return false;
+            else
+            {
+                UserNick = user.Nick;
+                UserKey = user.Key;
+                return true;
+            }
+
+        }
+
         /// <returns>true para válido</returns>
         public static bool Valida_email(string email)
         {

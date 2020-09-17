@@ -16,12 +16,26 @@ namespace Bookshelf
 
             InitializeComponent();
 
-            MainPage = new Acessa();
-            MainPage = new NavigationPage(new Acessa())
+            if(BusinessLayer.SqLiteUser.VerifyAcess())
             {
-                BarBackgroundColor = Color.FromHex("#301810"),
-                BarTextColor = Color.White
-            };
+                Application.Current.MainPage = new MainPage();
+                Application.Current.MainPage = new NavigationPage(new MainPage())
+                {
+                    BarBackgroundColor = Color.FromHex("#301810"),
+                    BarTextColor = Color.White
+                };
+            }
+            else
+            {
+                MainPage = new Acessa();
+                MainPage = new NavigationPage(new Acessa())
+                {
+                    BarBackgroundColor = Color.FromHex("#301810"),
+                    BarTextColor = Color.White
+                };
+            }
+
+         
         }
 
         protected override void OnStart()

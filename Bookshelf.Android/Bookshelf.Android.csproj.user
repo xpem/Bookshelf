@@ -2,6 +2,6 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <AndroidDesignerPreferredTheme>Theme.AppCompat.Light.NoActionBar</AndroidDesignerPreferredTheme>
-    <SelectedDevice>Android Emulator</SelectedDevice>
+    <SelectedDevice>Motorola moto g%287%29 play</SelectedDevice>
   </PropertyGroup>
 </Project>

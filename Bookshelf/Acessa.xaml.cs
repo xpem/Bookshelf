@@ -53,5 +53,10 @@ namespace Bookshelf
                 }
             }
         }
+
+        private void BtnRecSenha_Clicked(object sender, EventArgs e)
+        {
+            this.Navigation.PushAsync(new ConfirmaEmail());
+        }
     }
 }
