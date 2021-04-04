@@ -15,3 +15,20 @@ C:\Users\Emanuel\Documents\projetos pessoais\Bookshelf\ModelLayer\obj\Debug\nets
 C:\Users\Emanuel\Documents\projetos pessoais\Bookshelf\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.csproj.CoreCompileInputs.cache
 C:\Users\Emanuel\Documents\projetos pessoais\Bookshelf\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.dll
 C:\Users\Emanuel\Documents\projetos pessoais\Bookshelf\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.pdb
+C:\Users\Emanuel\Documents\Bookshelf\ModelLayer\bin\Debug\netstandard2.0\ModelLayer.deps.json
+C:\Users\Emanuel\Documents\Bookshelf\ModelLayer\bin\Debug\netstandard2.0\ModelLayer.dll
+C:\Users\Emanuel\Documents\Bookshelf\ModelLayer\bin\Debug\netstandard2.0\ModelLayer.pdb
+C:\Users\Emanuel\Documents\Bookshelf\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.csprojAssemblyReference.cache
+C:\Users\Emanuel\Documents\Bookshelf\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.AssemblyInfoInputs.cache
+C:\Users\Emanuel\Documents\Bookshelf\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.AssemblyInfo.cs
+C:\Users\Emanuel\Documents\Bookshelf\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.csproj.CoreCompileInputs.cache
+C:\Users\Emanuel\Documents\Bookshelf\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.dll
+C:\Users\Emanuel\Documents\Bookshelf\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.pdb
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\ModelLayer\bin\Debug\netstandard2.0\ModelLayer.deps.json
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\ModelLayer\bin\Debug\netstandard2.0\ModelLayer.dll
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\ModelLayer\bin\Debug\netstandard2.0\ModelLayer.pdb
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.AssemblyInfoInputs.cache
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.AssemblyInfo.cs
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.csproj.CoreCompileInputs.cache
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.dll
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.pdb

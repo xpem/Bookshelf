@@ -2,22 +2,32 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Bookshelf.Acessa"
+             xmlns:local="clr-namespace:Bookshelf.Resources"
              Title="Minha Estante"  
              StyleClass="contentpage">
     <ContentPage.Content>
         <StackLayout StyleClass="card" Orientation="Vertical"  VerticalOptions="FillAndExpand">
             <Frame StyleClass="card_body" VerticalOptions="CenterAndExpand">
                 <StackLayout Orientation="Vertical"  >
-                    <Entry Placeholder="Nome de Acesso" 
-                HorizontalOptions="CenterAndExpand" StyleClass="entry" x:Name="EntNomeAcesso">
+                    <Entry Placeholder="Nome de Acesso" HorizontalOptions="CenterAndExpand" StyleClass="entry" x:Name="EntNomeAcesso" TextTransform="Uppercase">
                     </Entry>
-                    <Entry Placeholder="Senha" IsPassword="True"
-                HorizontalOptions="CenterAndExpand"
-                x:Name="EntSenha"  StyleClass="entry">
+                    <Entry Placeholder="Senha" IsPassword="True" HorizontalOptions="CenterAndExpand" x:Name="EntSenha" StyleClass="entry">
                     </Entry>
-                    <Button Text="Acessar" x:Name="BtnAcessa" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand" StyleClass="button_primary"  Clicked="BtnAcessa_Clicked" />
-                    <Button Text="Cadastre-se" x:Name="BtnCadAcesso" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand"  StyleClass="button_secundary" Clicked="BtnCadAcesso_Clicked"/>
-                    <Button Text="Recuperar Senha" x:Name="BtnRecSenha" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand" StyleClass="button_secundary" Clicked="BtnRecSenha_Clicked"/>
+                    <Button x:Name="BtnAcessa"  Text="Acessar" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand"  Clicked="BtnAcessa_Clicked" StyleClass="button_primary" >
+                        <Button.ImageSource>
+                            <FontImageSource  FontFamily="FontAwesomeBold" Color="White" Glyph="{x:Static local:Icons.SignIn}" Size="Micro"></FontImageSource>
+                        </Button.ImageSource>
+                    </Button>
+                    <Button  Text="Cadastrar" x:Name="BtnCadAcesso" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand"   StyleClass="button_secundary"  Clicked="BtnCadAcesso_Clicked">
+                        <Button.ImageSource>
+                            <FontImageSource  FontFamily="FontAwesomeBold" Color="White" Glyph="{x:Static local:Icons.AddUser}" Size="Micro"></FontImageSource>
+                        </Button.ImageSource>
+                    </Button>
+                    <Button Text="Recuperar Senha" x:Name="BtnRecSenha" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand" StyleClass="button_secundary" Clicked="BtnRecSenha_Clicked">
+                        <Button.ImageSource>
+                            <FontImageSource  FontFamily="FontAwesomeBold" Color="White" Glyph="{x:Static local:Icons.RecoverPass}" Size="Micro"></FontImageSource>
+                        </Button.ImageSource>
+                    </Button>
                 </StackLayout>
             </Frame>
         </StackLayout>

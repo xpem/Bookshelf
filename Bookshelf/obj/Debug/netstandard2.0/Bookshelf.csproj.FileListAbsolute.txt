@@ -54,3 +54,61 @@ C:\Users\Emanuel\Documents\projetos pessoais\Bookshelf\Bookshelf\obj\Debug\netst
 C:\Users\Emanuel\Documents\projetos pessoais\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Bookshelf.csproj.CopyComplete
 C:\Users\Emanuel\Documents\projetos pessoais\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\ConfirmaEmail.xaml.g.cs
 C:\Users\Emanuel\Documents\projetos pessoais\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\NovaSenha.xaml.g.cs
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.deps.json
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.dll
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\ref\Bookshelf.dll
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.pdb
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\AcessLayer.dll
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\BusinessLayer.dll
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\ModelLayer.dll
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\BusinessLayer.pdb
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\ModelLayer.pdb
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\AcessLayer.pdb
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Bookshelf.csprojAssemblyReference.cache
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Acessa.xaml.g.cs
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\BooksList.xaml.g.cs
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\CadastrarLivro.xaml.g.cs
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\CadastrarUsuario.xaml.g.cs
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\ConfirmaEmail.xaml.g.cs
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\DetailBook.xaml.g.cs
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\NovaSenha.xaml.g.cs
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Styles.css.g.cs
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Bookshelf.AssemblyInfoInputs.cache
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Bookshelf.AssemblyInfo.cs
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Bookshelf.csproj.CoreCompileInputs.cache
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Bookshelf.csproj.CopyComplete
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Bookshelf.dll
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\ref\Bookshelf.dll
+C:\Users\Emanuel\Documents\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Bookshelf.pdb
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.deps.json
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.dll
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\ref\Bookshelf.dll
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.pdb
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\BusinessLayer.dll
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\ModelLayer.dll
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\BusinessLayer.pdb
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\ModelLayer.pdb
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Bookshelf.csprojAssemblyReference.cache
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Acessa.xaml.g.cs
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\BooksList.xaml.g.cs
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\CadastrarLivro.xaml.g.cs
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\CadastrarUsuario.xaml.g.cs
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\ConfirmaEmail.xaml.g.cs
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\DetailBook.xaml.g.cs
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\NovaSenha.xaml.g.cs
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Styles.css.g.cs
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Bookshelf.AssemblyInfoInputs.cache
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Bookshelf.AssemblyInfo.cs
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Bookshelf.csproj.CoreCompileInputs.cache
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Bookshelf.csproj.CopyComplete
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Bookshelf.dll
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\ref\Bookshelf.dll
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Bookshelf.pdb
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.AcessLayer.dll
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.AcessLayer.pdb

@@ -43,7 +43,7 @@
     <RootPropertyPathName Name="EllipseDiameter" />
     <RootPropertyPathName Name="EllipseOffset" />
     <RootPropertyPathName Name="IsPaneOpen" />
-    <RootPropertyPathName Name="Master" />
+    <RootPropertyPathName Name="Flyout" />
     <RootPropertyPathName Name="Detail" />
     <RootPropertyPathName Name="DetailTitleView" />
     <RootPropertyPathName Name="TitleView" />
@@ -83,8 +83,6 @@
     <RootPropertyPathName Name="ElementSoundMode" />
     <RootPropertyPathName Name="PaneToggleButtonVisibility" />
     <RootPropertyPathName Name="BackButtonVisibility" />
-    <RootPropertyPathName Name="Command" />
-    <RootPropertyPathName Name="CommandParameter" />
     <RootPropertyPathName Name="IsSelected" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
@@ -331,6 +329,7 @@
       <RootProperty Name="FontSize" />
       <RootProperty Name="FontStyle" />
       <RootProperty Name="IsHitTestVisible" />
+      <RootProperty Name="Name" />
       <RootProperty Name="HorizontalContentAlignment" />
       <RootProperty Name="VerticalContentAlignment" />
       <RootProperty Name="BorderBrush" />
@@ -340,7 +339,6 @@
       <RootProperty Name="FlowDirection" />
       <RootProperty Name="Resources" />
       <RootProperty Name="Height" />
-      <RootProperty Name="Name" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Automation.AutomationProperties">
       <RootMethod Name="GetAccessibilityView" />
@@ -429,6 +427,10 @@
       <RootEvent Name="ItemClick" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.Animation.TransitionCollection" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Page">
+      <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="Xamarin.Forms.Platform.UWP.ShellPageWrapper" />
     <RootType FullName="Windows.UI.Xaml.Controls.ItemsPanelTemplate">
       <RootProperty Name="Template" />
     </RootType>
@@ -618,7 +620,7 @@
       <RootProperty Name="RenderTransform" />
     </RootType>
     <RootType FullName="Xamarin.Forms.Platform.UWP.TextAlignmentToHorizontalAlignmentConverter" />
-    <RootType FullName="Xamarin.Forms.Platform.UWP.MasterDetailControl">
+    <RootType FullName="Xamarin.Forms.Platform.UWP.FlyoutPageControl">
       <RootProperty Name="ToolbarForeground" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.SplitView">
@@ -808,9 +810,6 @@
       <RootProperty Name="Visibility" />
       <RootProperty Name="RenderTransform" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Page">
-      <RootProperty Name="Content" />
-    </RootType>
     <RootType FullName="Xamarin.Forms.Platform.UWP.FormsEmbeddedPageWrapper" />
     <RootType FullName="Xamarin.Forms.Platform.UWP.ShellRenderer" />
     <RootType FullName="Microsoft.UI.Xaml.Controls.NavigationView">
@@ -862,8 +861,6 @@
       <RootProperty Name="Background" />
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="IsEnabled" />
-      <RootProperty Name="Command" />
-      <RootProperty Name="CommandParameter" />
       <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Microsoft.UI.Xaml.Controls.NavigationViewItemSeparator" />

@@ -30,10 +30,10 @@
                                                     VerticalTextAlignment="Start" MaxLines="2" LineBreakMode="TailTruncation" 
                                                     FontSize="Title" FontAttributes="Bold" TextDecorations="Underline"
                                                     TextColor="Black" VerticalOptions="StartAndExpand"  />
-                                        <Label  Text="{Binding SubTitle}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
+                                        <Label  Text="{Binding SubtitleAndVol, StringFormat='{0}'}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
                                                     VerticalTextAlignment="Start" MaxLines="2" LineBreakMode="TailTruncation" 
                                                     FontSize="Subtitle" FontAttributes="Italic" 
-                                                    TextColor="Black" VerticalOptions="StartAndExpand"  />
+                                                    TextColor="Black" VerticalOptions="StartAndExpand"  />                                    
                                         <Label  Text="{Binding AuthorsAndYear}" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" Grid.Row="2" Grid.Column="0"  Grid.ColumnSpan="2" FontSize="Small" LineBreakMode="TailTruncation" FontAttributes="Italic" TextColor="Gray"/>
                                         <!--<Label  Text="{Binding Genre}" HorizontalTextAlignment="Start"  VerticalTextAlignment="Start" Grid.Row="2" Grid.Column="0" FontSize="Small" LineBreakMode="TailTruncation"  FontAttributes="Bold" TextColor="Black"/>-->
                                         <Label  Text="{Binding Pages, StringFormat='Páginas: {0:F0}'}" HorizontalTextAlignment="Start"  VerticalTextAlignment="Start" Grid.Row="3" Grid.Column="0" FontSize="Small" LineBreakMode="TailTruncation"  FontAttributes="Bold" TextColor="Black"/>

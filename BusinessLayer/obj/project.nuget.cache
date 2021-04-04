@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tNMPZo9lsMggeWB1NbFKwtFTsZ1kkzA0fFS2nuEeaYd8ptHPJNf0btptIKmzIr/javj1PomnevWbfEsIiq8Ltw==",
+  "dgSpecHash": "RCK/HKMuqsFjAkuehg+P5UhFP2Q4BbBdc5LPwDhO7uDflClxnEW/FUdrql/4LNAeQpe2pdPjwn4rxM7d6idC8A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj",
+  "projectFilePath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Emanuel\\.nuget\\packages\\firebasedatabase.net\\4.0.4\\firebasedatabase.net.4.0.4.nupkg.sha512",
     "C:\\Users\\Emanuel\\.nuget\\packages\\litedb\\4.1.4\\litedb.4.1.4.nupkg.sha512",

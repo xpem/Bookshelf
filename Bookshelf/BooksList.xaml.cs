@@ -21,9 +21,6 @@ namespace Bookshelf
 
         private bool isLoading;
         public bool IsLoading { get => isLoading; set { isLoading = value; OnPropertyChanged(); } }
-
-
-
         private int SituationIndex { get; set; }
 
         public BooksList(int situation)
@@ -31,8 +28,6 @@ namespace Bookshelf
             BindingContext = this;
             SituationIndex = situation;
             InitializeComponent();
-            ObBooksList = new ObservableCollection<ItemBookList>();
-            LoadBooks(0);
         }
 
         protected override void OnAppearing()
@@ -40,6 +35,7 @@ namespace Bookshelf
             base.OnAppearing();
             ObBooksList = new ObservableCollection<ItemBookList>();
             LoadBooks(0);
+            PartialLoadBooks();
 
         }
 
@@ -58,13 +54,27 @@ namespace Bookshelf
 
             foreach (ModelLayer.Books.Book book in (await BusinessLayer.BBooks.GetBookSituationByStatus(SituationIndex, Index)))
             {
+                string SubtitleAndVol = "";
+                if(!string.IsNullOrEmpty(book.SubTitle))
+                {
+                    SubtitleAndVol = book.SubTitle;
+                }
+                if (!string.IsNullOrEmpty(book.SubTitle) && !string.IsNullOrEmpty(book.Volume))
+                {
+                    SubtitleAndVol += "; ";
+                }
+                if (!string.IsNullOrEmpty(book.Volume))
+                {
+                    SubtitleAndVol += "Vol.: " + book.Volume;
+                }
+
                 Books.ItemBookList itemBookList = new Books.ItemBookList
                 {
                     Key = book.Key,
                     Title = book.Title,
                     AuthorsAndYear = (book.Authors + "; Ano: " + book.Year),
                     Pages = book.Pages.ToString(),
-                    SubTitle = book.SubTitle,
+                    SubtitleAndVol = SubtitleAndVol
                 };
 
                 ObBooksList.Add(itemBookList);
@@ -121,8 +131,6 @@ namespace Bookshelf
                     Navigation.PushAsync(detalhaLivros);
                     LstBooks.SelectedItem = null;
                 }
-
-
             }
         }
 

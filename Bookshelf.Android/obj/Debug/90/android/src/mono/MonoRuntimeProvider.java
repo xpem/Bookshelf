@@ -20,32 +20,19 @@ public class MonoRuntimeProvider
 	{
 		// Mono Runtime Initialization {{{
 		android.content.pm.ApplicationInfo applicationInfo = context.getApplicationInfo ();
-		android.content.pm.PackageManager packageManager = context.getPackageManager ();
-		java.util.List<String> apks = new java.util.ArrayList<String> ();
-		apks.add (applicationInfo.sourceDir);
+		String[] apks = null;
 		if (android.os.Build.VERSION.SDK_INT >= 21) {
 			String[] splitApks = applicationInfo.splitPublicSourceDirs;
 			if (splitApks != null && splitApks.length > 0) {
-				java.util.Collections.addAll (apks, splitApks);
+				apks = new String[splitApks.length + 1];
+				apks [0] = applicationInfo.sourceDir;
+				System.arraycopy (splitApks, 0, apks, 1, splitApks.length);
 			}
 		}
-		String platformPackage	= mono.MonoPackageManager.getApiPackageName ();
-		if (platformPackage != null) {
-			try {
-				android.content.pm.ApplicationInfo apiInfo = packageManager.getApplicationInfo (platformPackage, 0);
-				apks.add (0, apiInfo.sourceDir);
-			} catch (android.content.pm.PackageManager.NameNotFoundException e) {
-				throw new RuntimeException ("Unable to find application " + platformPackage + "!", e);
-			}
+		if (apks == null) {
+			apks = new String[] { applicationInfo.sourceDir };
 		}
-		try {
-			android.content.pm.ApplicationInfo runtimeInfo = packageManager.getApplicationInfo ("Mono.Android.DebugRuntime", 0);
-			apks.add (0, runtimeInfo.sourceDir);
-			applicationInfo = runtimeInfo;
-		} catch (android.content.pm.PackageManager.NameNotFoundException e) {
-			throw new RuntimeException ("Unable to find application Mono.Android.DebugRuntime!", e);
-		}
-		mono.MonoPackageManager.LoadApplication (context, applicationInfo, apks.toArray(new String[0]));
+		mono.MonoPackageManager.LoadApplication (context, applicationInfo, apks);
 		// }}}
 		super.attachInfo (context, info);
 	}

@@ -18,10 +18,11 @@
                 HorizontalOptions="CenterAndExpand" x:Name="EntTitle" MaxLength="400" StyleClass="entry"/>
                     <Entry Placeholder="*Subtítulo"  WidthRequest="250" Text="{Binding BSubTitle}"
                 HorizontalOptions="CenterAndExpand" x:Name="EntSubTitle" MaxLength="400" StyleClass="entry"/>
-                    <Entry Placeholder="Autor"  WidthRequest="250" Text="{Binding BAuthors}"
-                HorizontalOptions="CenterAndExpand" x:Name="EntAutor" MaxLength="400" StyleClass="entry"/>
+               
+                 
                     <Grid HorizontalOptions="Center"  WidthRequest="250">
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
@@ -29,19 +30,21 @@
                             <ColumnDefinition  Width ="35*" />
                             <ColumnDefinition  Width ="65*" />
                         </Grid.ColumnDefinitions>
-                        <Entry Placeholder="Ano" Grid.Row="0" Grid.Column="0" 
+                   
+                        <Entry Placeholder="*Vol."  Grid.Row="0" Grid.Column="0" WidthRequest="90" Text="{Binding BVolume}"
+                HorizontalOptions="StartAndExpand" x:Name="EntVol" StyleClass="entry" Keyboard="Numeric" MaxLength="2"/>
+                        <Entry Placeholder="Ano" Grid.Row="0" Grid.Column="1" 
                                WidthRequest="90" Text="{Binding BYear}"
-                HorizontalOptions="EndAndExpand" x:Name="EntAno"  MaxLength="4"  Keyboard="Text" StyleClass="entry"  />
-                        <Entry Placeholder="*Google Id"   Grid.Row="0" Grid.Column="1"
-                               WidthRequest="180" Text="{Binding BGoogleId}"
-                HorizontalOptions="StartAndExpand" x:Name="EntGoogleId" MaxLength="200" StyleClass="entry" />
+                HorizontalOptions="Start" x:Name="EntAno"  MaxLength="4"  Keyboard="Text" StyleClass="entry"  />
                         <!---->
-                        <Entry Placeholder="Páginas" Grid.Row="1" Grid.Column="0"  
+                        <Entry Placeholder="Autor"  WidthRequest="250" Text="{Binding BAuthors}"   Grid.Row="1" Grid.ColumnSpan="2"
+                HorizontalOptions="CenterAndExpand" x:Name="EntAutor" MaxLength="400" StyleClass="entry"/>
+                        <Entry Placeholder="Páginas" Grid.Row="2" Grid.Column="0"  
                                WidthRequest="90" Text="{Binding BPages}"
                 HorizontalOptions="EndAndExpand" x:Name="EntPages"  MaxLength="4"  Keyboard="Numeric" StyleClass="entry" />
-                        <Entry Placeholder="Gênero"   Grid.Row="1" Grid.Column="1" 
+                        <Entry Placeholder="Gênero"   Grid.Row="2" Grid.Column="1" 
                                WidthRequest="180"  Keyboard="Numeric"  Text="{Binding BGenre}"
-                HorizontalOptions="StartAndExpand" x:Name="EntGenrer" MaxLength="15" StyleClass="entry" />
+                HorizontalOptions="StartAndExpand" x:Name="EntGenrer" MaxLength="100" StyleClass="entry" />
                     </Grid>
                     <Entry Placeholder="*Isbn"   Grid.Row="0" Grid.Column="1" 
                            WidthRequest="250" Text="{Binding BIsbn}"

@@ -1,0 +1,12 @@
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\AcessLayer\bin\Debug\netstandard2.0\Bookshelf.AcessLayer.deps.json
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\AcessLayer\bin\Debug\netstandard2.0\Bookshelf.AcessLayer.dll
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\AcessLayer\bin\Debug\netstandard2.0\Bookshelf.AcessLayer.pdb
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\AcessLayer\bin\Debug\netstandard2.0\ModelLayer.dll
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\AcessLayer\bin\Debug\netstandard2.0\ModelLayer.pdb
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\AcessLayer\obj\Debug\netstandard2.0\Bookshelf.AcessLayer.csprojAssemblyReference.cache
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\AcessLayer\obj\Debug\netstandard2.0\Bookshelf.AcessLayer.AssemblyInfoInputs.cache
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\AcessLayer\obj\Debug\netstandard2.0\Bookshelf.AcessLayer.AssemblyInfo.cs
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\AcessLayer\obj\Debug\netstandard2.0\Bookshelf.AcessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\AcessLayer\obj\Debug\netstandard2.0\Bookshelf.AcessLayer.csproj.CopyComplete
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\AcessLayer\obj\Debug\netstandard2.0\Bookshelf.AcessLayer.dll
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\AcessLayer\obj\Debug\netstandard2.0\Bookshelf.AcessLayer.pdb

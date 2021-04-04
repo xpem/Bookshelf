@@ -1,17 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                         xmlns:local="clr-namespace:Bookshelf.Resources"
              x:Class="Bookshelf.MainPage"
              Title="Minha Estante" StyleClass="contentpage" >
     <ContentPage.ToolbarItems>
-        <ToolbarItem Name="TbiSair" Order="Secondary"  Text="Sair" Priority="0" Clicked="TbiSair_Clicked" />
+        <ToolbarItem Name="TbiSair" Order="Secondary"  Text="Sair" Priority="0" Clicked="TbiSair_Clicked" >
+            <ToolbarItem.IconImageSource>
+                <FontImageSource  FontFamily="FontAwesomeBold" Color="Black" Glyph="{x:Static local:Icons.SignOut}" Size="Micro"></FontImageSource>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout StyleClass="card" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical"  >
             <Frame  HorizontalOptions="FillAndExpand" StyleClass="card_body">
                 <StackLayout Orientation="Vertical" >
                     <Button Text="Cadastrar Livro" VerticalOptions="Fill" HorizontalOptions="FillAndExpand" 
-                             x:Name="BtnRegisterBook"  Clicked="BtnRegisterBook_Clicked" StyleClass="button_secundary"  Margin="10" FontSize="Medium" />
+                             x:Name="BtnRegisterBook"  Clicked="BtnRegisterBook_Clicked" StyleClass="button_secundary"  Margin="10" FontSize="Medium" >
+                        <Button.ImageSource>
+                            <FontImageSource  FontFamily="FontAwesomeBold" Color="White" Glyph="{x:Static local:Icons.Book}" Size="Medium"></FontImageSource>
+                        </Button.ImageSource>
+                    </Button>
                 </StackLayout>
             </Frame>
             <ScrollView>
@@ -46,7 +55,11 @@
                              x:Name="BtnArchive" StyleClass="button_secundary" 
                                 FontSize="Small" Margin="10" 
                                 Clicked="BtnArchive_Clicked"
-                                />
+                               >
+                            <Button.ImageSource>
+                                <FontImageSource  FontFamily="FontAwesomeBold" Color="White" Glyph="{x:Static local:Icons.Archive}" Size="Small"></FontImageSource>
+                            </Button.ImageSource>
+                        </Button>
                     </StackLayout>
                 </Frame>
             </ScrollView>

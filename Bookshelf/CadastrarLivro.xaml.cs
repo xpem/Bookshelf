@@ -17,7 +17,10 @@ namespace Bookshelf
     {
         #region Properties
 
-        private string BookKey, bTitle, bSubTitle, bAuthors, bYear, bIsbn, bPages, bGenre, bGoogleId, bComment;
+        //
+        private bool IsUpdate = false;
+
+        private string BookKey, bTitle, bSubTitle, bVolume, bAuthors, bYear, bIsbn, bPages, bGenre, bComment;
 
         public string BTitle
         {
@@ -34,6 +37,15 @@ namespace Bookshelf
             set
             {
                 bSubTitle = value; OnPropertyChanged();
+            }
+        }
+
+        public string BVolume
+        {
+            get => bVolume;
+            set
+            {
+                bVolume = value; OnPropertyChanged();
             }
         }
 
@@ -79,15 +91,6 @@ namespace Bookshelf
             set
             {
                 bGenre = value; OnPropertyChanged();
-            }
-        }
-
-        public string BGoogleId
-        {
-            get => bGoogleId;
-            set
-            {
-                bGoogleId = value; OnPropertyChanged();
             }
         }
 
@@ -141,7 +144,7 @@ namespace Bookshelf
                 PkrSituation.SelectedIndex = 0;
 
                 SldrRate.IsVisible = LblSdlrRate.IsVisible = EdtComment.IsVisible = false;
-                BTitle = BSubTitle = BAuthors = BYear = BIsbn = BPages = BGenre = BGoogleId = "";
+                BTitle = BSubTitle = BAuthors = BYear = BIsbn = BPages = BGenre = BVolume = "";
             }
             else
             {
@@ -159,7 +162,7 @@ namespace Bookshelf
             BIsbn = book.Isbn;
             BPages = book.Pages.ToString();
             BGenre = book.Genre;
-            BGoogleId = book.GoogleId;
+            BVolume = book.Volume;
 
             BComment = book.BooksSituations.Comment;
 
@@ -192,6 +195,7 @@ namespace Bookshelf
             vs.Add("button_secundary");
             BtnCadastrar.StyleClass = vs;
             BtnCadastrar.Text = "Alterar";
+            IsUpdate = true;
         }
 
 
@@ -216,7 +220,7 @@ namespace Bookshelf
                     Isbn = EntIsbn.Text,
                     Pages = Convert.ToInt32(EntPages.Text),
                     Genre = EntGenrer.Text,
-                    GoogleId = EntGoogleId.Text,
+                    Volume = EntVol.Text,
                 };
                 //
 
@@ -253,9 +257,9 @@ namespace Bookshelf
 
                 }
 
-                if(!string.IsNullOrEmpty(BookKey))
+                if (!string.IsNullOrEmpty(BookKey))
                 {
-                    await BusinessLayer.BBooks.UpdateBook(book,BookKey);
+                    await BusinessLayer.BBooks.UpdateBook(book, BookKey);
                     mensagem += " Atualiados";
                 }
                 else
@@ -264,7 +268,7 @@ namespace Bookshelf
                     mensagem += " Cadastrados";
                 }
 
-               
+
 
                 bool resposta = await DisplayAlert("Aviso", mensagem, null, "Ok");
 
@@ -333,7 +337,11 @@ namespace Bookshelf
             }
             else
             {
-                VerFields = BusinessLayer.BBooks.VerifyRegisterBook(EntTitle.Text);
+
+                if (!IsUpdate)
+                    VerFields = BusinessLayer.BBooks.VerifyRegisterBook(EntTitle.Text);
+
+
                 if (!VerFields)
                 {
                     DisplayAlert("Aviso", "Livro já cadastrados", null, "Ok");

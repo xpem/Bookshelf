@@ -327,7 +327,7 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
-      "AcessLayer/1.0.0": {
+      "Bookshelf.AcessLayer/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -336,10 +336,10 @@
           "sqlite-net-pcl": "1.7.335"
         },
         "compile": {
-          "bin/placeholder/AcessLayer.dll": {}
+          "bin/placeholder/Bookshelf.AcessLayer.dll": {}
         },
         "runtime": {
-          "bin/placeholder/AcessLayer.dll": {}
+          "bin/placeholder/Bookshelf.AcessLayer.dll": {}
         }
       },
       "ModelLayer/1.0.0": {
@@ -1359,10 +1359,10 @@
         "system.threading.tasks.nuspec"
       ]
     },
-    "AcessLayer/1.0.0": {
+    "Bookshelf.AcessLayer/1.0.0": {
       "type": "project",
-      "path": "../AcessLayer/AcessLayer.csproj",
-      "msbuildProject": "../AcessLayer/AcessLayer.csproj"
+      "path": "../AcessLayer/Bookshelf.AcessLayer.csproj",
+      "msbuildProject": "../AcessLayer/Bookshelf.AcessLayer.csproj"
     },
     "ModelLayer/1.0.0": {
       "type": "project",
@@ -1372,29 +1372,32 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "AcessLayer >= 1.0.0",
+      "Bookshelf.AcessLayer >= 1.0.0",
       "FirebaseDatabase.net >= 4.0.4",
       "NETStandard.Library >= 2.0.3"
     ]
   },
   "packageFolders": {
     "C:\\Users\\Emanuel\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj",
       "projectName": "BusinessLayer",
-      "projectPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj",
+      "projectPath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj",
       "packagesPath": "C:\\Users\\Emanuel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\BusinessLayer\\obj\\",
+      "outputPath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\BusinessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\Emanuel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -1407,9 +1410,10 @@
       },
       "frameworks": {
         "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\AcessLayer\\AcessLayer.csproj": {
-              "projectPath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\AcessLayer\\AcessLayer.csproj"
+            "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\AcessLayer\\Bookshelf.AcessLayer.csproj": {
+              "projectPath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\AcessLayer\\Bookshelf.AcessLayer.csproj"
             }
           }
         }
@@ -1422,6 +1426,7 @@
     },
     "frameworks": {
       "netstandard2.0": {
+        "targetAlias": "netstandard2.0",
         "dependencies": {
           "FirebaseDatabase.net": {
             "target": "Package",
@@ -1444,7 +1449,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

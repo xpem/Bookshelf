@@ -3,6 +3,9 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "Bookshelf.Android.dll" comes first in this list. */
 		"Bookshelf.Android.dll",
+		"ModelLayer.dll",
+		"BusinessLayer.dll",
+		"Bookshelf.AcessLayer.dll",
 		"Bookshelf.dll",
 		"Firebase.dll",
 		"FormsViewGroup.dll",
@@ -58,11 +61,7 @@ public class MonoPackageManager_Resources {
 		"Xamarin.Forms.Platform.Android.dll",
 		"Xamarin.Forms.Platform.dll",
 		"Xamarin.Forms.Xaml.dll",
-		"ModelLayer.dll",
-		"BusinessLayer.dll",
-		"AcessLayer.dll",
 	};
 	public static String[] Dependencies = new String[]{
 	};
-	public static String ApiPackageName = "Mono.Android.Platform.ApiLevel_28";
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HSygk9DqjQPZ6sAJ8N5w9Kl0BHmUFTvKgvRQjX29E2BjDRx423x3ZcXTssptmmm0EwrCXLLfkB+ombroowk6BA==",
+  "dgSpecHash": "eS/EbyC62mUswzv/jnGVXkhrrGYUw7cdHKEG3Ad8MLGLS2lEV1ITFiTNHyJnLf/vbMABu9ElSRGaJc9Dt5fTqg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Emanuel\\Documents\\projetos pessoais\\Bookshelf\\ModelLayer\\ModelLayer.csproj",
+  "projectFilePath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\ModelLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Emanuel\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Emanuel\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

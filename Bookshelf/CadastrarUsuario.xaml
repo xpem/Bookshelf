@@ -12,11 +12,9 @@
                     <Label Text="Cadastro de Usuário"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="Start" TextColor="Black" FontSize="20" FontAttributes="Bold"/>
-                    <Entry Placeholder="Nome"
-                HorizontalOptions="CenterAndExpand" StyleClass="entry" x:Name="EntNome" MaxLength="100"/>
-                    <Entry Placeholder="Email"    WidthRequest="250"
-                HorizontalOptions="CenterAndExpand" StyleClass="entry"  x:Name="EntEmail" MaxLength="150" Keyboard="Email"  />
-                    <Entry Placeholder="Nome de Acesso"    WidthRequest="250" StyleClass="entry" 
+                    <Entry Placeholder="Nome" HorizontalOptions="CenterAndExpand" StyleClass="entry" x:Name="EntNome" MaxLength="100"/>
+                    <Entry Placeholder="Email" WidthRequest="250" HorizontalOptions="CenterAndExpand" StyleClass="entry" x:Name="EntEmail" MaxLength="150" Keyboard="Email"  />
+                    <Entry Placeholder="Nome de Acesso" WidthRequest="250" StyleClass="entry" TextTransform="Uppercase"
                 HorizontalOptions="CenterAndExpand" x:Name="EntNomeAcesso" MaxLength="50" />
                     <Entry Placeholder="Senha" IsPassword="True" StyleClass="entry" 
                 VerticalOptions="Center" 

@@ -25,7 +25,7 @@ namespace ModelLayer
             public string Authors { get; set; }
             public int Year { get; set; }
             public string Isbn { get; set; }
-            public string GoogleId { get; set; }
+            public string Volume { get; set; }
             public int Pages { get; set; }
             public string Genre { get; set; }
 
@@ -47,7 +47,7 @@ namespace ModelLayer
         {
             public string Key { get; set; }
             public string Title { get; set; }
-            public string SubTitle { get; set; }
+            public string SubtitleAndVol { get; set; }
             public string AuthorsAndYear { get; set; }
             public string Pages { get; set; }
             public string Rate { get; set; }

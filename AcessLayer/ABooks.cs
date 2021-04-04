@@ -59,7 +59,7 @@ namespace AcessLayer
                   Genre = item.Object.Genre,
                   Year = item.Object.Year,
                   SubTitle = item.Object.SubTitle,
-                  GoogleId = item.Object.GoogleId,
+                  Volume = item.Object.Volume,
                   BooksSituations = item.Object.BooksSituations,
                   Isbn = item.Object.Isbn,
               }).ToList().FirstOrDefault();
@@ -79,6 +79,7 @@ namespace AcessLayer
                  Year = item.Object.Year,
                  SubTitle = item.Object.SubTitle,
                  BooksSituations = item.Object.BooksSituations,
+                 Volume = item.Object.Volume
              }).ToList();
         }
 
@@ -96,6 +97,7 @@ namespace AcessLayer
                   Year = item.Object.Year,
                   SubTitle = item.Object.SubTitle,
                   BooksSituations = item.Object.BooksSituations,
+                  Volume = item.Object.Volume
               }).ToList();
         }
 

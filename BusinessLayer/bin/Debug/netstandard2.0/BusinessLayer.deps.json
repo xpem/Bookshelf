@@ -9,7 +9,7 @@
     ".NETStandard,Version=v2.0/": {
       "BusinessLayer/1.0.0": {
         "dependencies": {
-          "AcessLayer": "1.0.0",
+          "Bookshelf.AcessLayer": "1.0.0",
           "FirebaseDatabase.net": "4.0.4",
           "NETStandard.Library": "2.0.3"
         },
@@ -220,14 +220,14 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "AcessLayer/1.0.0": {
+      "Bookshelf.AcessLayer/1.0.0": {
         "dependencies": {
           "FirebaseDatabase.net": "4.0.4",
           "ModelLayer": "1.0.0",
           "sqlite-net-pcl": "1.7.335"
         },
         "runtime": {
-          "AcessLayer.dll": {}
+          "Bookshelf.AcessLayer.dll": {}
         }
       },
       "ModelLayer/1.0.0": {
@@ -411,7 +411,7 @@
       "path": "system.threading.tasks/4.3.0",
       "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
     },
-    "AcessLayer/1.0.0": {
+    "Bookshelf.AcessLayer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
