@@ -9,9 +9,9 @@
     ".NETStandard,Version=v2.0/": {
       "Bookshelf/1.0.0": {
         "dependencies": {
+          "Bookshelf.ModelLayer": "1.0.0",
           "BusinessLayer": "1.0.0",
           "FirebaseDatabase.net": "4.0.4",
-          "ModelLayer": "1.0.0",
           "NETStandard.Library": "2.0.3",
           "Xam.Plugin.Connectivity": "3.2.0",
           "Xamarin.Essentials": "1.5.3.2",
@@ -46,6 +46,17 @@
           }
         }
       },
+      "Microsoft.Data.Sqlite.Core/5.0.5": {
+        "dependencies": {
+          "SQLitePCLRaw.core": "2.0.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Data.Sqlite.dll": {
+            "assemblyVersion": "5.0.5.0",
+            "fileVersion": "5.0.521.16102"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/1.1.0": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
       "NETStandard.Library/2.0.3": {
@@ -74,7 +85,7 @@
       },
       "SQLitePCLRaw.bundle_green/2.0.3": {
         "dependencies": {
-          "SQLitePCLRaw.core": "2.0.3",
+          "SQLitePCLRaw.core": "2.0.4",
           "SQLitePCLRaw.lib.e_sqlite3": "2.0.3",
           "SQLitePCLRaw.provider.e_sqlite3": "2.0.3"
         },
@@ -85,21 +96,21 @@
           }
         }
       },
-      "SQLitePCLRaw.core/2.0.3": {
+      "SQLitePCLRaw.core/2.0.4": {
         "dependencies": {
           "System.Memory": "4.5.3"
         },
         "runtime": {
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {
-            "assemblyVersion": "2.0.3.851",
-            "fileVersion": "2.0.3.851"
+            "assemblyVersion": "2.0.4.976",
+            "fileVersion": "2.0.4.976"
           }
         }
       },
       "SQLitePCLRaw.lib.e_sqlite3/2.0.3": {},
       "SQLitePCLRaw.provider.e_sqlite3/2.0.3": {
         "dependencies": {
-          "SQLitePCLRaw.core": "2.0.3"
+          "SQLitePCLRaw.core": "2.0.4"
         },
         "runtime": {
           "lib/netstandard2.0/SQLitePCLRaw.provider.e_sqlite3.dll": {
@@ -268,26 +279,28 @@
       },
       "Bookshelf.AcessLayer/1.0.0": {
         "dependencies": {
+          "Bookshelf.ModelLayer": "1.0.0",
           "FirebaseDatabase.net": "4.0.4",
-          "ModelLayer": "1.0.0",
+          "Microsoft.Data.Sqlite.Core": "5.0.5",
           "sqlite-net-pcl": "1.7.335"
         },
         "runtime": {
           "Bookshelf.AcessLayer.dll": {}
         }
       },
+      "Bookshelf.ModelLayer/1.0.0": {
+        "runtime": {
+          "Bookshelf.ModelLayer.dll": {}
+        }
+      },
       "BusinessLayer/1.0.0": {
         "dependencies": {
           "Bookshelf.AcessLayer": "1.0.0",
-          "FirebaseDatabase.net": "4.0.4"
+          "FirebaseDatabase.net": "4.0.4",
+          "Xam.Plugin.Connectivity": "3.2.0"
         },
         "runtime": {
           "BusinessLayer.dll": {}
-        }
-      },
-      "ModelLayer/1.0.0": {
-        "runtime": {
-          "ModelLayer.dll": {}
         }
       }
     }
@@ -311,6 +324,13 @@
       "sha512": "sha512-g4g9JlHzRBZl+Gd2UbiRdszZ7t8wozU2wX7+5xY5uE79tmcgcDhha+ubAP84G1VLbwQmhBGCzRfIx+epLmJciQ==",
       "path": "litedb/4.1.4",
       "hashPath": "litedb.4.1.4.nupkg.sha512"
+    },
+    "Microsoft.Data.Sqlite.Core/5.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tFKcgzzk3495LzD38gw75qmFS6Y1lDr5O9TGfSSG8GgtYF2G5VuTp7VdkeHKaaKOOgrSgHjuc3ogyWh7TZ10Hg==",
+      "path": "microsoft.data.sqlite.core/5.0.5",
+      "hashPath": "microsoft.data.sqlite.core.5.0.5.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",
@@ -354,12 +374,12 @@
       "path": "sqlitepclraw.bundle_green/2.0.3",
       "hashPath": "sqlitepclraw.bundle_green.2.0.3.nupkg.sha512"
     },
-    "SQLitePCLRaw.core/2.0.3": {
+    "SQLitePCLRaw.core/2.0.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-9LO3qT7tP+0qBAQxg/PGLHPcsKri4H2zIiiMEg+7EGrnBbuUnJg1tcfKiiqFtRp74kZSAV6N0ZeSGYiodqYnoQ==",
-      "path": "sqlitepclraw.core/2.0.3",
-      "hashPath": "sqlitepclraw.core.2.0.3.nupkg.sha512"
+      "sha512": "sha512-4XlDZpDAsboMD6qZQcz9AaKblKDUTVHF+8f3lvbP7QjoqSRr2Xc0Lm34IK2pjRIYnyFLhI3yOJ5YWfOiCid2yg==",
+      "path": "sqlitepclraw.core/2.0.4",
+      "hashPath": "sqlitepclraw.core.2.0.4.nupkg.sha512"
     },
     "SQLitePCLRaw.lib.e_sqlite3/2.0.3": {
       "type": "package",
@@ -492,12 +512,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "BusinessLayer/1.0.0": {
+    "Bookshelf.ModelLayer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "ModelLayer/1.0.0": {
+    "BusinessLayer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

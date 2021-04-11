@@ -10,5 +10,6 @@ namespace ModelLayer
         public string Email { get; set; }
         public string Passworld { get; set; }
         public string CPassworld { get; set; }
+        public DateTime LastUpdate { get; set; }
     }
 }

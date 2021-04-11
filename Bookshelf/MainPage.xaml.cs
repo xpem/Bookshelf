@@ -72,24 +72,29 @@ namespace Bookshelf
         public MainPage()
         {
             BindingContext = this;
-     
+
             InitializeComponent();
+
+
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
             VVouLer = VLendo = VLido = VInterrompido = "...";
+
             CarregaBookshelfTotais();
+
+
         }
 
 
         public async void CarregaBookshelfTotais()
         {
-            if (!CrossConnectivity.Current.IsConnected)
+            while (BBooksLocal.Sincronizando)
             {
-                await DisplayAlert("Aviso", "Sem conexão com a internet", null, "Ok");
-                return;
+                this.Title = "Sincronizando...";
+                await Task.Delay(3000);
             }
 
             BtnIllRead.IsEnabled = BtnReading.IsEnabled = BtnRead.IsEnabled = BtnInterrupted.IsEnabled = false;
@@ -97,14 +102,12 @@ namespace Bookshelf
             //
             ModelLayer.Books.Totals totais = await BusinessLayer.BBooks.GetBookshelfTotais();
             VVouLer = totais.IllRead.ToString();
-            VLendo = totais.Reading.ToString(); 
+            VLendo = totais.Reading.ToString();
             VLido = totais.Read.ToString();
             VInterrompido = totais.Interrupted.ToString();
             //
             BtnIllRead.IsEnabled = BtnReading.IsEnabled = BtnRead.IsEnabled = BtnInterrupted.IsEnabled = true;
             IsLoading = false;
-
-
         }
     }
 }

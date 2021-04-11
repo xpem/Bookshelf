@@ -34,6 +34,10 @@ namespace Bookshelf
 
                     if (resp)
                     {
+                        //inicia processo de sincronização
+                        BusinessLayer.BBooksLocal bBooksLocal = new BusinessLayer.BBooksLocal();
+                        Task.Run(async () => await bBooksLocal.AtualizaBancoLocal());
+
                         Application.Current.MainPage = new MainPage();
                         Application.Current.MainPage = new NavigationPage(new MainPage())
                         {

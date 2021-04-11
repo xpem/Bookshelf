@@ -88,9 +88,7 @@ C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\ref\Bookshelf.dll
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.pdb
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\BusinessLayer.dll
-C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\ModelLayer.dll
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\BusinessLayer.pdb
-C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\ModelLayer.pdb
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Bookshelf.csprojAssemblyReference.cache
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Acessa.xaml.g.cs
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\App.xaml.g.cs
@@ -112,3 +110,5 @@ C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Bookshelf.pdb
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.AcessLayer.dll
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.AcessLayer.pdb
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.ModelLayer.dll
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.ModelLayer.pdb

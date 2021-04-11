@@ -51,8 +51,9 @@ namespace Bookshelf
             this.Title = "Carregando lista...";
             IsLoading = true;
 
+            BusinessLayer.BBooks bBooks = new BusinessLayer.BBooks();
 
-            foreach (ModelLayer.Books.Book book in (await BusinessLayer.BBooks.GetBookSituationByStatus(SituationIndex, Index)))
+            foreach (ModelLayer.Books.Book book in (await bBooks.GetBookSituationByStatus(SituationIndex, Index)))
             {
                 string SubtitleAndVol = "";
                 if(!string.IsNullOrEmpty(book.SubTitle))

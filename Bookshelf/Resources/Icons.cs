@@ -12,5 +12,6 @@ namespace Bookshelf.Resources
         public static string SignOut = "\uf2f5";
         public static string Book = "\uf02d";
         public static string Archive = "\uf187";
+        public static string Edit = "\uf304";
     }
 }

@@ -58,7 +58,7 @@ namespace Bookshelf
 
         #endregion
 
-        private string bSituation, bLblSituationtext, bRate, BookKey, bComment;
+        private string bSituation, bLblSituationtext, bRate, BookKey, bComment, bSubtitleAndVol, bVolume;
 
         public ObservableCollection<string> BBTSituation;
         private bool bVisibleTexts;
@@ -72,6 +72,22 @@ namespace Bookshelf
             set
             {
                 bSituation = value; OnPropertyChanged();
+            }
+        }
+        public string BSubtitleAndVol
+        {
+            get => bSubtitleAndVol;
+            set
+            {
+                bSubtitleAndVol = value; OnPropertyChanged();
+            }
+        }
+        public string BVolume
+        {
+            get => bVolume;
+            set
+            {
+                bVolume = value; OnPropertyChanged();
             }
         }
 
@@ -94,6 +110,7 @@ namespace Bookshelf
             }
         }
 
+      
 
         public string BRate
         {
@@ -145,12 +162,26 @@ namespace Bookshelf
 
             ModelLayer.Books.Book book = await BusinessLayer.BBooks.getBook(bookKey);
 
+            string SubtitleAndVol = "";
+            if (!string.IsNullOrEmpty(book.SubTitle))
+            {
+                SubtitleAndVol = book.SubTitle;
+            }
+            if (!string.IsNullOrEmpty(book.SubTitle) && !string.IsNullOrEmpty(book.Volume))
+            {
+                SubtitleAndVol += "; ";
+            }
+            if (!string.IsNullOrEmpty(book.Volume))
+            {
+                SubtitleAndVol += "Vol.: " + book.Volume;
+            }
 
             BTitle = book.Title;
             BAuthors = book.Authors;
             BGenre = book.Genre;
             BPages = book.Pages.ToString();
             BComment = book.BooksSituations.Comment;
+            BSubtitleAndVol = SubtitleAndVol;
             BLblSituationtext = BBTSituation[book.BooksSituations.Situation];
             lblSituation.IsVisible = lblHSituation.IsVisible = true;
 
@@ -277,6 +308,12 @@ namespace Bookshelf
                     SldrRate.IsVisible = LblSdlrRate.IsVisible = EdtComment.IsVisible = false;
                 }
             }
+        }
+
+        private void TbiEditarLivro_Clicked(object sender, EventArgs e)
+        {
+            CadastrarLivro page = new CadastrarLivro(BookKey);
+            Navigation.PushAsync(page);
         }
 
     }

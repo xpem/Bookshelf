@@ -34,8 +34,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\ModelLayer.csproj": {
-                "projectPath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\ModelLayer.csproj"
+              "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\Bookshelf.ModelLayer.csproj": {
+                "projectPath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\Bookshelf.ModelLayer.csproj"
               }
             }
           }
@@ -53,6 +53,10 @@
             "FirebaseDatabase.net": {
               "target": "Package",
               "version": "[4.0.4, )"
+            },
+            "Microsoft.Data.Sqlite.Core": {
+              "target": "Package",
+              "version": "[5.0.5, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",
@@ -112,8 +116,8 @@
               "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj": {
                 "projectPath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj"
               },
-              "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\ModelLayer.csproj": {
-                "projectPath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\ModelLayer.csproj"
+              "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\Bookshelf.ModelLayer.csproj": {
+                "projectPath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\Bookshelf.ModelLayer.csproj"
               }
             }
           }
@@ -220,6 +224,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Xam.Plugin.Connectivity": {
+              "target": "Package",
+              "version": "[3.2.0, )"
             }
           },
           "imports": [
@@ -236,12 +244,12 @@
         }
       }
     },
-    "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\ModelLayer.csproj": {
+    "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\Bookshelf.ModelLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\ModelLayer.csproj",
-        "projectName": "ModelLayer",
-        "projectPath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\ModelLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\Bookshelf.ModelLayer.csproj",
+        "projectName": "Bookshelf.ModelLayer",
+        "projectPath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\Bookshelf.ModelLayer.csproj",
         "packagesPath": "C:\\Users\\Emanuel\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\obj\\",
         "projectStyle": "PackageReference",

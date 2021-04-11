@@ -186,9 +186,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\ModelLayer.csproj",
-      "projectName": "ModelLayer",
-      "projectPath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\ModelLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\Bookshelf.ModelLayer.csproj",
+      "projectName": "Bookshelf.ModelLayer",
+      "projectPath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\Bookshelf.ModelLayer.csproj",
       "packagesPath": "C:\\Users\\Emanuel\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\obj\\",
       "projectStyle": "PackageReference",

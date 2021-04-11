@@ -28,7 +28,7 @@ namespace ModelLayer
             public string Volume { get; set; }
             public int Pages { get; set; }
             public string Genre { get; set; }
-
+            public DateTime LastUpdate { get; set; }
             public BookSituation BooksSituations { get; set; }
         }
 
@@ -36,7 +36,7 @@ namespace ModelLayer
         {
             public string Key { get; set; }
             public int Situation { get; set; }
-            public int Rate { get; set; }
+            public int? Rate { get; set; }
             public string Comment { get; set; }
         }
 

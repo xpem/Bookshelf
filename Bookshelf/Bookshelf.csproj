@@ -31,7 +31,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj" />
-    <ProjectReference Include="..\ModelLayer\ModelLayer.csproj" />
+    <ProjectReference Include="..\ModelLayer\Bookshelf.ModelLayer.csproj" />
   </ItemGroup>
 
   <ItemGroup>

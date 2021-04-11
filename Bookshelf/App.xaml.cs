@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Plugin.Connectivity;
+using System;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,8 +18,9 @@ namespace Bookshelf
 
             InitializeComponent();
 
-            if(BusinessLayer.SqLiteUser.VerifyAcess())
+            if (BusinessLayer.SqLiteUser.VerifyAcess())
             {
+
                 Application.Current.MainPage = new MainPage();
                 Application.Current.MainPage = new NavigationPage(new MainPage())
                 {
@@ -35,11 +38,13 @@ namespace Bookshelf
                 };
             }
 
-         
+
         }
 
         protected override void OnStart()
         {
+            BusinessLayer.BBooksLocal bBooksLocal = new BusinessLayer.BBooksLocal();
+            Task.Run(async () => await bBooksLocal.AtualizaBancoLocal());
         }
 
         protected override void OnSleep()

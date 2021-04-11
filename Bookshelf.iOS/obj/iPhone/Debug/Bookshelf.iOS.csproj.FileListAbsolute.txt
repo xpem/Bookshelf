@@ -164,7 +164,6 @@ C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\obj\iPhone\Debug\optimized\
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\obj\iPhone\Debug\Bookshelf.iOS.csprojAssemblyReference.cache
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\obj\iPhone\Debug\Bookshelf.iOS.csproj.CoreCompileInputs.cache
-C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\obj\iPhone\Debug\XamlC.stamp
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\obj\iPhone\Debug\Bookshelf.iOS.csproj.CopyComplete
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\obj\iPhone\Debug\Bookshelf.iOS.exe
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\obj\iPhone\Debug\Bookshelf.iOS.pdb

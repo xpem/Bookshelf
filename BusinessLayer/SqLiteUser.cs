@@ -8,15 +8,10 @@ using ModelLayer;
 namespace BusinessLayer
 {
 
-
-
-
-
     public class SqLiteUser
     {
 
-        public static void CriaBD() =>
-     ASqLite.CriaDb();
+        public static void CriaBD() => ASqLite.CriaDb();
 
 
         public static bool VerifyAcess()
@@ -45,7 +40,23 @@ namespace BusinessLayer
                 return res[0];
             }
             else return null;
+        }
 
+        public static Users RecAcessoLastUpdate()
+        {
+            List<Users> res = new List<Users>();
+            Task.Run(async () => res = await ASqLite.RecAcessoLastUpdate()).Wait();
+            if (res.Count > 0)
+            {
+                return res[0];
+            }
+            else return null;
+
+        }
+
+        public static void AtualizaAcessoLastUpdade(string Key, DateTime LastUpdate)
+        {
+           ASqLite.AtualizaAcessoLastUpdade(Key,LastUpdate);
         }
 
         public static void DelAcesso() => ASqLite.DelAcesso();

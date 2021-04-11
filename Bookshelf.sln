@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookshelf", "Bookshelf\Book
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookshelf.AcessLayer", "AcessLayer\Bookshelf.AcessLayer.csproj", "{0C1E6928-E2DD-436E-8BBA-16F8928F1A7C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelLayer", "ModelLayer\ModelLayer.csproj", "{EC0C21B8-3EDA-4DD3-A405-A3DBB90BE80B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookshelf.ModelLayer", "ModelLayer\Bookshelf.ModelLayer.csproj", "{EC0C21B8-3EDA-4DD3-A405-A3DBB90BE80B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{03081CAE-8A04-4638-88CB-027E3506A203}"
 	ProjectSection(ProjectDependencies) = postProject

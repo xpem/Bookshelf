@@ -1,0 +1,9 @@
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\ModelLayer\bin\Debug\netstandard2.0\Bookshelf.ModelLayer.deps.json
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\ModelLayer\bin\Debug\netstandard2.0\Bookshelf.ModelLayer.dll
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\ModelLayer\bin\Debug\netstandard2.0\Bookshelf.ModelLayer.pdb
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\ModelLayer\obj\Debug\netstandard2.0\Bookshelf.ModelLayer.AssemblyInfoInputs.cache
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\ModelLayer\obj\Debug\netstandard2.0\Bookshelf.ModelLayer.AssemblyInfo.cs
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\ModelLayer\obj\Debug\netstandard2.0\Bookshelf.ModelLayer.csproj.CoreCompileInputs.cache
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\ModelLayer\obj\Debug\netstandard2.0\Bookshelf.ModelLayer.dll
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\ModelLayer\obj\Debug\netstandard2.0\Bookshelf.ModelLayer.pdb
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\ModelLayer\obj\Debug\netstandard2.0\Bookshelf.ModelLayer.csprojAssemblyReference.cache

@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Bookshelf.DetailBook"
+             xmlns:local="clr-namespace:Bookshelf.Resources"
               Title="Minha Estante" StyleClass="contentpage"
              >
     <ContentPage.Resources>
@@ -9,17 +10,24 @@
             <![CDATA[
       .lbl_header {
     font-style: italic;
-    color: white;
+    color: #423324;
     font-size: 10;
 }
             .lbl {
     font-style: bold;
     color: black;
-    font-size: small;
+    font-size: 12;
 }
             ]]>
         </StyleSheet>
     </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="TbiEditarLivro" Order="Secondary"  Text="Editar Livro" Priority="0" Clicked="TbiEditarLivro_Clicked">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource  FontFamily="FontAwesomeBold" Color="Black" Glyph="{x:Static local:Icons.Edit}" Size="Micro"></FontImageSource>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand" 
                          HorizontalOptions="FillAndExpand" 
@@ -28,9 +36,8 @@
                        StyleClass="card_body" >
                 <StackLayout  Orientation="Vertical">
                     <Label   Text="{Binding BTitle}" HorizontalOptions="CenterAndExpand" TextColor="Black" FontSize="Medium" FontAttributes="Bold" Padding="0,0,0,5" TextDecorations="Underline"/>
-                    <Label  Text="Autores:" HorizontalTextAlignment="Start" 
-                                VerticalTextAlignment="Start" Grid.Row="0" Grid.Column="0"
-                               StyleClass="lbl_header" HorizontalOptions="Start" />
+                    <Label   Text="{Binding BSubtitleAndVol}" HorizontalOptions="CenterAndExpand" TextColor="Black" FontSize="12" FontAttributes="Italic" Padding="0,0,0,5"/>
+                    <Label  Text="Autores:" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" Grid.Row="0" Grid.Column="0" StyleClass="lbl_header" HorizontalOptions="Start" />
                     <Label  Text="{Binding BAuthors}" HorizontalTextAlignment="Start"
                                 VerticalTextAlignment="Start" Grid.Row="0" Grid.Column="1" 
                                  HorizontalOptions="Start" StyleClass="lbl"  />
@@ -45,11 +52,11 @@
                         </Grid.ColumnDefinitions>
                         <Label  Text="Páginas:" Grid.Row="0" Grid.Column="0"  
                                     HorizontalTextAlignment="Start" 
-                                    VerticalTextAlignment="Start"  StyleClass="lbl_header"/>
+                                    VerticalTextAlignment="Start"  StyleClass="lbl_header" />
                         <Label  Text="{Binding BPages}" HorizontalTextAlignment="Start"
                                     Grid.Row="1"  Grid.Column="0"
                                     VerticalTextAlignment="Start"
-                                     TextColor="Black" FontSize="Small"  FontAttributes="Bold" />
+                                       StyleClass="lbl" />
                         <Label  Text="Categoria:" Grid.Row="0" Grid.Column="1"   
                                     HorizontalTextAlignment="Start" VerticalTextAlignment="Start" 
                                      StyleClass="lbl_header" />

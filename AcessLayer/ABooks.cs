@@ -83,6 +83,25 @@ namespace AcessLayer
              }).ToList();
         }
 
+        public async static Task<List<Books.Book>> GetBooksByLastUpdate(string vUserKey,DateTime vLastUpdate)
+        {
+            return (await AcessFirebase.firebase
+             .Child("Books")
+             .OnceAsync<Books.Book>()).Where(a => a.Object.UserKey == vUserKey && a.Object.LastUpdate >= vLastUpdate ).Select(item => new Books.Book
+             {
+                 Key = item.Key,
+                 UserKey = item.Object.UserKey,
+                 Title = item.Object.Title,
+                 Authors = item.Object.Authors,
+                 Pages = item.Object.Pages,
+                 Genre = item.Object.Genre,
+                 Year = item.Object.Year,
+                 SubTitle = item.Object.SubTitle,
+                 BooksSituations = item.Object.BooksSituations,
+                 Volume = item.Object.Volume
+             }).ToList();
+        }
+
         public async static Task<List<Books.Book>> GetBookSituationByStatus(int vSituation, string vUserKey)
         {
             return (await AcessFirebase.firebase
@@ -101,7 +120,7 @@ namespace AcessLayer
               }).ToList();
         }
 
-        public async static Task UpdateSituationBook(string vKey, string vUserKey, int vSituation, int vRate, string vComment)
+        public async static Task UpdateSituationBook(string vKey, string vUserKey, int vSituation, int vRate, string vComment,DateTime vlastUpdate)
         {
             var toUpdateBookStatus = (await AcessFirebase.firebase
               .Child("Books")
@@ -110,6 +129,7 @@ namespace AcessLayer
             toUpdateBookStatus.BooksSituations.Situation = vSituation;
             toUpdateBookStatus.BooksSituations.Rate = vRate;
             toUpdateBookStatus.BooksSituations.Comment = vComment;
+            toUpdateBookStatus.LastUpdate = vlastUpdate;
 
             await AcessFirebase.firebase
               .Child("Books")

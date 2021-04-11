@@ -43,8 +43,6 @@ C:\Users\Emanuel\Documents\Bookshelf\BusinessLayer\obj\Debug\netstandard2.0\Busi
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\BusinessLayer\bin\Debug\netstandard2.0\BusinessLayer.deps.json
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\BusinessLayer\bin\Debug\netstandard2.0\BusinessLayer.dll
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\BusinessLayer\bin\Debug\netstandard2.0\BusinessLayer.pdb
-C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\BusinessLayer\bin\Debug\netstandard2.0\ModelLayer.dll
-C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\BusinessLayer\bin\Debug\netstandard2.0\ModelLayer.pdb
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\BusinessLayer\obj\Debug\netstandard2.0\BusinessLayer.csprojAssemblyReference.cache
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\BusinessLayer\obj\Debug\netstandard2.0\BusinessLayer.AssemblyInfoInputs.cache
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\BusinessLayer\obj\Debug\netstandard2.0\BusinessLayer.AssemblyInfo.cs
@@ -54,3 +52,5 @@ C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\BusinessLayer\
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\BusinessLayer\obj\Debug\netstandard2.0\BusinessLayer.pdb
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\BusinessLayer\bin\Debug\netstandard2.0\Bookshelf.AcessLayer.dll
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\BusinessLayer\bin\Debug\netstandard2.0\Bookshelf.AcessLayer.pdb
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\BusinessLayer\bin\Debug\netstandard2.0\Bookshelf.ModelLayer.dll
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\BusinessLayer\bin\Debug\netstandard2.0\Bookshelf.ModelLayer.pdb
