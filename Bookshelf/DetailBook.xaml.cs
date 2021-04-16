@@ -17,35 +17,11 @@ namespace Bookshelf
 
         #region variaveis do bind.
 
-        public string bTitle, bAuthors, bPages,
-            bGenre;
+        public string bTitle, bAuthors, bPages, bGenre, bSituation, bLblSituationtext, bRate, BookKey, bComment, bSubtitleAndVol, bVolume;
 
-        public string BTitle
-        {
-            get => bTitle;
-            set
-            {
-                bTitle = value; OnPropertyChanged();
-            }
-        }
-
-        public string BAuthors
-        {
-            get => bAuthors;
-            set
-            {
-                bAuthors = value; OnPropertyChanged();
-            }
-        }
-
-        public string BPages
-        {
-            get => bPages;
-            set
-            {
-                bPages = value; OnPropertyChanged();
-            }
-        }
+        public string BTitle { get => bTitle; set { bTitle = value; OnPropertyChanged(); } }
+        public string BAuthors { get => bAuthors; set { bAuthors = value; OnPropertyChanged(); } }
+        public string BPages { get => bPages; set { bPages = value; OnPropertyChanged(); } }
 
         public string BGenre
         {
@@ -58,48 +34,16 @@ namespace Bookshelf
 
         #endregion
 
-        private string bSituation, bLblSituationtext, bRate, BookKey, bComment, bSubtitleAndVol, bVolume;
-
         public ObservableCollection<string> BBTSituation;
+
         private bool bVisibleTexts;
         private string BSituationOri { get; set; }
         private string BRateOri { get; set; }
-
         private string BCommentOri { get; set; }
-        public string BSituation
-        {
-            get => bSituation;
-            set
-            {
-                bSituation = value; OnPropertyChanged();
-            }
-        }
-        public string BSubtitleAndVol
-        {
-            get => bSubtitleAndVol;
-            set
-            {
-                bSubtitleAndVol = value; OnPropertyChanged();
-            }
-        }
-        public string BVolume
-        {
-            get => bVolume;
-            set
-            {
-                bVolume = value; OnPropertyChanged();
-            }
-        }
-
-        public string BLblSituationtext
-        {
-            get => bLblSituationtext;
-            set
-            {
-                bLblSituationtext = value; OnPropertyChanged();
-            }
-        }
-
+        public string BSituation { get => bSituation; set { bSituation = value; OnPropertyChanged(); } }
+        public string BSubtitleAndVol { get => bSubtitleAndVol; set { bSubtitleAndVol = value; OnPropertyChanged(); } }
+        public string BVolume { get => bVolume; set { bVolume = value; OnPropertyChanged(); } }
+        public string BLblSituationtext { get => bLblSituationtext; set { bLblSituationtext = value; OnPropertyChanged(); } }
 
         public bool BVisibleTexts
         {
@@ -109,8 +53,6 @@ namespace Bookshelf
                 bVisibleTexts = value; OnPropertyChanged();
             }
         }
-
-      
 
         public string BRate
         {
@@ -152,15 +94,10 @@ namespace Bookshelf
 
             this.Title = "Minha Estante";
         }
+
         private async void CarregaBook(string bookKey)
         {
-            if (!CrossConnectivity.Current.IsConnected)
-            {
-                await DisplayAlert("Aviso", "Sem conexão com a internet", null, "Ok");
-                return;
-            }
-
-            ModelLayer.Books.Book book = await BusinessLayer.BBooks.getBook(bookKey);
+            ModelLayer.Books.Book book =  BusinessLayer.BBooks.GetBook(bookKey);
 
             string SubtitleAndVol = "";
             if (!string.IsNullOrEmpty(book.SubTitle))
@@ -231,15 +168,9 @@ namespace Bookshelf
 
         private async void BtnConf_Clicked(object sender, EventArgs e)
         {
-            if (!CrossConnectivity.Current.IsConnected)
-            {
-                DisplayAlert("Aviso", "Sem conexão com a internet", null, "Ok");
-                return;
-            }
             if (DisableUpdates)
             {
                 PkrSituation.IsVisible = PkrSituation.IsEnabled = EdtComment.IsEnabled = true;
-                //EdtComment.IsVisible = PkrSituation.IsEnabled = EdtComment.IsEnabled = SldrRate.IsVisible = true;
                 lblHComment.IsVisible = lblHSituation.IsVisible = lblComment.IsVisible = lblSituation.IsVisible = false;
 
                 DisableUpdates = false;
@@ -254,8 +185,7 @@ namespace Bookshelf
             BtnConf.IsEnabled = false;
             bool alterou = false;
             string commment = "";
-            int rate = 0;
-            rate = Convert.ToInt32(SldrRate.Value);
+            int rate = Convert.ToInt32(SldrRate.Value);
 
             if (BRateOri != rate.ToString())
             {
@@ -276,12 +206,16 @@ namespace Bookshelf
             }
             if (alterou)
             {
-                await BusinessLayer.BBooks.UpdateSituationBook(BookKey, PkrSituation.SelectedIndex, rate, commment);
-                DisplayAlert("Aviso", "Situação alterada", null, "Ok");
+                _ = Task.Run(() => { BusinessLayer.BBooks.UpdateSituationBook(BookKey, PkrSituation.SelectedIndex, rate, commment); return Task.CompletedTask; });
+
+                if (!(await DisplayAlert("Aviso", "Situação alterada", null, "Ok")))
+                {
+                    await Navigation.PopAsync();
+                }
             }
             else
             {
-                DisplayAlert("Aviso", "Sem alterações", null, "Ok");
+                _ = DisplayAlert("Aviso", "Sem alterações", null, "Ok");
                 BtnConf.IsEnabled = true;
             }
 

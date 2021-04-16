@@ -2,14 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Bookshelf.BooksList"
-              Title="Minha Estante" StyleClass="contentpage"
-             >
+              Title="Minha Estante" StyleClass="contentpage">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#fff">
+        <StackLayout BackgroundColor="#fff" HorizontalOptions="FillAndExpand" Margin="15,0,5,0">
             <Entry Placeholder="Buscar por Título" Margin="10" WidthRequest="250"
                 HorizontalOptions="FillAndExpand" x:Name="EntSearchTitle" MaxLength="400" StyleClass="entry"  TextTransform="Uppercase" TextChanged="EntSearchTitle_TextChanged"  />
             <ListView x:Name="LstBooks"  HasUnevenRows="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  ItemSelected="LstBooks_ItemSelected" >
-
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -33,11 +31,9 @@
                                         <Label  Text="{Binding SubtitleAndVol, StringFormat='{0}'}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
                                                     VerticalTextAlignment="Start" MaxLines="2" LineBreakMode="TailTruncation" 
                                                     FontSize="Subtitle" FontAttributes="Italic" 
-                                                    TextColor="Black" VerticalOptions="StartAndExpand" />                                    
+                                                    TextColor="Black" VerticalOptions="StartAndExpand" />
                                         <Label Text="{Binding AuthorsAndYear}" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" Grid.Row="2" Grid.Column="0"  Grid.ColumnSpan="2" FontSize="Small" LineBreakMode="TailTruncation" FontAttributes="Italic" TextColor="Gray"/>
-                                        <!--<Label  Text="{Binding Genre}" HorizontalTextAlignment="Start"  VerticalTextAlignment="Start" Grid.Row="2" Grid.Column="0" FontSize="Small" LineBreakMode="TailTruncation"  FontAttributes="Bold" TextColor="Black"/>-->
                                         <Label  Text="{Binding Pages, StringFormat='Páginas: {0:F0}'}" HorizontalTextAlignment="Start"  VerticalTextAlignment="Start" Grid.Row="3" Grid.Column="0" FontSize="Small" LineBreakMode="TailTruncation"  FontAttributes="Bold" TextColor="Black"/>
-                                        <!--<Label  Text="{Binding Year}" HorizontalTextAlignment="Start"  VerticalTextAlignment="Start" Grid.Row="3" Grid.Column="0" FontSize="Small" LineBreakMode="TailTruncation"  FontAttributes="Bold"/>-->
                                         <Label  Text="{Binding Rate}" HorizontalTextAlignment="Start" HorizontalOptions="Fill" Grid.Row="3" Grid.Column="1"  FontSize="Small" FontAttributes="Bold" TextColor="Black"/>
                                     </Grid>
                                 </StackLayout>

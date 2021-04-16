@@ -13,16 +13,11 @@ namespace BusinessLayer
 
         public static void CriaBD() => ASqLite.CriaDb();
 
-
         public static bool VerifyAcess()
         {
-            List<Users> res = new List<Users>();
-            Task.Run(async () => res = await ASqLite.RecAcesso()).Wait();
+            List<Users> res = ASqLite.RecAcesso();
 
-            if (res.Count > 0)
-            {
-                return true;
-            }
+            if (res.Count > 0) return true;
             else return false;
         }
 
@@ -33,30 +28,22 @@ namespace BusinessLayer
 
         public static Users RecAcesso()
         {
-            List<Users> res = new List<Users>();
-            Task.Run(async () => res = await ASqLite.RecAcesso()).Wait();
-            if (res.Count > 0)
-            {
-                return res[0];
-            }
+            List<Users> res = ASqLite.RecAcesso();
+            if (res.Count > 0) return res[0];
             else return null;
         }
 
         public static Users RecAcessoLastUpdate()
         {
-            List<Users> res = new List<Users>();
-            Task.Run(async () => res = await ASqLite.RecAcessoLastUpdate()).Wait();
-            if (res.Count > 0)
-            {
-                return res[0];
-            }
+            List<Users> res = ASqLite.RecAcesso();
+            if (res.Count > 0) return res[0];
             else return null;
 
         }
 
         public static void AtualizaAcessoLastUpdade(string Key, DateTime LastUpdate)
         {
-           ASqLite.AtualizaAcessoLastUpdade(Key,LastUpdate);
+            ASqLite.AtualizaAcessoLastUpdade(Key, LastUpdate);
         }
 
         public static void DelAcesso() => ASqLite.DelAcesso();

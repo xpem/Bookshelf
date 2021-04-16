@@ -30,13 +30,13 @@ namespace Bookshelf
                 {
                     BtnCadAcesso.IsEnabled = false;
                     bool resp = false;
+
                     Task.Run(async () => resp = await BusinessLayer.BUser.RecoverUser(EntNomeAcesso.Text, EntSenha.Text)).Wait();
 
                     if (resp)
                     {
                         //inicia processo de sincronização
-                        BusinessLayer.BBooksLocal bBooksLocal = new BusinessLayer.BBooksLocal();
-                        Task.Run(async () => await bBooksLocal.AtualizaBancoLocal());
+                        Task.Run(async () => await BusinessLayer.BBooksSync.AtualizaBancoLocal());
 
                         Application.Current.MainPage = new MainPage();
                         Application.Current.MainPage = new NavigationPage(new MainPage())

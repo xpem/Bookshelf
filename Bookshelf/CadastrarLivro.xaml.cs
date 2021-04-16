@@ -22,32 +22,11 @@ namespace Bookshelf
 
         private string BookKey, bTitle, bSubTitle, bVolume, bAuthors, bYear, bIsbn, bPages, bGenre, bComment;
 
-        public string BTitle
-        {
-            get => bTitle;
-            set
-            {
-                bTitle = value; OnPropertyChanged();
-            }
-        }
+        public string BTitle { get => bTitle; set { bTitle = value; OnPropertyChanged(); } }
 
-        public string BSubTitle
-        {
-            get => bSubTitle;
-            set
-            {
-                bSubTitle = value; OnPropertyChanged();
-            }
-        }
+        public string BSubTitle { get => bSubTitle; set { bSubTitle = value; OnPropertyChanged(); } }
 
-        public string BVolume
-        {
-            get => bVolume;
-            set
-            {
-                bVolume = value; OnPropertyChanged();
-            }
-        }
+        public string BVolume { get => bVolume; set { bVolume = value; OnPropertyChanged(); } }
 
         public string BAuthors
         {
@@ -103,9 +82,6 @@ namespace Bookshelf
             }
         }
 
-
-        #endregion
-
         private string bSituation, bRate;
 
         public string BSituation
@@ -125,6 +101,10 @@ namespace Bookshelf
                 bRate = value; OnPropertyChanged();
             }
         }
+
+        #endregion
+
+
 
         public CadastrarLivro(string bookKey)
         {
@@ -148,13 +128,13 @@ namespace Bookshelf
             }
             else
             {
-                GetBook(BookKey);
+                Task.Run(() => GetBook(BookKey));
             }
         }
 
-        private async void GetBook(string BookKey)
+        private void GetBook(string BookKey)
         {
-            Books.Book book = await BusinessLayer.BBooks.getBook(BookKey);
+            Books.Book book = BusinessLayer.BBooks.GetBook(BookKey);
             BTitle = book.Title;
             BSubTitle = book.SubTitle;
             BAuthors = book.Authors;
@@ -201,11 +181,6 @@ namespace Bookshelf
 
         private async void BtnCadastrar_Clicked(object sender, EventArgs e)
         {
-            if (!CrossConnectivity.Current.IsConnected)
-            {
-                await DisplayAlert("Aviso", "Sem conexão com a internet", null, "Ok");
-                return;
-            }
 
             if (VerrifyFields())
             {
@@ -222,10 +197,9 @@ namespace Bookshelf
                     Genre = EntGenrer.Text,
                     Volume = EntVol.Text,
                 };
-                //
 
                 //cadastra o livro 
-                string mensagem = "";
+                string mensagem;
 
                 //caso tenha avaliação
                 if (PkrSituation.SelectedIndex > 0)
@@ -259,7 +233,8 @@ namespace Bookshelf
 
                 if (!string.IsNullOrEmpty(BookKey))
                 {
-                    await BusinessLayer.BBooks.UpdateBook(book, BookKey);
+                    book.Key = BookKey;
+                    await BusinessLayer.BBooks.UpdateBook(book);
                     mensagem += " Atualiados";
                 }
                 else

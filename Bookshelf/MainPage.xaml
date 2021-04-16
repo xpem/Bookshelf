@@ -1,16 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                         xmlns:local="clr-namespace:Bookshelf.Resources"
+             xmlns:local="clr-namespace:Bookshelf.Resources"
              x:Class="Bookshelf.MainPage"
-             Title="Minha Estante" StyleClass="contentpage" >
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Name="TbiSair" Order="Secondary"  Text="Sair" Priority="0" Clicked="TbiSair_Clicked" >
-            <ToolbarItem.IconImageSource>
-                <FontImageSource  FontFamily="FontAwesomeBold" Color="Black" Glyph="{x:Static local:Icons.SignOut}" Size="Micro"></FontImageSource>
-            </ToolbarItem.IconImageSource>
-        </ToolbarItem>
-    </ContentPage.ToolbarItems>
+             Title="Minha Estante" StyleClass="contentpage" NavigationPage.HasNavigationBar="False" >
     <ContentPage.Content>
         <StackLayout StyleClass="card" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical"  >
             <Frame  HorizontalOptions="FillAndExpand" StyleClass="card_body">
@@ -18,7 +11,7 @@
                     <Button Text="Cadastrar Livro" VerticalOptions="Fill" HorizontalOptions="FillAndExpand" 
                              x:Name="BtnRegisterBook"  Clicked="BtnRegisterBook_Clicked" StyleClass="button_secundary"  Margin="10" FontSize="Medium" >
                         <Button.ImageSource>
-                            <FontImageSource  FontFamily="FontAwesomeBold" Color="White" Glyph="{x:Static local:Icons.Book}" Size="Medium"></FontImageSource>
+                            <FontImageSource  FontFamily="FontAwesomeBold" Color="White" Glyph="{x:Static local:Icons.Book}" Size="Micro"></FontImageSource>
                         </Button.ImageSource>
                     </Button>
                 </StackLayout>
@@ -26,40 +19,79 @@
             <ScrollView>
                 <Frame  HorizontalOptions="FillAndExpand" StyleClass="card_body" >
                     <StackLayout Orientation="Vertical" >
-                        <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" Color="#2196F3" VerticalOptions="Center"    HorizontalOptions="Center"/>
-                        <Button Text="{Binding VVouLer,StringFormat='Vou Ler ({0})'}" 
+                        <Button Text="{Binding VVouLer,StringFormat='Vou Ler = {0}'}" 
                                 VerticalOptions="Fill" HorizontalOptions="FillAndExpand"
                                 StyleClass="button_primary" x:Name="BtnIllRead"
                                 FontSize="Medium"  Margin="10" 
-                                Clicked="BtnVouLer_Clicked" />
-                        <Button Text="{Binding VLendo,StringFormat='Lendo ({0})'}"
+                                Clicked="BtnVouLer_Clicked" >
+                            <Button.ImageSource>
+                                <FontImageSource  FontFamily="FontAwesomeBold" Color="White" Glyph="{x:Static local:Icons.List}" Size="Micro"></FontImageSource>
+                            </Button.ImageSource>
+                        </Button>
+                        <Button Text="{Binding VLendo,StringFormat='Lendo = {0}'}"
                                 VerticalOptions="Fill" HorizontalOptions="FillAndExpand"
                                 StyleClass="button_primary" x:Name="BtnReading" 
                                 FontSize="Medium"  Margin="10"
-                                Clicked="BtnReading_Clicked"
-                                />
-                        <Button Text="{Binding VLido,StringFormat='Lido ({0})'}"
+                                Clicked="BtnReading_Clicked" >
+                            <Button.ImageSource>
+                                <FontImageSource  FontFamily="FontAwesomeBold" Color="White" Glyph="{x:Static local:Icons.Play}" Size="Micro"></FontImageSource>
+                            </Button.ImageSource>
+                        </Button>
+                        <Button Text="{Binding VLido,StringFormat='Lido = {0}'}"
                                 VerticalOptions="Fill" HorizontalOptions="FillAndExpand" 
                                 StyleClass="button_primary" x:Name="BtnRead" 
                                 FontSize="Medium"  Margin="10"
-                                Clicked="BtnRead_Clicked"
-                                />
-                        <Button Text="{Binding VInterrompido,StringFormat='Interrompido ({0})'}" 
+                                Clicked="BtnRead_Clicked">
+                            <Button.ImageSource>
+                                <FontImageSource  FontFamily="FontAwesomeBold" Color="White" Glyph="{x:Static local:Icons.Check}" Size="Micro"></FontImageSource>
+                            </Button.ImageSource>
+                        </Button>
+                        <Button Text="{Binding VInterrompido,StringFormat='Interrompido = {0}'}" 
                                 VerticalOptions="Fill" HorizontalOptions="FillAndExpand"  
                                 StyleClass="button_primary" x:Name="BtnInterrupted" 
                                 FontSize="Medium"  Margin="10"
                                 Clicked="BtnInterrupted_Clicked"
-                                />
+                                >
+                            <Button.ImageSource>
+                                <FontImageSource  FontFamily="FontAwesomeBold" Color="White" Glyph="{x:Static local:Icons.Stop}" Size="Micro"></FontImageSource>
+                            </Button.ImageSource>
+                        </Button>
                         <Button Text="Arquivo" VerticalOptions="Fill"
                                 HorizontalOptions="FillAndExpand" 
                              x:Name="BtnArchive" StyleClass="button_secundary" 
                                 FontSize="Small" Margin="10" 
-                                Clicked="BtnArchive_Clicked"
-                               >
+                                Clicked="BtnArchive_Clicked">
                             <Button.ImageSource>
-                                <FontImageSource  FontFamily="FontAwesomeBold" Color="White" Glyph="{x:Static local:Icons.Archive}" Size="Small"></FontImageSource>
+                                <FontImageSource  FontFamily="FontAwesomeBold" Color="White" Glyph="{x:Static local:Icons.Archive}" Size="Micro"></FontImageSource>
                             </Button.ImageSource>
                         </Button>
+                        <Grid HorizontalOptions="FillAndExpand"  WidthRequest="250">
+                                <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition  Width ="35*" />
+                                    <ColumnDefinition  Width ="65*" />
+                                </Grid.ColumnDefinitions>
+                            <Button Text="Sair" VerticalOptions="Start" HorizontalOptions="Start" FontSize="15" Margin="10"  Clicked="TbiSair_Clicked"  Grid.Row="0" Grid.Column="0" CornerRadius="10" TextColor="White" BackgroundColor="#5b3f36">
+                                <Button.ImageSource>
+                                    <FontImageSource  FontFamily="FontAwesomeBold" Color="White" Glyph="{x:Static local:Icons.SignOut}" Size="12"></FontImageSource>
+                                </Button.ImageSource>
+                            </Button>
+                            <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalOptions="EndAndExpand">
+                                <Button HorizontalOptions="End" VerticalOptions="End" BackgroundColor="Transparent" IsVisible="true"  >
+                                    <Button.ImageSource>
+                                        <FontImageSource  FontFamily="FontAwesomeBold" Color="{Binding IsConnected}" Glyph="{x:Static local:Icons.Connection}" Size="12"></FontImageSource>
+                                    </Button.ImageSource>
+                                </Button>
+                                <Button HorizontalOptions="End" VerticalOptions="End" BackgroundColor="Transparent" IsVisible="true"  >
+                                    <Button.ImageSource>
+                                        <FontImageSource  FontFamily="FontAwesomeBold" Color="{Binding IsSync}" Glyph="{x:Static local:Icons.Sync}" Size="12"></FontImageSource>
+                                    </Button.ImageSource>
+
+                                </Button>
+                            </StackLayout>
+                        </Grid>
                     </StackLayout>
                 </Frame>
             </ScrollView>

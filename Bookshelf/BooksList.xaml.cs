@@ -35,28 +35,28 @@ namespace Bookshelf
             base.OnAppearing();
             ObBooksList = new ObservableCollection<ItemBookList>();
             LoadBooks(0);
-            PartialLoadBooks();
-
+            Task.Run(() => PartialLoadBooks());
         }
 
         //Recupera os livros por status
-        private async Task LoadBooks(int Index)
+        private void LoadBooks(int Index)
         {
-            if (!CrossConnectivity.Current.IsConnected)
-            {
-                await DisplayAlert("Aviso", "Sem conexão com a internet", null, "Ok");
-                return;
-            }
-
             this.Title = "Carregando lista...";
             IsLoading = true;
 
             BusinessLayer.BBooks bBooks = new BusinessLayer.BBooks();
+            string SubtitleAndVol;
 
-            foreach (ModelLayer.Books.Book book in (await bBooks.GetBookSituationByStatus(SituationIndex, Index)))
+            string textoBusca = "";
+            if (!string.IsNullOrEmpty(EntSearchTitle.Text))
             {
-                string SubtitleAndVol = "";
-                if(!string.IsNullOrEmpty(book.SubTitle))
+                textoBusca = EntSearchTitle.Text;
+            }
+
+            foreach (Books.Book book in bBooks.GetBookSituationByStatus(SituationIndex, Index, textoBusca))
+            {
+                SubtitleAndVol = "";
+                if (!string.IsNullOrEmpty(book.SubTitle))
                 {
                     SubtitleAndVol = book.SubTitle;
                 }
@@ -81,19 +81,24 @@ namespace Bookshelf
                 ObBooksList.Add(itemBookList);
             }
             LstBooks.ItemsSource = ObBooksList;
+
             this.Title = "Estante";
+            switch (Index)
+            {
+                case 0: this.Title += " Arquivo"; break;
+                case 1: this.Title += " Vou Ler"; break;
+                case 2: this.Title += " Lendo"; break;
+                case 3: this.Title += " Lido"; break;
+                case 4: this.Title += " Interrompido"; break;
+            }
+
+
             IsLoading = false;
         }
 
         //função que carrega parcialmente a lista de livros por status
-        private async void PartialLoadBooks()
+        private void PartialLoadBooks()
         {
-            if (!CrossConnectivity.Current.IsConnected)
-            {
-                await DisplayAlert("Aviso", "Sem conexão com a internet", null, "Ok");
-                return;
-            }
-
             int Index = 0;
 
             LstBooks.ItemAppearing += (sender, e) =>

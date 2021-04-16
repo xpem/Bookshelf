@@ -13,5 +13,11 @@ namespace Bookshelf.Resources
         public static string Book = "\uf02d";
         public static string Archive = "\uf187";
         public static string Edit = "\uf304";
+        public static string Sync = "\uf2f1";
+        public static string List = "\uf0cb";
+        public static string Play = "\uf04b";
+        public static string Check = "\uf00c";
+        public static string Stop = "\uf04d";
+        public static string Connection = "\uf0c1";
     }
 }

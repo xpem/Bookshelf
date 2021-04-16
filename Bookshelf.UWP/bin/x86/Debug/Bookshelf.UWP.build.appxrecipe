@@ -91,11 +91,11 @@
     <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.dll">
       <PackagePath>Bookshelf.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\BusinessLayer.dll">
-      <PackagePath>BusinessLayer.dll</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.ModelLayer.dll">
       <PackagePath>Bookshelf.ModelLayer.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\BusinessLayer.dll">
+      <PackagePath>BusinessLayer.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.AcessLayer.dll">
       <PackagePath>Bookshelf.AcessLayer.dll</PackagePath>

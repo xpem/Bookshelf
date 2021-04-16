@@ -3,13 +3,14 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "Bookshelf.Android.dll" comes first in this list. */
 		"Bookshelf.Android.dll",
-		"ModelLayer.dll",
 		"BusinessLayer.dll",
+		"Bookshelf.ModelLayer.dll",
 		"Bookshelf.AcessLayer.dll",
 		"Bookshelf.dll",
 		"Firebase.dll",
 		"FormsViewGroup.dll",
 		"LiteDB.dll",
+		"Microsoft.Data.Sqlite.dll",
 		"Newtonsoft.Json.dll",
 		"Plugin.Connectivity.Abstractions.dll",
 		"Plugin.Connectivity.dll",

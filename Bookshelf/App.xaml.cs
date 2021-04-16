@@ -20,6 +20,7 @@ namespace Bookshelf
 
             if (BusinessLayer.SqLiteUser.VerifyAcess())
             {
+                Task.Run(async () => await BusinessLayer.BBooksSync.AtualizaBancoLocal());
 
                 Application.Current.MainPage = new MainPage();
                 Application.Current.MainPage = new NavigationPage(new MainPage())
@@ -37,14 +38,11 @@ namespace Bookshelf
                     BarTextColor = Color.White
                 };
             }
-
-
         }
 
         protected override void OnStart()
         {
-            BusinessLayer.BBooksLocal bBooksLocal = new BusinessLayer.BBooksLocal();
-            Task.Run(async () => await bBooksLocal.AtualizaBancoLocal());
+            
         }
 
         protected override void OnSleep()

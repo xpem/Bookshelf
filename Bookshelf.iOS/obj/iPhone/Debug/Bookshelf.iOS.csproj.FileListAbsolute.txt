@@ -150,11 +150,9 @@ C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\bin\iPhone\Debug\zh-Hant\Xamarin.Forms.Platform.iOS.resources.dll
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\bin\iPhone\Debug\Bookshelf.dll
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\bin\iPhone\Debug\Xamarin.Forms.Platform.iOS.dll
-C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\bin\iPhone\Debug\ModelLayer.dll
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\bin\iPhone\Debug\BusinessLayer.dll
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\bin\iPhone\Debug\Bookshelf.pdb
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\bin\iPhone\Debug\Xamarin.Forms.Platform.iOS.pdb
-C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\bin\iPhone\Debug\ModelLayer.pdb
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\bin\iPhone\Debug\BusinessLayer.pdb
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\obj\iPhone\Debug\actool\_PartialAppManifest.items
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\obj\iPhone\Debug\actool\_BundleResourceWithLogicalName.items
@@ -169,3 +167,6 @@ C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\obj\iPhone\Debug\Bookshelf.iOS.pdb
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\bin\iPhone\Debug\Bookshelf.AcessLayer.dll
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\bin\iPhone\Debug\Bookshelf.AcessLayer.pdb
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\bin\iPhone\Debug\Microsoft.Data.Sqlite.dll
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\bin\iPhone\Debug\Bookshelf.ModelLayer.dll
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\bin\iPhone\Debug\Bookshelf.ModelLayer.pdb
