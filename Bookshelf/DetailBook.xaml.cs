@@ -38,39 +38,24 @@ namespace Bookshelf
 
         private bool bVisibleTexts;
         private string BSituationOri { get; set; }
+
         private string BRateOri { get; set; }
+
         private string BCommentOri { get; set; }
+
         public string BSituation { get => bSituation; set { bSituation = value; OnPropertyChanged(); } }
+
         public string BSubtitleAndVol { get => bSubtitleAndVol; set { bSubtitleAndVol = value; OnPropertyChanged(); } }
+
         public string BVolume { get => bVolume; set { bVolume = value; OnPropertyChanged(); } }
+
         public string BLblSituationtext { get => bLblSituationtext; set { bLblSituationtext = value; OnPropertyChanged(); } }
 
-        public bool BVisibleTexts
-        {
-            get => bVisibleTexts;
-            set
-            {
-                bVisibleTexts = value; OnPropertyChanged();
-            }
-        }
+        public bool BVisibleTexts { get => bVisibleTexts; set { bVisibleTexts = value; OnPropertyChanged(); } }
 
-        public string BRate
-        {
-            get => bRate;
-            set
-            {
-                bRate = value; OnPropertyChanged();
-            }
-        }
+        public string BRate { get => bRate; set { bRate = value; OnPropertyChanged(); } }
 
-        public string BComment
-        {
-            get => bComment;
-            set
-            {
-                bComment = value; OnPropertyChanged();
-            }
-        }
+        public string BComment { get => bComment; set { bComment = value; OnPropertyChanged(); } }
 
         private bool DisableUpdates { get; set; }
 
@@ -79,7 +64,6 @@ namespace Bookshelf
         {
             BRate = BSituation = "0";
             DisableUpdates = false;
-            BSituation = BRate = "0";
             BindingContext = this;
             BookKey = bookKey;
             InitializeComponent();
@@ -88,16 +72,14 @@ namespace Bookshelf
 
             PkrSituation.ItemsSource = BBTSituation;
 
-            this.Title = "Loading";
-            CarregaBook(bookKey);
-
-
-            this.Title = "Minha Estante";
+            Task.Run(() => { CarregaBook(bookKey); return Task.CompletedTask; }).Wait();
         }
 
         private async void CarregaBook(string bookKey)
         {
-            ModelLayer.Books.Book book =  BusinessLayer.BBooks.GetBook(bookKey);
+            ModelLayer.Books.Book book = new ModelLayer.Books.Book();
+
+            await Task.Run(() => book = BusinessLayer.BBooks.GetBook(bookKey));
 
             string SubtitleAndVol = "";
             if (!string.IsNullOrEmpty(book.SubTitle))
@@ -181,7 +163,6 @@ namespace Bookshelf
                 return;
             }
 
-            this.Title = "Carregando...";
             BtnConf.IsEnabled = false;
             bool alterou = false;
             string commment = "";
@@ -219,7 +200,6 @@ namespace Bookshelf
                 BtnConf.IsEnabled = true;
             }
 
-            this.Title = "Minha Estante";
         }
 
         private void PkrSituation_SelectedIndexChanged(object sender, EventArgs e)
@@ -248,6 +228,19 @@ namespace Bookshelf
         {
             CadastrarLivro page = new CadastrarLivro(BookKey);
             Navigation.PushAsync(page);
+        }
+
+        private async void TbiExcLivro_Clicked(object sender, EventArgs e)
+        {
+            if ((await DisplayAlert("Confirmação", "Deseja excluir esse livro?", "Sim", "Cancelar")))
+            {
+                _ = Task.Run(() => { BusinessLayer.BBooks.InactivateBook(BookKey); });
+
+                if (!(await DisplayAlert("Aviso", "Livro excluído!", null, "Ok")))
+                {
+                    await Navigation.PopAsync();
+                }
+            }
         }
 
     }

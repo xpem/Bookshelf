@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AcessLayer\Bookshelf.AcessLayer.csproj" />
+    <ProjectReference Include="..\AcessLayer\AcessLayer.csproj" />
   </ItemGroup>
 
 </Project>

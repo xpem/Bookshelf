@@ -82,16 +82,16 @@ namespace Bookshelf
             }
             LstBooks.ItemsSource = ObBooksList;
 
-            this.Title = "Estante";
-            switch (Index)
+            //Definição do título da interface
+            this.Title = "Lista de Livros";
+            switch (SituationIndex)
             {
-                case 0: this.Title += " Arquivo"; break;
-                case 1: this.Title += " Vou Ler"; break;
-                case 2: this.Title += " Lendo"; break;
-                case 3: this.Title += " Lido"; break;
-                case 4: this.Title += " Interrompido"; break;
+                case 0: this.Title += " (Arquivo)"; break;
+                case 1: this.Title += " (Vou Ler)"; break;
+                case 2: this.Title += " (Lendo)"; break;
+                case 3: this.Title += " (Lido)"; break;
+                case 4: this.Title += " (Interrompido)"; break;
             }
-
 
             IsLoading = false;
         }
@@ -140,7 +140,7 @@ namespace Bookshelf
             }
         }
 
-        private async void EntSearchTitle_TextChanged(object sender, TextChangedEventArgs e)
+        private void EntSearchTitle_TextChanged(object sender, TextChangedEventArgs e)
         {
             LstBooks.ItemsSource = ObBooksList.Where(item => item.Title.ToUpper().Contains(EntSearchTitle.Text));
         }

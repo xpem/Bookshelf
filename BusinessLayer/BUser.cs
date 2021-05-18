@@ -31,22 +31,25 @@ namespace BusinessLayer
         }
 
 
-        public static bool RecoverUserEmail(string Email, out string UserNick, out string UserKey)
+        public static Users RecoverUserEmail(string Email)
         {
             Users user = new Users();
-            UserNick = UserKey = "";
-
 
             Task.Run(async () => user = await AcessLayer.AUsers.RecUserEmail(Email)).Wait();
 
-            if (user == null) return false;
+            if (user == null) return null;
             else
             {
-                UserNick = user.Nick;
-                UserKey = user.Key;
-                return true;
+                return user;
             }
+        }
 
+        public async static Task UpdateUserPassworld(string userKey, string passworld)
+        {
+            Users user = new Users();
+            user.Key = userKey;
+            user.Passworld = passworld;
+             await AcessLayer.AUsers.UpdateUserPassworld(user);
         }
 
         /// <returns>true para válido</returns>

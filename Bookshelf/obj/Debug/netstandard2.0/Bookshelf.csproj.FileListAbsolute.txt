@@ -99,7 +99,6 @@ C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\DetailBook.xaml.g.cs
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\NovaSenha.xaml.g.cs
-C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Styles.css.g.cs
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Bookshelf.AssemblyInfoInputs.cache
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Bookshelf.AssemblyInfo.cs
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Bookshelf.csproj.CoreCompileInputs.cache
@@ -108,7 +107,7 @@ C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Bookshelf.dll
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\ref\Bookshelf.dll
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\obj\Debug\netstandard2.0\Bookshelf.pdb
-C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.AcessLayer.dll
-C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.AcessLayer.pdb
-C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.ModelLayer.dll
-C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.ModelLayer.pdb
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\AcessLayer.dll
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\ModelLayer.dll
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\ModelLayer.pdb
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\AcessLayer.pdb

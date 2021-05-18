@@ -382,37 +382,27 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Bookshelf.AcessLayer/1.0.0": {
+      "AcessLayer/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Bookshelf.ModelLayer": "1.0.0",
           "FirebaseDatabase.net": "4.0.4",
           "Microsoft.Data.Sqlite.Core": "5.0.5",
+          "ModelLayer": "1.0.0",
           "sqlite-net-pcl": "1.7.335"
         },
         "compile": {
-          "bin/placeholder/Bookshelf.AcessLayer.dll": {}
+          "bin/placeholder/AcessLayer.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Bookshelf.AcessLayer.dll": {}
-        }
-      },
-      "Bookshelf.ModelLayer/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/Bookshelf.ModelLayer.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Bookshelf.ModelLayer.dll": {}
+          "bin/placeholder/AcessLayer.dll": {}
         }
       },
       "BusinessLayer/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Bookshelf.AcessLayer": "1.0.0",
+          "AcessLayer": "1.0.0",
           "FirebaseDatabase.net": "4.0.4",
           "Xam.Plugin.Connectivity": "3.2.0"
         },
@@ -421,6 +411,16 @@
         },
         "runtime": {
           "bin/placeholder/BusinessLayer.dll": {}
+        }
+      },
+      "ModelLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/ModelLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ModelLayer.dll": {}
         }
       }
     }
@@ -1782,27 +1782,27 @@
         "xamarin.forms.nuspec"
       ]
     },
-    "Bookshelf.AcessLayer/1.0.0": {
+    "AcessLayer/1.0.0": {
       "type": "project",
-      "path": "../AcessLayer/Bookshelf.AcessLayer.csproj",
-      "msbuildProject": "../AcessLayer/Bookshelf.AcessLayer.csproj"
-    },
-    "Bookshelf.ModelLayer/1.0.0": {
-      "type": "project",
-      "path": "../ModelLayer/Bookshelf.ModelLayer.csproj",
-      "msbuildProject": "../ModelLayer/Bookshelf.ModelLayer.csproj"
+      "path": "../AcessLayer/AcessLayer.csproj",
+      "msbuildProject": "../AcessLayer/AcessLayer.csproj"
     },
     "BusinessLayer/1.0.0": {
       "type": "project",
       "path": "../BusinessLayer/BusinessLayer.csproj",
       "msbuildProject": "../BusinessLayer/BusinessLayer.csproj"
+    },
+    "ModelLayer/1.0.0": {
+      "type": "project",
+      "path": "../ModelLayer/ModelLayer.csproj",
+      "msbuildProject": "../ModelLayer/ModelLayer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "Bookshelf.ModelLayer >= 1.0.0",
       "BusinessLayer >= 1.0.0",
       "FirebaseDatabase.net >= 4.0.4",
+      "ModelLayer >= 1.0.0",
       "NETStandard.Library >= 2.0.3",
       "Xam.Plugin.Connectivity >= 3.2.0",
       "Xamarin.Essentials >= 1.5.3.2",
@@ -1847,8 +1847,8 @@
             "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj": {
               "projectPath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\BusinessLayer\\BusinessLayer.csproj"
             },
-            "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\Bookshelf.ModelLayer.csproj": {
-              "projectPath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\Bookshelf.ModelLayer.csproj"
+            "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\ModelLayer.csproj": {
+              "projectPath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\ModelLayer.csproj"
             }
           }
         }
@@ -1896,7 +1896,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

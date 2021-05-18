@@ -54,7 +54,7 @@ namespace Bookshelf
             {
                 ValCampos = false;
             }
-            if (EntConfSenha.Text != EntSenha.Text)
+            if (EntConfSenha.Text.ToUpper() != EntSenha.Text.ToUpper())
             {
                 ValCampos = false;
             }
@@ -65,7 +65,7 @@ namespace Bookshelf
             }
             else
             {
-                ValCampos = BUser.VerificaCadUsuario(EntNome.Text, EntEmail.Text);
+                ValCampos = BUser.VerificaCadUsuario(EntNome.Text, EntEmail.Text.ToUpper());
                 if (!ValCampos)
                 {
                     DisplayAlert("Aviso", "Nome de Acesso/Email já cadastrados", null, "Ok");
@@ -75,10 +75,7 @@ namespace Bookshelf
         }
 
         private async void BtnCadastrar_Clicked(object sender, EventArgs e)
-        {
-
-           
-
+        {    
             if (!CrossConnectivity.Current.IsConnected)
             {
                 await DisplayAlert("Aviso", "Sem conexão com a internet", null, "Ok");
@@ -92,7 +89,7 @@ namespace Bookshelf
                 {
                     UserName = EntNome.Text,
                     Nick = EntNomeAcesso.Text,
-                    Email = EntEmail.Text,
+                    Email = EntEmail.Text.ToUpper(),
                     Passworld = BUser.CPEncrypt(EntSenha.Text, EntSenha.Text.Length)
 
                 };

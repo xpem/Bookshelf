@@ -20,7 +20,7 @@ namespace Bookshelf
         //
         private bool IsUpdate = false;
 
-        private string BookKey, bTitle, bSubTitle, bVolume, bAuthors, bYear, bIsbn, bPages, bGenre, bComment;
+        private string BookKey, bTitle, bSubTitle, bVolume, bAuthors, bYear, bIsbn, bPages, bGenre, bComment, bSituation, bRate;
 
         public string BTitle { get => bTitle; set { bTitle = value; OnPropertyChanged(); } }
 
@@ -28,83 +28,23 @@ namespace Bookshelf
 
         public string BVolume { get => bVolume; set { bVolume = value; OnPropertyChanged(); } }
 
-        public string BAuthors
-        {
-            get => bAuthors;
-            set
-            {
-                bAuthors = value; OnPropertyChanged();
-            }
-        }
+        public string BAuthors { get => bAuthors; set { bAuthors = value; OnPropertyChanged(); } }
 
-        public string BYear
-        {
-            get => bYear;
-            set
-            {
-                bYear = value; OnPropertyChanged();
-            }
-        }
+        public string BYear { get => bYear; set { bYear = value; OnPropertyChanged(); } }
 
-        public string BIsbn
-        {
-            get => bIsbn;
-            set
-            {
-                bIsbn = value; OnPropertyChanged();
-            }
-        }
+        public string BIsbn { get => bIsbn; set { bIsbn = value; OnPropertyChanged(); } }
 
-        public string BPages
-        {
-            get => bPages;
-            set
-            {
-                bPages = value; OnPropertyChanged();
-            }
-        }
+        public string BPages { get => bPages; set { bPages = value; OnPropertyChanged(); } }
 
-        public string BGenre
-        {
-            get => bGenre;
-            set
-            {
-                bGenre = value; OnPropertyChanged();
-            }
-        }
+        public string BGenre { get => bGenre; set { bGenre = value; OnPropertyChanged(); } }
 
-        public string BComment
-        {
-            get => bComment;
-            set
-            {
-                bComment = value; OnPropertyChanged();
-            }
-        }
+        public string BComment { get => bComment; set { bComment = value; OnPropertyChanged(); } }
 
-        private string bSituation, bRate;
+        public string BSituation { get => bSituation; set { bSituation = value; OnPropertyChanged(); } }
 
-        public string BSituation
-        {
-            get => bSituation;
-            set
-            {
-                bSituation = value; OnPropertyChanged();
-            }
-        }
-
-        public string BRate
-        {
-            get => bRate;
-            set
-            {
-                bRate = value; OnPropertyChanged();
-            }
-        }
+        public string BRate { get => bRate; set { bRate = value; OnPropertyChanged(); } }
 
         #endregion
-
-
 
         public CadastrarLivro(string bookKey)
         {
@@ -178,7 +118,6 @@ namespace Bookshelf
             IsUpdate = true;
         }
 
-
         private async void BtnCadastrar_Clicked(object sender, EventArgs e)
         {
 
@@ -228,7 +167,6 @@ namespace Bookshelf
                     };
 
                     mensagem = "Livro";
-
                 }
 
                 if (!string.IsNullOrEmpty(BookKey))
@@ -242,8 +180,6 @@ namespace Bookshelf
                     await BusinessLayer.BBooks.RegisterBook(book);
                     mensagem += " Cadastrados";
                 }
-
-
 
                 bool resposta = await DisplayAlert("Aviso", mensagem, null, "Ok");
 
@@ -312,10 +248,8 @@ namespace Bookshelf
             }
             else
             {
-
                 if (!IsUpdate)
                     VerFields = BusinessLayer.BBooks.VerifyRegisterBook(EntTitle.Text);
-
 
                 if (!VerFields)
                 {

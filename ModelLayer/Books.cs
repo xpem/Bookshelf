@@ -30,6 +30,8 @@ namespace ModelLayer
             public string Genre { get; set; }
             public DateTime LastUpdate { get; set; }
             public BookSituation BooksSituations { get; set; }
+
+            public bool Inativo { get; set; }
         }
 
         public class BookSituation

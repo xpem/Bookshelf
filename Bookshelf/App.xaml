@@ -3,6 +3,45 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Bookshelf.App">
     <Application.Resources>
-        <StyleSheet Source="Styles.css" />
+        <!--<StyleSheet Source="Styles.css" />-->
+      
+        <ResourceDictionary>
+            <Style x:Key="ContentPage" TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="#212121"></Setter>
+            </Style>
+            <!--Layout Principal-->
+            <Style x:Key="StackLayoutPrincipal" TargetType="StackLayout">
+                <Setter Property="Orientation" Value="Vertical"></Setter>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"></Setter>
+            </Style>
+            <Style x:Key="FramePrincipal" TargetType="Frame">
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"></Setter>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+                <Setter Property="BackgroundColor" Value="#BDBDBD"></Setter>
+            </Style>
+            <!--botão #1-->
+            <Style x:Key="BtnSecundario" TargetType="Button">
+                <Setter Property="VerticalOptions" Value="Fill"></Setter>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"></Setter>
+                <Setter Property="BackgroundColor" Value="#5D4037"></Setter>
+                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="CornerRadius" Value="5"></Setter>
+                <Setter Property="FontFamily" Value="FontAwesome"></Setter>
+            </Style>
+            <Style x:Key="BtnPrincipal" TargetType="Button">
+                <Setter Property="VerticalOptions" Value="Fill"></Setter>
+                <Setter Property="HorizontalOptions" Value="Fill"></Setter>
+                <Setter Property="BackgroundColor" Value="#435760"></Setter>
+                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="CornerRadius" Value="5"></Setter>
+                <Setter Property="FontFamily" Value="FontAwesome"></Setter>
+                <Setter Property="FontSize" Value="20"></Setter>
+            </Style>
+            <Style x:Key="Entry" TargetType="Entry">
+                <Setter Property="BackgroundColor" Value="White"></Setter>
+                <Setter Property="PlaceholderColor" Value="#606060"></Setter>
+                <Setter Property="WidthRequest" Value="250"></Setter>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

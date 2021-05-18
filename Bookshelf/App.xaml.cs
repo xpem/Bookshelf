@@ -1,5 +1,6 @@
 ﻿using Plugin.Connectivity;
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -18,9 +19,12 @@ namespace Bookshelf
 
             InitializeComponent();
 
-            if (BusinessLayer.SqLiteUser.VerifyAcess())
+            if (BusinessLayer.SqLiteUser.RecAcesso() != null)
             {
-                Task.Run(async () => await BusinessLayer.BBooksSync.AtualizaBancoLocal());
+                Thread thread = new Thread(BusinessLayer.BBooksSync.AtualizaBancoLocal) { IsBackground = true };
+                thread.Start();
+            
+                //  Task.Run(async () => await BusinessLayer.BBooksSync.AtualizaBancoLocal());
 
                 Application.Current.MainPage = new MainPage();
                 Application.Current.MainPage = new NavigationPage(new MainPage())

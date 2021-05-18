@@ -3,31 +3,55 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Bookshelf.Acessa"
              xmlns:local="clr-namespace:Bookshelf.Resources"
-             Title="Minha Estante"  
-             StyleClass="contentpage">
+             Style="{StaticResource ContentPage}" 
+             NavigationPage.HasNavigationBar="False" 
+             >
     <ContentPage.Content>
-        <StackLayout StyleClass="card" Orientation="Vertical"  VerticalOptions="FillAndExpand">
-            <Frame StyleClass="card_body" VerticalOptions="CenterAndExpand">
+        <StackLayout Style="{StaticResource StackLayoutPrincipal}" >
+            <Frame Style="{StaticResource FramePrincipal}">
                 <StackLayout Orientation="Vertical"  >
-                    <Entry Placeholder="Nome de Acesso" HorizontalOptions="CenterAndExpand" StyleClass="entry" x:Name="EntNomeAcesso" TextTransform="Uppercase">
+                    <!--Título-->
+                    <Label Text="{x:Static local:Icons.Reading}" TextColor="Black" HorizontalOptions="Center" FontFamily="FontAwesomeBold" FontSize="50" Padding="0,0,0,10"></Label>
+
+                    <Entry Placeholder="Nome de Acesso"  x:Name="EntNomeAcesso"
+                                   HorizontalOptions="FillAndExpand" TextTransform="Uppercase" PlaceholderColor="Black" BackgroundColor="White" TextColor="Black" >
                     </Entry>
-                    <Entry Placeholder="Senha" IsPassword="True" HorizontalOptions="CenterAndExpand" x:Name="EntSenha" StyleClass="entry">
+                    <Entry Placeholder="Senha" x:Name="EntSenha" 
+                            IsPassword="True"   HorizontalOptions="Start" WidthRequest="180" PlaceholderColor="Black"  BackgroundColor="White" TextColor="Black">
                     </Entry>
-                    <Button x:Name="BtnAcessa"  Text="Acessar" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand"  Clicked="BtnAcessa_Clicked" StyleClass="button_primary" >
+                    <Button x:Name="BtnAcessa"  Text="Acessar" 
+                            Style="{StaticResource BtnPrincipal}"
+                            FontSize="20" 
+                            WidthRequest="300" 
+                            Clicked="BtnAcessa_Clicked"
+                            BackgroundColor="#5D4037" >
                         <Button.ImageSource>
-                            <FontImageSource  FontFamily="FontAwesomeBold" Color="White" Glyph="{x:Static local:Icons.SignIn}" Size="Micro"></FontImageSource>
+                            <FontImageSource  FontFamily="FontAwesomeBold" Color="White" Glyph="{x:Static local:Icons.SignIn}" Size="18"></FontImageSource>
                         </Button.ImageSource>
                     </Button>
-                    <Button  Text="Cadastrar" x:Name="BtnCadAcesso" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand"   StyleClass="button_secundary"  Clicked="BtnCadAcesso_Clicked">
-                        <Button.ImageSource>
-                            <FontImageSource  FontFamily="FontAwesomeBold" Color="White" Glyph="{x:Static local:Icons.AddUser}" Size="Micro"></FontImageSource>
-                        </Button.ImageSource>
-                    </Button>
-                    <Button Text="Recuperar Senha" x:Name="BtnRecSenha" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand" StyleClass="button_secundary" Clicked="BtnRecSenha_Clicked">
-                        <Button.ImageSource>
-                            <FontImageSource  FontFamily="FontAwesomeBold" Color="White" Glyph="{x:Static local:Icons.RecoverPass}" Size="Micro"></FontImageSource>
-                        </Button.ImageSource>
-                    </Button>
+                    <Grid HorizontalOptions="FillAndExpand" WidthRequest="292">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition  Width ="*" />
+                        </Grid.ColumnDefinitions>
+                        <Button  Text="Cadastrar" x:Name="BtnCadAcesso"  Clicked="BtnCadAcesso_Clicked"
+                                 Grid.Row="0" Grid.Column="0"
+                                 Style="{StaticResource BtnSecundario}" BackgroundColor="#607D8B" FontSize="15" >
+                            <Button.ImageSource>
+                                <FontImageSource  FontFamily="FontAwesomeBold" Color="White" Glyph="{x:Static local:Icons.AddUser}" Size="10"></FontImageSource>
+                            </Button.ImageSource>
+                        </Button>
+                        <Button Text="Recuperar Senha" x:Name="BtnRecSenha" Clicked="BtnRecSenha_Clicked"
+                                Grid.Row="1" Grid.Column="0"
+                                 Style="{StaticResource BtnPrincipal}"  BackgroundColor="#607D8B" FontSize="15" >
+                            <Button.ImageSource>
+                                <FontImageSource  FontFamily="FontAwesomeBold" Color="White" Glyph="{x:Static local:Icons.RecoverPass}" Size="10"></FontImageSource>
+                            </Button.ImageSource>
+                        </Button>
+                    </Grid>
                 </StackLayout>
             </Frame>
         </StackLayout>

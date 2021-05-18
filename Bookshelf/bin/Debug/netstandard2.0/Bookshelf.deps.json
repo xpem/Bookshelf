@@ -9,9 +9,9 @@
     ".NETStandard,Version=v2.0/": {
       "Bookshelf/1.0.0": {
         "dependencies": {
-          "Bookshelf.ModelLayer": "1.0.0",
           "BusinessLayer": "1.0.0",
           "FirebaseDatabase.net": "4.0.4",
+          "ModelLayer": "1.0.0",
           "NETStandard.Library": "2.0.3",
           "Xam.Plugin.Connectivity": "3.2.0",
           "Xamarin.Essentials": "1.5.3.2",
@@ -277,30 +277,30 @@
           }
         }
       },
-      "Bookshelf.AcessLayer/1.0.0": {
+      "AcessLayer/1.0.0": {
         "dependencies": {
-          "Bookshelf.ModelLayer": "1.0.0",
           "FirebaseDatabase.net": "4.0.4",
           "Microsoft.Data.Sqlite.Core": "5.0.5",
+          "ModelLayer": "1.0.0",
           "sqlite-net-pcl": "1.7.335"
         },
         "runtime": {
-          "Bookshelf.AcessLayer.dll": {}
-        }
-      },
-      "Bookshelf.ModelLayer/1.0.0": {
-        "runtime": {
-          "Bookshelf.ModelLayer.dll": {}
+          "AcessLayer.dll": {}
         }
       },
       "BusinessLayer/1.0.0": {
         "dependencies": {
-          "Bookshelf.AcessLayer": "1.0.0",
+          "AcessLayer": "1.0.0",
           "FirebaseDatabase.net": "4.0.4",
           "Xam.Plugin.Connectivity": "3.2.0"
         },
         "runtime": {
           "BusinessLayer.dll": {}
+        }
+      },
+      "ModelLayer/1.0.0": {
+        "runtime": {
+          "ModelLayer.dll": {}
         }
       }
     }
@@ -507,17 +507,17 @@
       "path": "xamarin.forms/5.0.0.2012",
       "hashPath": "xamarin.forms.5.0.0.2012.nupkg.sha512"
     },
-    "Bookshelf.AcessLayer/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Bookshelf.ModelLayer/1.0.0": {
+    "AcessLayer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "BusinessLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ModelLayer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

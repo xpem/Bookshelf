@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -31,12 +32,15 @@ namespace Bookshelf
                     BtnCadAcesso.IsEnabled = false;
                     bool resp = false;
 
-                    Task.Run(async () => resp = await BusinessLayer.BUser.RecoverUser(EntNomeAcesso.Text, EntSenha.Text)).Wait();
+                    //To upper para garantir que tudo esteja maiúsculo independente do dispositivo
+                    Task.Run(async () => resp = await BusinessLayer.BUser.RecoverUser(EntNomeAcesso.Text.ToUpper(), EntSenha.Text)).Wait();
 
                     if (resp)
                     {
+                        Thread thread = new Thread(BusinessLayer.BBooksSync.AtualizaBancoLocal) { IsBackground = true };
+                        thread.Start();
                         //inicia processo de sincronização
-                        Task.Run(async () => await BusinessLayer.BBooksSync.AtualizaBancoLocal());
+                      //  Task.Run(async () => await BusinessLayer.BBooksSync.AtualizaBancoLocal());
 
                         Application.Current.MainPage = new MainPage();
                         Application.Current.MainPage = new NavigationPage(new MainPage())

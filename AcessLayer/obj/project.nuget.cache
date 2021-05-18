@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "u7b1yW4K5YyN/urKEQPWcsVblCIhJf7oAg/zftVgok7RiXQAQ5Er5ow4HtQQ74QnLCsT6LMr5dnm5q+hvOZRdw==",
+  "dgSpecHash": "9ip9LcObAvtO5Iupojam5+Ggr+YkImH67ppi/g9cRcp8qdNGNEaUXROzsn93hdog96+Nm7n9Fnu8f8MyetB0eg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\AcessLayer\\Bookshelf.AcessLayer.csproj",
+  "projectFilePath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\AcessLayer\\AcessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Emanuel\\.nuget\\packages\\firebasedatabase.net\\4.0.4\\firebasedatabase.net.4.0.4.nupkg.sha512",
     "C:\\Users\\Emanuel\\.nuget\\packages\\litedb\\4.1.4\\litedb.4.1.4.nupkg.sha512",

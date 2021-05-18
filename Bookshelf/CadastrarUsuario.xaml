@@ -1,31 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Bookshelf.Resources"
              x:Class="Bookshelf.CadastrarUsuario"
-              Title="Minha Estante"              
-           StyleClass="contentpage"
-             >
+             Title="Cadastrar Usuário"            
+             Style="{StaticResource ContentPage}" >
     <ContentPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical" StyleClass="card" >
-            <Frame  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" StyleClass="card_body">
-                <StackLayout Orientation="Vertical" >
-                    <Label Text="Cadastro de Usuário"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="Start" TextColor="Black" FontSize="20" FontAttributes="Bold"/>
-                    <Entry Placeholder="Nome" HorizontalOptions="CenterAndExpand" StyleClass="entry" x:Name="EntNome" MaxLength="100"/>
-                    <Entry Placeholder="Email" WidthRequest="250" HorizontalOptions="CenterAndExpand" StyleClass="entry" x:Name="EntEmail" MaxLength="150" Keyboard="Email"  />
-                    <Entry Placeholder="Nome de Acesso" WidthRequest="250" StyleClass="entry" TextTransform="Uppercase"
-                HorizontalOptions="CenterAndExpand" x:Name="EntNomeAcesso" MaxLength="50" />
-                    <Entry Placeholder="Senha" IsPassword="True" StyleClass="entry" 
-                VerticalOptions="Center" 
-                HorizontalOptions="CenterAndExpand"
-                 WidthRequest="250"  x:Name="EntSenha" MaxLength="10" />
-                    <Entry Placeholder="Confirmação da senha" IsPassword="True" StyleClass="entry" 
-                VerticalOptions="Center" 
-                HorizontalOptions="CenterAndExpand"
-                 WidthRequest="250"  x:Name="EntConfSenha" MaxLength="10">
-                    </Entry>
-                    <Button Text="Cadastrar" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand"  x:Name="BtnCadastrar" StyleClass="button_primary" Clicked="BtnCadastrar_Clicked" />
+        <StackLayout  VerticalOptions="Center"  >
+            <Frame Style="{ StaticResource FramePrincipal }">
+                <StackLayout Style="{StaticResource StackLayoutPrincipal}">
+                    <Label Text="{x:Static local:Icons.AddUser}" TextColor="Black" HorizontalOptions="Center" FontFamily="FontAwesomeBold" FontSize="30"></Label>
+                    <Entry Placeholder="Nome" Style="{StaticResource Entry}" x:Name="EntNome" MaxLength="100"/>
+                    <Entry Placeholder="Email" Style="{StaticResource Entry}" x:Name="EntEmail" MaxLength="150" Keyboard="Email"  />
+                    <Entry Placeholder="Nome de Acesso" Style="{StaticResource Entry}" TextTransform="Uppercase" x:Name="EntNomeAcesso" MaxLength="50" />
+                    <Entry Placeholder="Senha" IsPassword="True" Style="{StaticResource Entry}" x:Name="EntSenha" MaxLength="10" />
+                    <Entry Placeholder="Confirmação da senha" IsPassword="True" Style="{StaticResource Entry}"  x:Name="EntConfSenha" MaxLength="10"/>
+                    <Button Text="Cadastrar"  x:Name="BtnCadastrar" Style="{StaticResource BtnPrincipal}"  Clicked="BtnCadastrar_Clicked" />
                 </StackLayout>
             </Frame>
         </StackLayout>

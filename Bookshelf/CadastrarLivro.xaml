@@ -1,18 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Bookshelf.CadastrarLivro"
-             Title="Minha Estante"              
-               StyleClass="contentpage"
+             x:Class="Bookshelf.CadastrarLivro"     
+             xmlns:local="clr-namespace:Bookshelf.Resources"
+             Style="{StaticResource ContentPage}"
+             Title="Cadastrar Livro"
              >
     <ContentPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" 
-                     Orientation="Vertical" StyleClass="card" >
-            <Frame  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
-                    StyleClass="card_body">
-                <StackLayout Orientation="Vertical" >
-                    <Label Text="Cadastrar Livro"  VerticalOptions="Fill" 
-                HorizontalOptions="Center" TextColor="Black" FontSize="Large" FontAttributes="Bold" />
+        <StackLayout  VerticalOptions="Center"  >
+            <Frame Style="{ StaticResource FramePrincipal }">
+                <StackLayout Style="{StaticResource StackLayoutPrincipal}">
+                    <Label Text="{x:Static local:Icons.Book}" TextColor="Black" HorizontalOptions="Center" FontFamily="FontAwesomeBold" FontSize="30"></Label>
                     <Entry Placeholder="Título"  WidthRequest="250" Text="{Binding BTitle}"
                 HorizontalOptions="CenterAndExpand" x:Name="EntTitle" MaxLength="400" StyleClass="entry" />
                     <Entry Placeholder="*Subtítulo"  WidthRequest="250" Text="{Binding BSubTitle}"
@@ -24,10 +22,9 @@
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition  Width ="35*" />
-                            <ColumnDefinition  Width ="65*" />
-                        </Grid.ColumnDefinitions>
-                   
+                            <ColumnDefinition Width ="35*" />
+                            <ColumnDefinition Width ="65*" />
+                        </Grid.ColumnDefinitions>                   
                         <Entry Placeholder="*Vol."  Grid.Row="0" Grid.Column="0" WidthRequest="90" Text="{Binding BVolume}"
                 HorizontalOptions="StartAndExpand" x:Name="EntVol" StyleClass="entry" Keyboard="Numeric" MaxLength="2"/>
                         <Entry Placeholder="Ano" Grid.Row="0" Grid.Column="1" 
@@ -54,8 +51,8 @@
                     <Label  x:Name="LblSdlrRate" Text="{Binding Source={x:Reference SldrRate}, Path=Value, StringFormat='Avaliação pessoal: {0:F0} de 5'}" TextColor="#5D4037" HorizontalTextAlignment="Center" Margin="0, 20, 0, 0" />
                     <Slider x:Name="SldrRate" Minimum="0" Maximum="5" Value="{ Binding BRate }" ThumbColor="#efebeb" BackgroundColor="#5D4037" HorizontalOptions="FillAndExpand" />
                     <Editor Placeholder="*Comentários"  WidthRequest="250" HeightRequest="100" MaxLength="200" Text="{ Binding BComment }"
-                HorizontalOptions="CenterAndExpand"  x:Name="EdtComment" StyleClass="entry"  Keyboard="Chat" />                    
-                    <Button Text="Cadastrar" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand" StyleClass="button_primary" x:Name="BtnCadastrar" Clicked="BtnCadastrar_Clicked" />
+                HorizontalOptions="CenterAndExpand"  x:Name="EdtComment" StyleClass="entry"  Keyboard="Chat" />
+                    <Button Text="Cadastrar"  Style="{StaticResource BtnPrincipal}" x:Name="BtnCadastrar" Clicked="BtnCadastrar_Clicked" />
                 </StackLayout>
             </Frame>
         </StackLayout>

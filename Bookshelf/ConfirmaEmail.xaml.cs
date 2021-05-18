@@ -1,4 +1,5 @@
-﻿using Plugin.Connectivity;
+﻿using ModelLayer;
+using Plugin.Connectivity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,32 +26,28 @@ namespace Bookshelf
                 DisplayAlert("Aviso", "Sem conexão com a internet", null, "Ok");
                 return;
             }
-
-
             if (string.IsNullOrEmpty(EntEmail.Text))
             {
                 DisplayAlert("Aviso", "Digite um email válido", null, "Ok");
                 return;
             }
-            else if (!BusinessLayer.BUser.Valida_email(EntEmail.Text))
+            else if (!BusinessLayer.BUser.Valida_email(EntEmail.Text.ToUpper()))
             {
                 DisplayAlert("Aviso", "Digite um email válido", null, "Ok");
                 return;
             }
             else
             {
-                string UserNick, UserKey;
+                Users user = BusinessLayer.BUser.RecoverUserEmail(EntEmail.Text.ToUpper());
 
-                bool resposta = BusinessLayer.BUser.RecoverUserEmail(EntEmail.Text, out UserNick, out UserKey);
-
-                if (!resposta)
+                if (user == null)
                 {
                     DisplayAlert("Aviso", "Email não encontrado", null, "Ok");
                     return;
                 }
                 else
                 {
-                 this.Navigation.PushAsync(new NovaSenha(UserNick, UserKey));
+                  this.Navigation.PushAsync(new NovaSenha(user.Nick, user.Key));
                 }
 
             }

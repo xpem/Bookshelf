@@ -353,30 +353,30 @@
           "lib/netstandard1.0/Plugin.Connectivity.dll": {}
         }
       },
-      "Bookshelf.AcessLayer/1.0.0": {
+      "AcessLayer/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Bookshelf.ModelLayer": "1.0.0",
           "FirebaseDatabase.net": "4.0.4",
           "Microsoft.Data.Sqlite.Core": "5.0.5",
+          "ModelLayer": "1.0.0",
           "sqlite-net-pcl": "1.7.335"
         },
         "compile": {
-          "bin/placeholder/Bookshelf.AcessLayer.dll": {}
+          "bin/placeholder/AcessLayer.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Bookshelf.AcessLayer.dll": {}
+          "bin/placeholder/AcessLayer.dll": {}
         }
       },
-      "Bookshelf.ModelLayer/1.0.0": {
+      "ModelLayer/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "compile": {
-          "bin/placeholder/Bookshelf.ModelLayer.dll": {}
+          "bin/placeholder/ModelLayer.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Bookshelf.ModelLayer.dll": {}
+          "bin/placeholder/ModelLayer.dll": {}
         }
       }
     }
@@ -1469,20 +1469,20 @@
         "xam.plugin.connectivity.nuspec"
       ]
     },
-    "Bookshelf.AcessLayer/1.0.0": {
+    "AcessLayer/1.0.0": {
       "type": "project",
-      "path": "../AcessLayer/Bookshelf.AcessLayer.csproj",
-      "msbuildProject": "../AcessLayer/Bookshelf.AcessLayer.csproj"
+      "path": "../AcessLayer/AcessLayer.csproj",
+      "msbuildProject": "../AcessLayer/AcessLayer.csproj"
     },
-    "Bookshelf.ModelLayer/1.0.0": {
+    "ModelLayer/1.0.0": {
       "type": "project",
-      "path": "../ModelLayer/Bookshelf.ModelLayer.csproj",
-      "msbuildProject": "../ModelLayer/Bookshelf.ModelLayer.csproj"
+      "path": "../ModelLayer/ModelLayer.csproj",
+      "msbuildProject": "../ModelLayer/ModelLayer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "Bookshelf.AcessLayer >= 1.0.0",
+      "AcessLayer >= 1.0.0",
       "FirebaseDatabase.net >= 4.0.4",
       "NETStandard.Library >= 2.0.3",
       "Xam.Plugin.Connectivity >= 3.2.0"
@@ -1523,8 +1523,8 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\AcessLayer\\Bookshelf.AcessLayer.csproj": {
-              "projectPath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\AcessLayer\\Bookshelf.AcessLayer.csproj"
+            "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\AcessLayer\\AcessLayer.csproj": {
+              "projectPath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\AcessLayer\\AcessLayer.csproj"
             }
           }
         }
@@ -1564,7 +1564,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

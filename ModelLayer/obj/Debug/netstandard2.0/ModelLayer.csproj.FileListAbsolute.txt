@@ -32,4 +32,3 @@ C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\ModelLayer\obj
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.csproj.CoreCompileInputs.cache
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.dll
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.pdb
-C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.csprojAssemblyReference.cache

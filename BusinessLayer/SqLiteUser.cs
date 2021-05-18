@@ -13,33 +13,17 @@ namespace BusinessLayer
 
         public static void CriaBD() => ASqLite.CriaDb();
 
-        public static bool VerifyAcess()
+        public static Users RecAcesso()
         {
-            List<Users> res = ASqLite.RecAcesso();
-
-            if (res.Count > 0) return true;
-            else return false;
+            Users res = ASqLite.RecAcesso();
+            if (res != null) return res;
+            else return null;
         }
 
         public static void CadatraAcesso(string id, string login)
         {
             ASqLite.CadastraAcesso(id, login);
-        }
-
-        public static Users RecAcesso()
-        {
-            List<Users> res = ASqLite.RecAcesso();
-            if (res.Count > 0) return res[0];
-            else return null;
-        }
-
-        public static Users RecAcessoLastUpdate()
-        {
-            List<Users> res = ASqLite.RecAcesso();
-            if (res.Count > 0) return res[0];
-            else return null;
-
-        }
+        } 
 
         public static void AtualizaAcessoLastUpdade(string Key, DateTime LastUpdate)
         {

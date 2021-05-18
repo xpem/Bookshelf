@@ -1,4 +1,5 @@
 ﻿using AcessLayer;
+using AcessLayer.ABooks;
 using ModelLayer;
 using Plugin.Connectivity;
 using System;
@@ -30,11 +31,11 @@ namespace BusinessLayer
         /// Carrega o banco de dados local do usuário
         /// </summary>
         /// <returns></returns>
-        public async static Task AtualizaBancoLocal()
+        public async static void AtualizaBancoLocal()
         {
             try
             {
-                Users login = SqLiteUser.RecAcessoLastUpdate();
+                Users login = SqLiteUser.RecAcesso();
 
                 bool ProcessoContinuo = true;
                 while (ProcessoContinuo)
@@ -50,23 +51,26 @@ namespace BusinessLayer
                     {
                         DateTime LastUptade = login.LastUpdate;
 
+                        List<Books.Book> booksList = ABooksSqlite.GetBooksLocalByLastUpdate(login.Key, login.LastUpdate);
+
                         //atualiza banco fb
-                        foreach (Books.Book book in AcessLayer.ABooks.GetBooksLocalByLastUpdate(login.Key, login.LastUpdate))
+                        foreach (Books.Book book in booksList)
                         {
                             if (book.Key == null)
                             {
-                                await ABooks.RegisterBook(book);
+                                await ABooksFirebase.RegisterBook(book);
                             }
                             else
                             {
-                                await ABooks.UpdateBook(book);
+                                await ABooksFirebase.UpdateBook(book);
                             }
                         }
 
                         //atualiza banco sql
-                        foreach (Books.Book book in await AcessLayer.ABooks.GetBooksByLastUpdate(login.Key, login.LastUpdate))
+                        foreach (Books.Book book in await ABooksFirebase.GetBooksByLastUpdate(login.Key, login.LastUpdate))
                         {
-                            ABooks.UpdateBookLocal(book);
+                            ABooksSqlite.SyncUpdateBookLocal(book);
+
                             if (LastUptade < book.LastUpdate) LastUptade = book.LastUpdate;
                         }
                         SqLiteUser.AtualizaAcessoLastUpdade(login.Key, LastUptade);

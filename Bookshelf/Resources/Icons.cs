@@ -19,5 +19,8 @@ namespace Bookshelf.Resources
         public static string Check = "\uf00c";
         public static string Stop = "\uf04d";
         public static string Connection = "\uf0c1";
+        public static string Reading = "\uf5da";
+        public static string AngleRight = "\uf105";
+        public static string Times = "\uf00d";
     }
 }

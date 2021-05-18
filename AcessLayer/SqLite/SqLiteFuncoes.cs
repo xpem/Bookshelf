@@ -27,9 +27,6 @@ namespace Bookshelf.AcessLayer.SqLite
 
         public static void CloseIfOpen() { if (ASqLite.db.State == System.Data.ConnectionState.Open) { ASqLite.db.Close(); } }
 
-        /// <summary>
-        /// verificação de nulo
-        /// </summary>
         public static string GetWithNullableString(this SqliteDataReader sqliteDataReader, int ordinal)
         {
             if (!sqliteDataReader.IsDBNull(ordinal))
@@ -38,9 +35,14 @@ namespace Bookshelf.AcessLayer.SqLite
                 return null;
         }
 
-        /// <summary>
-        /// verificação de nulo
-        /// </summary>
+        public static bool GetWithNullableBool(this SqliteDataReader sqliteDataReader, int ordinal)
+        {
+            if (!sqliteDataReader.IsDBNull(ordinal))
+                return sqliteDataReader.GetBoolean(ordinal);
+            else
+                return false;
+        }
+
         public static int? GetWithNullableInt(this SqliteDataReader sqliteDataReader, int ordinal)
         {
             if (!sqliteDataReader.IsDBNull(ordinal))

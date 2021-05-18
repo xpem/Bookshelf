@@ -319,13 +319,29 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "AcessLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "FirebaseDatabase.net": "4.0.4",
+          "Microsoft.Data.Sqlite.Core": "5.0.5",
+          "ModelLayer": "1.0.0",
+          "sqlite-net-pcl": "1.7.335"
+        },
+        "compile": {
+          "bin/placeholder/AcessLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AcessLayer.dll": {}
+        }
+      },
       "Bookshelf/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Bookshelf.ModelLayer": "1.0.0",
           "BusinessLayer": "1.0.0",
           "FirebaseDatabase.net": "4.0.4",
+          "ModelLayer": "1.0.0",
           "Xam.Plugin.Connectivity": "3.2.0",
           "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.Forms": "5.0.0.2012"
@@ -337,37 +353,11 @@
           "bin/placeholder/Bookshelf.dll": {}
         }
       },
-      "Bookshelf.AcessLayer/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Bookshelf.ModelLayer": "1.0.0",
-          "FirebaseDatabase.net": "4.0.4",
-          "Microsoft.Data.Sqlite.Core": "5.0.5",
-          "sqlite-net-pcl": "1.7.335"
-        },
-        "compile": {
-          "bin/placeholder/Bookshelf.AcessLayer.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Bookshelf.AcessLayer.dll": {}
-        }
-      },
-      "Bookshelf.ModelLayer/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/Bookshelf.ModelLayer.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Bookshelf.ModelLayer.dll": {}
-        }
-      },
       "BusinessLayer/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Bookshelf.AcessLayer": "1.0.0",
+          "AcessLayer": "1.0.0",
           "FirebaseDatabase.net": "4.0.4",
           "Xam.Plugin.Connectivity": "3.2.0"
         },
@@ -376,6 +366,16 @@
         },
         "runtime": {
           "bin/placeholder/BusinessLayer.dll": {}
+        }
+      },
+      "ModelLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/ModelLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ModelLayer.dll": {}
         }
       }
     },
@@ -697,13 +697,29 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "AcessLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "FirebaseDatabase.net": "4.0.4",
+          "Microsoft.Data.Sqlite.Core": "5.0.5",
+          "ModelLayer": "1.0.0",
+          "sqlite-net-pcl": "1.7.335"
+        },
+        "compile": {
+          "bin/placeholder/AcessLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AcessLayer.dll": {}
+        }
+      },
       "Bookshelf/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Bookshelf.ModelLayer": "1.0.0",
           "BusinessLayer": "1.0.0",
           "FirebaseDatabase.net": "4.0.4",
+          "ModelLayer": "1.0.0",
           "Xam.Plugin.Connectivity": "3.2.0",
           "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.Forms": "5.0.0.2012"
@@ -715,37 +731,11 @@
           "bin/placeholder/Bookshelf.dll": {}
         }
       },
-      "Bookshelf.AcessLayer/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Bookshelf.ModelLayer": "1.0.0",
-          "FirebaseDatabase.net": "4.0.4",
-          "Microsoft.Data.Sqlite.Core": "5.0.5",
-          "sqlite-net-pcl": "1.7.335"
-        },
-        "compile": {
-          "bin/placeholder/Bookshelf.AcessLayer.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Bookshelf.AcessLayer.dll": {}
-        }
-      },
-      "Bookshelf.ModelLayer/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/Bookshelf.ModelLayer.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Bookshelf.ModelLayer.dll": {}
-        }
-      },
       "BusinessLayer/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Bookshelf.AcessLayer": "1.0.0",
+          "AcessLayer": "1.0.0",
           "FirebaseDatabase.net": "4.0.4",
           "Xam.Plugin.Connectivity": "3.2.0"
         },
@@ -754,6 +744,16 @@
         },
         "runtime": {
           "bin/placeholder/BusinessLayer.dll": {}
+        }
+      },
+      "ModelLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/ModelLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ModelLayer.dll": {}
         }
       }
     },
@@ -1075,13 +1075,29 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "AcessLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "FirebaseDatabase.net": "4.0.4",
+          "Microsoft.Data.Sqlite.Core": "5.0.5",
+          "ModelLayer": "1.0.0",
+          "sqlite-net-pcl": "1.7.335"
+        },
+        "compile": {
+          "bin/placeholder/AcessLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AcessLayer.dll": {}
+        }
+      },
       "Bookshelf/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Bookshelf.ModelLayer": "1.0.0",
           "BusinessLayer": "1.0.0",
           "FirebaseDatabase.net": "4.0.4",
+          "ModelLayer": "1.0.0",
           "Xam.Plugin.Connectivity": "3.2.0",
           "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.Forms": "5.0.0.2012"
@@ -1093,37 +1109,11 @@
           "bin/placeholder/Bookshelf.dll": {}
         }
       },
-      "Bookshelf.AcessLayer/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Bookshelf.ModelLayer": "1.0.0",
-          "FirebaseDatabase.net": "4.0.4",
-          "Microsoft.Data.Sqlite.Core": "5.0.5",
-          "sqlite-net-pcl": "1.7.335"
-        },
-        "compile": {
-          "bin/placeholder/Bookshelf.AcessLayer.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Bookshelf.AcessLayer.dll": {}
-        }
-      },
-      "Bookshelf.ModelLayer/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/Bookshelf.ModelLayer.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Bookshelf.ModelLayer.dll": {}
-        }
-      },
       "BusinessLayer/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Bookshelf.AcessLayer": "1.0.0",
+          "AcessLayer": "1.0.0",
           "FirebaseDatabase.net": "4.0.4",
           "Xam.Plugin.Connectivity": "3.2.0"
         },
@@ -1132,6 +1122,16 @@
         },
         "runtime": {
           "bin/placeholder/BusinessLayer.dll": {}
+        }
+      },
+      "ModelLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/ModelLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ModelLayer.dll": {}
         }
       }
     },
@@ -1453,13 +1453,29 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "AcessLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "FirebaseDatabase.net": "4.0.4",
+          "Microsoft.Data.Sqlite.Core": "5.0.5",
+          "ModelLayer": "1.0.0",
+          "sqlite-net-pcl": "1.7.335"
+        },
+        "compile": {
+          "bin/placeholder/AcessLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AcessLayer.dll": {}
+        }
+      },
       "Bookshelf/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Bookshelf.ModelLayer": "1.0.0",
           "BusinessLayer": "1.0.0",
           "FirebaseDatabase.net": "4.0.4",
+          "ModelLayer": "1.0.0",
           "Xam.Plugin.Connectivity": "3.2.0",
           "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.Forms": "5.0.0.2012"
@@ -1471,37 +1487,11 @@
           "bin/placeholder/Bookshelf.dll": {}
         }
       },
-      "Bookshelf.AcessLayer/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Bookshelf.ModelLayer": "1.0.0",
-          "FirebaseDatabase.net": "4.0.4",
-          "Microsoft.Data.Sqlite.Core": "5.0.5",
-          "sqlite-net-pcl": "1.7.335"
-        },
-        "compile": {
-          "bin/placeholder/Bookshelf.AcessLayer.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Bookshelf.AcessLayer.dll": {}
-        }
-      },
-      "Bookshelf.ModelLayer/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/Bookshelf.ModelLayer.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Bookshelf.ModelLayer.dll": {}
-        }
-      },
       "BusinessLayer/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Bookshelf.AcessLayer": "1.0.0",
+          "AcessLayer": "1.0.0",
           "FirebaseDatabase.net": "4.0.4",
           "Xam.Plugin.Connectivity": "3.2.0"
         },
@@ -1510,6 +1500,16 @@
         },
         "runtime": {
           "bin/placeholder/BusinessLayer.dll": {}
+        }
+      },
+      "ModelLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/ModelLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ModelLayer.dll": {}
         }
       }
     }
@@ -2268,25 +2268,25 @@
         "xamarin.forms.nuspec"
       ]
     },
+    "AcessLayer/1.0.0": {
+      "type": "project",
+      "path": "../AcessLayer/AcessLayer.csproj",
+      "msbuildProject": "../AcessLayer/AcessLayer.csproj"
+    },
     "Bookshelf/1.0.0": {
       "type": "project",
       "path": "../Bookshelf/Bookshelf.csproj",
       "msbuildProject": "../Bookshelf/Bookshelf.csproj"
     },
-    "Bookshelf.AcessLayer/1.0.0": {
-      "type": "project",
-      "path": "../AcessLayer/Bookshelf.AcessLayer.csproj",
-      "msbuildProject": "../AcessLayer/Bookshelf.AcessLayer.csproj"
-    },
-    "Bookshelf.ModelLayer/1.0.0": {
-      "type": "project",
-      "path": "../ModelLayer/Bookshelf.ModelLayer.csproj",
-      "msbuildProject": "../ModelLayer/Bookshelf.ModelLayer.csproj"
-    },
     "BusinessLayer/1.0.0": {
       "type": "project",
       "path": "../BusinessLayer/BusinessLayer.csproj",
       "msbuildProject": "../BusinessLayer/BusinessLayer.csproj"
+    },
+    "ModelLayer/1.0.0": {
+      "type": "project",
+      "path": "../ModelLayer/ModelLayer.csproj",
+      "msbuildProject": "../ModelLayer/ModelLayer.csproj"
     }
   },
   "projectFileDependencyGroups": {

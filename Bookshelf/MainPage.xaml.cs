@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -14,7 +15,6 @@ namespace Bookshelf
     public partial class MainPage : ContentPage
     {
         #region variaveis
-
         private bool isLoading;
         public bool IsLoading { get => isLoading; set { isLoading = value; OnPropertyChanged(); } }
 
@@ -31,6 +31,8 @@ namespace Bookshelf
         public string IsSync { get => isSync; set { isSync = value; OnPropertyChanged(); } }
 
         public string IsConnected { get => isConnected; set { isConnected = value; OnPropertyChanged(); } }
+
+
         /// <summary>
         /// variavel que define se a função que verifica a sincronização já está rodando ou não.
         /// </summary>
@@ -71,25 +73,32 @@ namespace Bookshelf
                 else
                 {
                     IsConnected = "#fff";
-                    if (BBooksSync.Sincronizando) IsSync = "#008000";
-                    else IsSync = "#fff";
+                    if (BBooksSync.Sincronizando)
+                    {
+                        IsSync = "#008000";
+                    }
+                    else
+                    {
+                        CarregaBookshelfTotais();
+                        IsSync = "#fff";
+                    }
                 }
-                await Task.Delay(5000);
+                await Task.Delay(10000);
             }
         }
 
         public async void CarregaBookshelfTotais()
         {
-            BtnIllRead.IsEnabled = BtnReading.IsEnabled = BtnRead.IsEnabled = BtnInterrupted.IsEnabled = false;
             //
             ModelLayer.Books.Totals totais = new ModelLayer.Books.Totals();
             await Task.Run(() => totais = BusinessLayer.BBooks.GetBookshelfTotais());
-            VVouLer = totais.IllRead.ToString();
-            VLendo = totais.Reading.ToString();
-            VLido = totais.Read.ToString();
-            VInterrompido = totais.Interrupted.ToString();
+
+            if (totais.IllRead.ToString() != VVouLer) { VVouLer = totais.IllRead.ToString(); }
+            if (totais.Reading.ToString() != VLendo) { VLendo = totais.Reading.ToString(); }
+            if (totais.Read.ToString() != VLido) { VLido = totais.Read.ToString(); }
+            if (totais.Interrupted.ToString() != VInterrompido) { VInterrompido = totais.Interrupted.ToString(); }
             //
-            BtnIllRead.IsEnabled = BtnReading.IsEnabled = BtnRead.IsEnabled = BtnInterrupted.IsEnabled = true;
+
         }
 
         #region navegação
@@ -115,29 +124,37 @@ namespace Bookshelf
             this.Navigation.PushAsync(new CadastrarLivro(""));
         }
 
-        private void BtnVouLer_Clicked(object sender, EventArgs e)
+        private void btnSync_Clicked(object sender, EventArgs e)
         {
-            this.Navigation.PushAsync(new BooksList(1));
+            Thread thread = new Thread(BusinessLayer.BBooksSync.AtualizaBancoLocal) { IsBackground = true };
+            thread.Start();
+            //inicia processo de sincronização
+           // Task.Run(async () => await BusinessLayer.BBooksSync.AtualizaBancoLocal());
         }
 
-        private void BtnReading_Clicked(object sender, EventArgs e)
-        {
-            this.Navigation.PushAsync(new BooksList(2));
-        }
-
-        private void BtnRead_Clicked(object sender, EventArgs e)
+        private void TpGstRg_Read_Tapped(object sender, EventArgs e)
         {
             this.Navigation.PushAsync(new BooksList(3));
         }
 
-        private void BtnInterrupted_Clicked(object sender, EventArgs e)
+        private void TpGstRg_Interrupted_Tapped(object sender, EventArgs e)
         {
             this.Navigation.PushAsync(new BooksList(4));
         }
 
+        private void TpGstRg_Reading_Tapped(object sender, EventArgs e)
+        {
+            this.Navigation.PushAsync(new BooksList(2));
+        }
+
+        private void TpGstRg_IllRead_Tapped(object sender, EventArgs e)
+        {
+            this.Navigation.PushAsync(new BooksList(1));
+        }
+
         private void BtnArchive_Clicked(object sender, EventArgs e)
         {
-            this.Navigation.PushAsync(new BooksList(-1));
+            this.Navigation.PushAsync(new BooksList(0));
         }
 
         #endregion

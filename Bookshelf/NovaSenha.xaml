@@ -2,27 +2,23 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Bookshelf.NovaSenha"
-                 Title="Minha Estante"              
-               StyleClass="contentpage"
+          xmlns:local="clr-namespace:Bookshelf.Resources"
+                  Title="Recuperar senha"              
+                Style="{StaticResource ContentPage}"
              >
     <ContentPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" 
-                     Orientation="Vertical" StyleClass="card" >
-            <Frame  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
-                    StyleClass="card_body">
-                <StackLayout Orientation="Vertical" >
-                    <Label Text="{Binding VNick,StringFormat='Usuário: {0}'}"
-                VerticalOptions="Fill" 
-                HorizontalOptions="Center" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
-                    <Entry Placeholder="Nova senha"  WidthRequest="250"
-                            IsPassword="True"
-                HorizontalOptions="CenterAndExpand" x:Name="EntSenha"
-                           MaxLength="400" StyleClass="entry"/>
-                    <Entry Placeholder="Confirme a nova senha"  WidthRequest="250"
-                            IsPassword="True"
-                HorizontalOptions="CenterAndExpand" x:Name="EntConfSenha"
-                           MaxLength="400" StyleClass="entry"/>
-                    <Button Text="Cadastrar" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand"  x:Name="BtnCadastrar" StyleClass="button_primary" />
+        <StackLayout  VerticalOptions="Center"  >
+            <Frame Style="{ StaticResource FramePrincipal }">
+                <StackLayout Style="{StaticResource StackLayoutPrincipal}">
+                    <Label Text="{x:Static local:Icons.RecoverPass}" TextColor="Black" HorizontalOptions="Center" FontFamily="FontAwesomeBold" FontSize="30"></Label>
+                    <Label Text="{Binding VNick,StringFormat='Usuário: {0}'}"  VerticalOptions="Fill" HorizontalOptions="Center" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
+                    <Entry Placeholder="Nova senha"
+                            IsPassword="True" x:Name="EntSenha"
+                           MaxLength="400" Style="{StaticResource Entry}"/>
+                    <Entry Placeholder="Confirme a nova senha"
+                            IsPassword="True" Style="{StaticResource Entry}" x:Name="EntConfSenha"
+                           MaxLength="400" />
+                    <Button Text="Atualizar" x:Name="BtnCadastrar" Clicked="BtnCadastrar_Clicked" Style="{StaticResource BtnPrincipal}" />
                 </StackLayout>
             </Frame>
         </StackLayout>

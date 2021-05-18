@@ -165,8 +165,8 @@ C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\obj\iPhone\Debug\Bookshelf.iOS.csproj.CopyComplete
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\obj\iPhone\Debug\Bookshelf.iOS.exe
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\obj\iPhone\Debug\Bookshelf.iOS.pdb
-C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\bin\iPhone\Debug\Bookshelf.AcessLayer.dll
-C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\bin\iPhone\Debug\Bookshelf.AcessLayer.pdb
 C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\bin\iPhone\Debug\Microsoft.Data.Sqlite.dll
-C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\bin\iPhone\Debug\Bookshelf.ModelLayer.dll
-C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\bin\iPhone\Debug\Bookshelf.ModelLayer.pdb
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\bin\iPhone\Debug\ModelLayer.dll
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\bin\iPhone\Debug\AcessLayer.dll
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\bin\iPhone\Debug\ModelLayer.pdb
+C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.iOS\bin\iPhone\Debug\AcessLayer.pdb

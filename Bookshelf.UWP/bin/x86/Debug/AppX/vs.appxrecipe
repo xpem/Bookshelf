@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.UWP\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>866D6F74F58FB87829196F6B325331CAB3198AE1A8C8C21450AC43700664F240</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>8635E178247DFD91067EDBF1D3177F891163C8889BDB826BC50D40114A88978F</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>6c53b9cf-d28c-4638-83c1-c8f343800d6a_1.0.0.0_x86__2ddf6bwycm1g6</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>6c53b9cf-d28c-4638-83c1-c8f343800d6a_2ddf6bwycm1g6!App</RegisteredUserModeAppID>
     <RegisteredPackageID>6c53b9cf-d28c-4638-83c1-c8f343800d6a</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-04-16T20:33:54.060</Modified>
+      <Modified>2021-05-18T12:30:32.641</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.UWP\bin\x86\Debug\Bookshelf.UWP.exe">
       <PackagePath>entrypoint\Bookshelf.UWP.exe</PackagePath>
-      <Modified>2021-04-16T20:33:52.562</Modified>
+      <Modified>2021-05-18T12:30:25.647</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\.nuget\packages\firebasedatabase.net\4.0.4\lib\netstandard2.0\Firebase.dll">
       <PackagePath>Firebase.dll</PackagePath>
@@ -120,19 +120,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.dll">
       <PackagePath>Bookshelf.dll</PackagePath>
-      <Modified>2021-04-16T20:33:45.706</Modified>
+      <Modified>2021-05-18T15:28:05.126</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.ModelLayer.dll">
-      <PackagePath>Bookshelf.ModelLayer.dll</PackagePath>
-      <Modified>2021-04-11T21:01:08.663</Modified>
+    <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\ModelLayer.dll">
+      <PackagePath>ModelLayer.dll</PackagePath>
+      <Modified>2021-05-18T12:30:11.303</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\BusinessLayer.dll">
       <PackagePath>BusinessLayer.dll</PackagePath>
-      <Modified>2021-04-15T20:50:02.734</Modified>
+      <Modified>2021-05-18T15:28:03.924</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.AcessLayer.dll">
-      <PackagePath>Bookshelf.AcessLayer.dll</PackagePath>
-      <Modified>2021-04-15T20:48:50.405</Modified>
+    <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\AcessLayer.dll">
+      <PackagePath>AcessLayer.dll</PackagePath>
+      <Modified>2021-05-18T15:28:03.525</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\.nuget\packages\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
@@ -291,11 +291,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-04-16T20:33:52.479</Modified>
+      <Modified>2021-05-18T12:30:25.439</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2021-04-16T20:33:52.479</Modified>
+      <Modified>2021-05-18T12:30:25.440</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.18362.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -311,11 +311,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2021-04-11T15:11:05.131</Modified>
+      <Modified>2021-05-18T12:30:28.722</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.UWP\bin\x86\Debug\Core\Bookshelf.UWP.exe">
       <PackagePath>Bookshelf.UWP.exe</PackagePath>
-      <Modified>2021-04-16T20:33:54.054</Modified>
+      <Modified>2021-05-18T12:30:32.621</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

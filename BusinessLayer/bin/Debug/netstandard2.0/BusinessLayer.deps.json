@@ -9,7 +9,7 @@
     ".NETStandard,Version=v2.0/": {
       "BusinessLayer/1.0.0": {
         "dependencies": {
-          "Bookshelf.AcessLayer": "1.0.0",
+          "AcessLayer": "1.0.0",
           "FirebaseDatabase.net": "4.0.4",
           "NETStandard.Library": "2.0.3",
           "Xam.Plugin.Connectivity": "3.2.0"
@@ -247,20 +247,20 @@
           }
         }
       },
-      "Bookshelf.AcessLayer/1.0.0": {
+      "AcessLayer/1.0.0": {
         "dependencies": {
-          "Bookshelf.ModelLayer": "1.0.0",
           "FirebaseDatabase.net": "4.0.4",
           "Microsoft.Data.Sqlite.Core": "5.0.5",
+          "ModelLayer": "1.0.0",
           "sqlite-net-pcl": "1.7.335"
         },
         "runtime": {
-          "Bookshelf.AcessLayer.dll": {}
+          "AcessLayer.dll": {}
         }
       },
-      "Bookshelf.ModelLayer/1.0.0": {
+      "ModelLayer/1.0.0": {
         "runtime": {
-          "Bookshelf.ModelLayer.dll": {}
+          "ModelLayer.dll": {}
         }
       }
     }
@@ -453,12 +453,12 @@
       "path": "xam.plugin.connectivity/3.2.0",
       "hashPath": "xam.plugin.connectivity.3.2.0.nupkg.sha512"
     },
-    "Bookshelf.AcessLayer/1.0.0": {
+    "AcessLayer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Bookshelf.ModelLayer/1.0.0": {
+    "ModelLayer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

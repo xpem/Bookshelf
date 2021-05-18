@@ -186,9 +186,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\Bookshelf.ModelLayer.csproj",
-      "projectName": "Bookshelf.ModelLayer",
-      "projectPath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\Bookshelf.ModelLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\ModelLayer.csproj",
+      "projectName": "ModelLayer",
+      "projectPath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\ModelLayer.csproj",
       "packagesPath": "C:\\Users\\Emanuel\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Emanuel\\Documents\\documentos pessoais\\projetos\\Bookshelf\\ModelLayer\\obj\\",
       "projectStyle": "PackageReference",
@@ -242,7 +242,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
