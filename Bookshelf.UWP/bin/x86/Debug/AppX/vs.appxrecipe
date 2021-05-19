@@ -120,7 +120,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.dll">
       <PackagePath>Bookshelf.dll</PackagePath>
-      <Modified>2021-05-18T15:28:05.126</Modified>
+      <Modified>2021-05-19T12:14:56.811</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\ModelLayer.dll">
       <PackagePath>ModelLayer.dll</PackagePath>
@@ -128,11 +128,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\BusinessLayer.dll">
       <PackagePath>BusinessLayer.dll</PackagePath>
-      <Modified>2021-05-18T15:28:03.924</Modified>
+      <Modified>2021-05-19T12:11:04.483</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\AcessLayer.dll">
       <PackagePath>AcessLayer.dll</PackagePath>
-      <Modified>2021-05-18T15:28:03.525</Modified>
+      <Modified>2021-05-19T12:11:04.001</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\.nuget\packages\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>

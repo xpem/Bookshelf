@@ -10,7 +10,7 @@ using Microsoft.Data.Sqlite;
 using ModelLayer;
 using static ModelLayer.Books;
 
-namespace AcessLayer.ABooks
+namespace AcessLayer.SqLite
 {
     public class ABooksSqlite
     {
@@ -249,7 +249,7 @@ namespace AcessLayer.ABooks
                 if (!string.IsNullOrEmpty(textoBusca))
                     query += " and b.title like '%'+@textoBusca+'%'";
 
-                query += " and b.Inativo is null";
+                query += " and b.Inativo in (null,false)";
 
                 SqliteCommand selectCommand = new SqliteCommand(query, ASqLite.db);
                 selectCommand.Parameters.AddWithValue("@userKey", UserKey);

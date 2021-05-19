@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
-using AcessLayer;
+using AcessLayer.SqLite;
 using Plugin.Connectivity;
 using ModelLayer;
-using AcessLayer.ABooks;
+using AcessLayer.Firebase;
 
 namespace BusinessLayer
 {
@@ -56,17 +56,18 @@ namespace BusinessLayer
             book.UserKey = login.Key;
             book.LastUpdate = DateTime.Now;
 
-            //gera um id local temporário único
-            book.Key = Guid.NewGuid().ToString();
-
-            ABooksSqlite.RegisterBookLocal(book);
-
             if (CrossConnectivity.Current.IsConnected)
             {
-                //seta a key como nula, para ser gerada a permanente no firebase
-                book.Key = null;
-                await ABooksFirebase.RegisterBook(book);
+                book.Key = await ABooksFirebase.RegisterBook(book);
             }
+            else
+            {
+                //gera um id local temporário único
+                book.Key = Guid.NewGuid().ToString();
+            }
+            ABooksSqlite.RegisterBookLocal(book);
+
+          
         }
 
         public static Books.Book GetBook(string bookKey)
@@ -123,7 +124,7 @@ namespace BusinessLayer
         {
             Users login = SqLiteUser.RecAcesso();
 
-            List<Books.Book> lista = AcessLayer.ABooks.ABooksSqlite.GetBookSituationByStatus(Situation, login.Key, textoBusca);
+            List<Books.Book> lista = ABooksSqlite.GetBookSituationByStatus(Situation, login.Key, textoBusca);
 
             Total = lista.Count;
 

@@ -1,12 +1,9 @@
 ﻿using ModelLayer;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Firebase.Database.Query;
 using System.Threading.Tasks;
 using System.Linq;
 
-namespace AcessLayer
+namespace AcessLayer.Firebase
 {
   public  class AUsers
     {

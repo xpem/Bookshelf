@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static ModelLayer.Books;
 
-namespace AcessLayer
+namespace AcessLayer.SqLite
 {
     public static class ASqLite
     {
@@ -18,7 +18,7 @@ namespace AcessLayer
         /// <summary>
         /// aumento da versao de alguma tabela força a atualização da mesma
         /// </summary>
-        public static DbVersions ActualDbVersions = new DbVersions() { ACESSADD = 1, BOOK = 12 };
+        public static DbVersions ActualDbVersions = new DbVersions() { ACESSADD = 1, BOOK = 14 };
 
         public static void CriaDb()
         {

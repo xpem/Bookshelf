@@ -1,11 +1,8 @@
-﻿using AcessLayer;
-using AcessLayer.ABooks;
-using ModelLayer;
+﻿using ModelLayer;
 using Plugin.Connectivity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace BusinessLayer
@@ -51,30 +48,33 @@ namespace BusinessLayer
                     {
                         DateTime LastUptade = login.LastUpdate;
 
-                        List<Books.Book> booksList = ABooksSqlite.GetBooksLocalByLastUpdate(login.Key, login.LastUpdate);
+                        List<Books.Book> booksList = AcessLayer.SqLite.ABooksSqlite.GetBooksLocalByLastUpdate(login.Key, login.LastUpdate);
 
                         //atualiza banco fb
                         foreach (Books.Book book in booksList)
                         {
-                            if (book.Key == null)
+                            //caso o livro esteja com uma chave temporária local, cadastrá-lo no firebase
+                            if (Guid.TryParse(book.Key, out _))
                             {
-                                await ABooksFirebase.RegisterBook(book);
+                                //seta a key como nula para cadastrar o livro no firebase
+                                book.Key = null;
+                                await AcessLayer.Firebase.ABooksFirebase.RegisterBook(book);
                             }
                             else
                             {
-                                await ABooksFirebase.UpdateBook(book);
+                                await AcessLayer.Firebase.ABooksFirebase.UpdateBook(book);
                             }
                         }
 
                         //atualiza banco sql
-                        foreach (Books.Book book in await ABooksFirebase.GetBooksByLastUpdate(login.Key, login.LastUpdate))
+                        foreach (Books.Book book in await AcessLayer.Firebase.ABooksFirebase.GetBooksByLastUpdate(login.Key, login.LastUpdate))
                         {
-                            ABooksSqlite.SyncUpdateBookLocal(book);
+                            AcessLayer.SqLite.ABooksSqlite.SyncUpdateBookLocal(book);
 
                             if (LastUptade < book.LastUpdate) LastUptade = book.LastUpdate;
                         }
                         SqLiteUser.AtualizaAcessoLastUpdade(login.Key, LastUptade);
-                                               
+
                     }
 
                     Sincronizando = false;
@@ -85,6 +85,6 @@ namespace BusinessLayer
             catch (Exception ex) { throw ex; }
         }
 
-     
+
     }
 }

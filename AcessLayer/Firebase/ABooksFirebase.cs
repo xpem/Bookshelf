@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static ModelLayer.Books;
 
-namespace AcessLayer.ABooks
+namespace AcessLayer.Firebase
 {
     /// <summary>
     /// acesso às tabelas de books no firebase

@@ -1,10 +1,6 @@
 ﻿using Firebase.Database;
-using Firebase.Database.Query;
-using Firebase.Database.Streaming;
 
-using System;
-
-namespace AcessLayer
+namespace AcessLayer.Firebase
 {
     public class AcessFirebase
     {

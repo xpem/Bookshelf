@@ -3,6 +3,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using ModelLayer;
+using AcessLayer.Firebase;
 
 namespace BusinessLayer
 {
@@ -12,16 +13,16 @@ namespace BusinessLayer
         {
             
             bool ret = false;
-            Task.Run(async () => ret = await AcessLayer.AUsers.VerificaCadUsuario(LoginNome, Email)).Wait();
+            Task.Run(async () => ret = await AUsers.VerificaCadUsuario(LoginNome, Email)).Wait();
             return ret;
         }
 
-        public static async Task CadastraUsuario(Users user) => await AcessLayer.AUsers.CadastraUsuario(user);
+        public static async Task CadastraUsuario(Users user) => await AUsers.CadastraUsuario(user);
 
         public async static Task<bool> RecoverUser(string LoginNome, string Senha)
         {
             Senha = CPEncrypt(Senha, Senha.Length);
-            Users user = await AcessLayer.AUsers.RecUser(LoginNome, Senha);
+            Users user = await AUsers.RecUser(LoginNome, Senha);
             if (user != null)
             {
                 SqLiteUser.CadatraAcesso(user.Key, user.Nick);
@@ -35,7 +36,7 @@ namespace BusinessLayer
         {
             Users user = new Users();
 
-            Task.Run(async () => user = await AcessLayer.AUsers.RecUserEmail(Email)).Wait();
+            Task.Run(async () => user = await AUsers.RecUserEmail(Email)).Wait();
 
             if (user == null) return null;
             else
@@ -49,7 +50,7 @@ namespace BusinessLayer
             Users user = new Users();
             user.Key = userKey;
             user.Passworld = passworld;
-             await AcessLayer.AUsers.UpdateUserPassworld(user);
+             await AUsers.UpdateUserPassworld(user);
         }
 
         /// <returns>true para válido</returns>
