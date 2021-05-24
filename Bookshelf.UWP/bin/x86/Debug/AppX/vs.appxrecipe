@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-05-18T12:30:32.641</Modified>
+      <Modified>2021-05-20T14:17:20.013</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.UWP\bin\x86\Debug\Bookshelf.UWP.exe">
       <PackagePath>entrypoint\Bookshelf.UWP.exe</PackagePath>
-      <Modified>2021-05-18T12:30:25.647</Modified>
+      <Modified>2021-05-20T14:17:15.504</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\.nuget\packages\firebasedatabase.net\4.0.4\lib\netstandard2.0\Firebase.dll">
       <PackagePath>Firebase.dll</PackagePath>
@@ -120,19 +120,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.dll">
       <PackagePath>Bookshelf.dll</PackagePath>
-      <Modified>2021-05-19T12:14:56.811</Modified>
+      <Modified>2021-05-20T14:17:06.507</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\ModelLayer.dll">
       <PackagePath>ModelLayer.dll</PackagePath>
-      <Modified>2021-05-18T12:30:11.303</Modified>
+      <Modified>2021-05-20T14:17:02.707</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\BusinessLayer.dll">
       <PackagePath>BusinessLayer.dll</PackagePath>
-      <Modified>2021-05-19T12:11:04.483</Modified>
+      <Modified>2021-05-20T14:17:04.255</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\AcessLayer.dll">
       <PackagePath>AcessLayer.dll</PackagePath>
-      <Modified>2021-05-19T12:11:04.001</Modified>
+      <Modified>2021-05-20T14:17:03.813</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\.nuget\packages\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
@@ -291,11 +291,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-05-18T12:30:25.439</Modified>
+      <Modified>2021-05-20T14:17:15.418</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2021-05-18T12:30:25.440</Modified>
+      <Modified>2021-05-20T14:17:15.418</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.18362.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -311,11 +311,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2021-05-18T12:30:28.722</Modified>
+      <Modified>2021-05-20T14:17:17.172</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf.UWP\bin\x86\Debug\Core\Bookshelf.UWP.exe">
       <PackagePath>Bookshelf.UWP.exe</PackagePath>
-      <Modified>2021-05-18T12:30:32.621</Modified>
+      <Modified>2021-05-20T14:17:20.009</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

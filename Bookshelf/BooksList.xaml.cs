@@ -23,6 +23,10 @@ namespace Bookshelf
         public bool IsLoading { get => isLoading; set { isLoading = value; OnPropertyChanged(); } }
         private int SituationIndex { get; set; }
 
+        /// <summary>
+        /// true se o processo de busca estiver em funcionamento
+        /// </summary>
+        public bool Efetuandobusca { get; set; }
         public BooksList(int situation)
         {
             BindingContext = this;
@@ -142,7 +146,36 @@ namespace Bookshelf
 
         private void EntSearchTitle_TextChanged(object sender, TextChangedEventArgs e)
         {
-            LstBooks.ItemsSource = ObBooksList.Where(item => item.Title.ToUpper().Contains(EntSearchTitle.Text));
+            EfetuaBusca();
         }
+
+        /// <summary>
+        /// Filtra a lista pela busca por texto
+        /// </summary>
+        private async void EfetuaBusca()
+        {
+            //rodar apenas se nao estiver no processo de busca
+            if (!Efetuandobusca)
+            {
+                Efetuandobusca = true;
+
+                while (Efetuandobusca)
+                {
+                    try
+                    {
+                        //espera dois segundos para efetuar a busca
+                        await Task.Delay(2000);
+
+                        ObBooksList = new ObservableCollection<ItemBookList>();
+                        LoadBooks(0);
+
+                        Efetuandobusca = false;
+                    }
+                    catch (Exception ex)
+                    { throw ex; }
+                }
+            }
+        }
+
     }
 }

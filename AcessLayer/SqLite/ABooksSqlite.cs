@@ -247,9 +247,9 @@ namespace AcessLayer.SqLite
                     query += " where b.UserKey = @userKey";
 
                 if (!string.IsNullOrEmpty(textoBusca))
-                    query += " and b.title like '%'+@textoBusca+'%'";
+                    query += " and b.title like @textoBusca";
 
-                query += " and b.Inativo in (null,false)";
+                query += " and b.Inativo is null";
 
                 SqliteCommand selectCommand = new SqliteCommand(query, ASqLite.db);
                 selectCommand.Parameters.AddWithValue("@userKey", UserKey);
@@ -258,8 +258,7 @@ namespace AcessLayer.SqLite
                     selectCommand.Parameters.AddWithValue("@situation", Situation);
 
                 if (!string.IsNullOrEmpty(textoBusca))
-                    selectCommand.Parameters.AddWithValue("@textoBusca", Situation);
-
+                    selectCommand.Parameters.AddWithValue("@textoBusca", "%"+textoBusca+ "%");
 
                 SqliteDataReader Retorno = selectCommand.ExecuteReader();
 
