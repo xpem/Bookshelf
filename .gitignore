@@ -3,7 +3,7 @@
 ################################################################################
 
 /AcessLayer/AcessFirebase.cs
-/AcessLayer/bin/**
+/AcessLayer/bin/
 /build/
 *.suo
 *.user

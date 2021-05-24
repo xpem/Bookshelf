@@ -155,7 +155,7 @@ namespace Bookshelf
                         Rate = rate,
                         Comment = EdtComment.Text,
                     };
-                    mensagem = "Livro e avaliacção";
+                    mensagem = "Livro e avaliação";
                 }
                 else
                 {

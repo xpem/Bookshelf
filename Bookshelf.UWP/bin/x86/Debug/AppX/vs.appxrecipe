@@ -120,7 +120,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\Bookshelf.dll">
       <PackagePath>Bookshelf.dll</PackagePath>
-      <Modified>2021-05-20T14:17:06.507</Modified>
+      <Modified>2021-05-24T16:46:55.875</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel\Documents\documentos pessoais\projetos\Bookshelf\Bookshelf\bin\Debug\netstandard2.0\ModelLayer.dll">
       <PackagePath>ModelLayer.dll</PackagePath>
