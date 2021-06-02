@@ -22,7 +22,7 @@ namespace AcessLayer.SqLite
         {
             //verificar a data da ultima atualização
 
-            DateTime? lastUpdate = GetLastUpdateBook(book.Key,book.Title);
+            DateTime? lastUpdate = GetLastUpdateBook(book.Key, book.Title);
 
             if (lastUpdate == null && !book.Inativo)
             {
@@ -142,10 +142,7 @@ namespace AcessLayer.SqLite
             UpdateCommand.Parameters.AddWithNullableValue("@Genre", book.Genre);
             UpdateCommand.Parameters.AddWithNullableValue("@LastUpdate", book.LastUpdate);
             UpdateCommand.Parameters.AddWithNullableValue("@Isbn", book.Isbn);
-
-            //Livro desativado
-            if(book.Inativo) UpdateCommand.Parameters.AddWithNullableValue("@Inativo", "1");
-
+            UpdateCommand.Parameters.AddWithNullableValue("@Inativo", (book.Inativo ? "1" : "0"));
             UpdateCommand.ExecuteReader();
 
             SqLiteFunctions.CloseIfOpen();
@@ -178,7 +175,7 @@ namespace AcessLayer.SqLite
         /// <param name="KEY">nulo caso o livro esteja no momento cadastrado apenas localmente</param>
         /// <param name="Title"></param>
         /// <returns></returns>
-        public static DateTime? GetLastUpdateBook(string KEY,string Title)
+        public static DateTime? GetLastUpdateBook(string KEY, string Title)
         {
             SqLiteFunctions.OpenIfClosed();
             string query = "select LastUpdate from BOOK where";
@@ -217,7 +214,7 @@ namespace AcessLayer.SqLite
         {
             SqLiteFunctions.OpenIfClosed();
 
-            SqliteCommand selectCommand = new SqliteCommand("select bs.Situation from BOOKSITUATIONS bs inner join BOOK b on  bs.BookKey = b.Key where b.UserKey = @userKey and b.Inativo is null", ASqLite.db);
+            SqliteCommand selectCommand = new SqliteCommand("select bs.Situation from BOOKSITUATIONS bs inner join BOOK b on  bs.BookKey = b.Key where b.UserKey = @userKey and (b.Inativo is null or b.Inativo = '0')", ASqLite.db);
             selectCommand.Parameters.AddWithValue("@userKey", userKey);
             SqliteDataReader query = selectCommand.ExecuteReader();
 
@@ -249,7 +246,7 @@ namespace AcessLayer.SqLite
                 if (!string.IsNullOrEmpty(textoBusca))
                     query += " and b.title like @textoBusca";
 
-                query += " and b.Inativo is null";
+                query += " and (b.Inativo is null or b.Inativo = '0')";
 
                 SqliteCommand selectCommand = new SqliteCommand(query, ASqLite.db);
                 selectCommand.Parameters.AddWithValue("@userKey", UserKey);
@@ -258,7 +255,7 @@ namespace AcessLayer.SqLite
                     selectCommand.Parameters.AddWithValue("@situation", Situation);
 
                 if (!string.IsNullOrEmpty(textoBusca))
-                    selectCommand.Parameters.AddWithValue("@textoBusca", "%"+textoBusca+ "%");
+                    selectCommand.Parameters.AddWithValue("@textoBusca", "%" + textoBusca + "%");
 
                 SqliteDataReader Retorno = selectCommand.ExecuteReader();
 
