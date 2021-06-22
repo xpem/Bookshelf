@@ -20,7 +20,6 @@ namespace Bookshelf
             InitializeComponent();
         }
 
-
         private bool ValidaCadastro()
         {
             bool ValCampos = true;

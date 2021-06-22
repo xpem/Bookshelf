@@ -34,7 +34,7 @@ namespace Bookshelf
 
         #endregion
 
-        public ObservableCollection<string> BBTSituation;
+        public readonly ObservableCollection<string> BBTSituation = new ObservableCollection<string> { "Nenhuma", "Vou ler", "Lendo", "Lido", "Interrompido" };
 
         private bool bVisibleTexts;
         private string BSituationOri { get; set; }
@@ -68,8 +68,6 @@ namespace Bookshelf
             BookKey = bookKey;
             InitializeComponent();
 
-            BBTSituation = new ObservableCollection<string> { "Nenhuma", "Vou ler", "Lendo", "Lido", "Interrompido" };
-
             PkrSituation.ItemsSource = BBTSituation;
 
             Task.Run(() => { CarregaBook(bookKey); return Task.CompletedTask; }).Wait();
@@ -101,7 +99,7 @@ namespace Bookshelf
             BPages = book.Pages.ToString();
             BComment = book.BooksSituations.Comment;
             BSubtitleAndVol = SubtitleAndVol;
-            BLblSituationtext = BBTSituation[book.BooksSituations.Situation];
+            BLblSituationtext = BBTSituation[(((int)book.BooksSituations.Situation))];
             lblSituation.IsVisible = lblHSituation.IsVisible = true;
 
             if (book.BooksSituations.Situation > 0)
@@ -129,21 +127,17 @@ namespace Bookshelf
             if (PkrSituation.SelectedIndex != 0)
             {
                 DisableUpdates = true;
-                PkrSituation.IsEnabled = EdtComment.IsEnabled = SldrRate.IsVisible = false;
+                PkrSituation.IsEnabled = EdtComment.IsEnabled = EdtComment.IsVisible = SldrRate.IsVisible = false;
 
                 if (PkrSituation.SelectedIndex == 3)
                 {
-                    if (string.IsNullOrEmpty(EdtComment.Text))
+                    if (!string.IsNullOrEmpty(EdtComment.Text))
                     {
-                        EdtComment.IsVisible = false;
+                        EdtComment.IsVisible = true;
                     }
                     SldrRate.IsVisible = false;
                 }
-
-                //StyleClass = "button_primary"
-                IList<string> vs = new List<string>();
-                vs.Add("button_secundary");
-                BtnConf.StyleClass = vs;
+                BtnConf.StyleClass = new List<string> { "button_secundary" };
                 BtnConf.Text = "Alterar";
             }
         }
@@ -156,9 +150,7 @@ namespace Bookshelf
                 lblHComment.IsVisible = lblHSituation.IsVisible = lblComment.IsVisible = lblSituation.IsVisible = false;
 
                 DisableUpdates = false;
-                IList<string> vs = new List<string>();
-                vs.Add("button_primary");
-                BtnConf.StyleClass = vs;
+                BtnConf.StyleClass = new List<string> { "button_primary" };
                 BtnConf.Text = "Confirmar";
                 return;
             }
@@ -187,11 +179,11 @@ namespace Bookshelf
             }
             if (alterou)
             {
-                _ = Task.Run(() => { BusinessLayer.BBooks.UpdateSituationBook(BookKey, PkrSituation.SelectedIndex, rate, commment); return Task.CompletedTask; });
+                _ = Task.Run(() => { BusinessLayer.BBooks.UpdateSituationBook(BookKey,(ModelLayer.Books.Situation)PkrSituation.SelectedIndex, rate, commment); return Task.CompletedTask; });
 
-                if (!(await DisplayAlert("Aviso", "Situação alterada", null, "Ok")))
+                if (!await DisplayAlert("Aviso", "Situação alterada", null, "Ok"))
                 {
-                    await Navigation.PopAsync();
+                    _ = await Navigation.PopAsync();
                 }
             }
             else
@@ -226,8 +218,7 @@ namespace Bookshelf
 
         private void TbiEditarLivro_Clicked(object sender, EventArgs e)
         {
-            CadastrarLivro page = new CadastrarLivro(BookKey);
-            Navigation.PushAsync(page);
+            Navigation.PushAsync(new CadastrarLivro(BookKey));
         }
 
         private async void TbiExcLivro_Clicked(object sender, EventArgs e)

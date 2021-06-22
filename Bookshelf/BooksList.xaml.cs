@@ -1,15 +1,9 @@
 ﻿using ModelLayer;
-using Plugin.Connectivity;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using static ModelLayer.Books;
 
 namespace Bookshelf
 {
@@ -37,13 +31,13 @@ namespace Bookshelf
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            ObBooksList = new ObservableCollection<ItemBookList>();
+            ObBooksList = new ObservableCollection<Books.ItemBookList>();
             LoadBooks(0);
             Task.Run(() => PartialLoadBooks());
         }
 
         //Recupera os livros por status
-        private void LoadBooks(int Index)
+        private async void LoadBooks(int Index)
         {
             this.Title = "Carregando lista...";
             IsLoading = true;
@@ -54,10 +48,10 @@ namespace Bookshelf
             string textoBusca = "";
             if (!string.IsNullOrEmpty(EntSearchTitle.Text))
             {
-                textoBusca = EntSearchTitle.Text;
+                textoBusca = EntSearchTitle.Text.ToUpper();
             }
 
-            foreach (Books.Book book in bBooks.GetBookSituationByStatus(SituationIndex, Index, textoBusca))
+            foreach (Books.Book book in await bBooks.GetBookSituationByStatus(SituationIndex, Index, textoBusca))
             {
                 SubtitleAndVol = "";
                 if (!string.IsNullOrEmpty(book.SubTitle))
@@ -104,7 +98,6 @@ namespace Bookshelf
         private void PartialLoadBooks()
         {
             int Index = 0;
-
             LstBooks.ItemAppearing += (sender, e) =>
                 {
                     if (BusinessLayer.BBooks.Total > 10)
@@ -121,6 +114,7 @@ namespace Bookshelf
                         }
                     }
                 };
+
         }
 
         private void LstBooks_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -166,7 +160,7 @@ namespace Bookshelf
                         //espera dois segundos para efetuar a busca
                         await Task.Delay(2000);
 
-                        ObBooksList = new ObservableCollection<ItemBookList>();
+                        ObBooksList = new ObservableCollection<Books.ItemBookList>();
                         LoadBooks(0);
 
                         Efetuandobusca = false;

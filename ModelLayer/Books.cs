@@ -37,9 +37,14 @@ namespace ModelLayer
         public class BookSituation
         {
             public string Key { get; set; }
-            public int Situation { get; set; }
+            public Situation Situation { get; set; }
             public int? Rate { get; set; }
             public string Comment { get; set; }
+        }
+
+        public enum Situation
+        {
+            None, IllRead, Reading, Read, Interrupted
         }
 
         /// <summary>

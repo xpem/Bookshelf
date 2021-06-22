@@ -2,7 +2,7 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <AndroidDesignerPreferredTheme>Theme.AppCompat.Light.NoActionBar</AndroidDesignerPreferredTheme>
-    <SelectedDevice>Motorola moto g%287%29 play</SelectedDevice>
-    <ActiveDebugProfile>Motorola moto g%287%29 play</ActiveDebugProfile>
+    <SelectedDevice>Android Emulator</SelectedDevice>
+    <ActiveDebugProfile>Android Emulator</ActiveDebugProfile>
   </PropertyGroup>
 </Project>

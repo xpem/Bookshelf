@@ -14,6 +14,8 @@ namespace AcessLayer.SqLite
 {
     public class ABooksSqlite
     {
+        //data/user/0/com.companyname.bookshelf/files/.local/share/Bookshelf.db3
+
         /// <summary>
         /// Atualiza o livro e sua situação do banco de dados local
         /// </summary>
@@ -92,7 +94,7 @@ namespace AcessLayer.SqLite
             SqLiteFunctions.CloseIfOpen();
         }
 
-        public static void UpdateSituationBookLocal(string Key, string UserKey, int Situation, int Rate, string Comment, DateTime lastUpdate)
+        public static void UpdateSituationBookLocal(string Key, string UserKey, Situation Situation, int Rate, string Comment, DateTime lastUpdate)
         {
             SqLiteFunctions.OpenIfClosed();
 
@@ -218,11 +220,11 @@ namespace AcessLayer.SqLite
             selectCommand.Parameters.AddWithValue("@userKey", userKey);
             SqliteDataReader query = selectCommand.ExecuteReader();
 
-            List<Books.BookSituation> lista = new List<BookSituation>();
+            List<BookSituation> lista = new List<BookSituation>();
 
             while (query.Read())
             {
-                lista.Add(new Books.BookSituation() { Situation = query.GetInt32(0) });
+                lista.Add(new BookSituation() { Situation = (Situation)query.GetInt32(0) });
             }
 
             SqLiteFunctions.CloseIfOpen();
@@ -231,7 +233,7 @@ namespace AcessLayer.SqLite
 
         }
 
-        public static List<Book> GetBookSituationByStatus(int Situation, string UserKey, string textoBusca)
+        public static async Task<List<Book>> GetBookSituationByStatus(int Situation, string UserKey, string textoBusca)
         {
             try
             {
@@ -246,7 +248,7 @@ namespace AcessLayer.SqLite
                 if (!string.IsNullOrEmpty(textoBusca))
                     query += " and b.title like @textoBusca";
 
-                query += " and (b.Inativo is null or b.Inativo = '0')";
+                query += " and (b.Inativo is null or b.Inativo = '0') order by LastUpdate desc";
 
                 SqliteCommand selectCommand = new SqliteCommand(query, ASqLite.db);
                 selectCommand.Parameters.AddWithValue("@userKey", UserKey);
@@ -256,8 +258,9 @@ namespace AcessLayer.SqLite
 
                 if (!string.IsNullOrEmpty(textoBusca))
                     selectCommand.Parameters.AddWithValue("@textoBusca", "%" + textoBusca + "%");
+                SqliteDataReader Retorno = null;
 
-                SqliteDataReader Retorno = selectCommand.ExecuteReader();
+                await Task.Run(() => Retorno = selectCommand.ExecuteReader());
 
                 List<Book> lista = new List<Book>();
 
@@ -311,7 +314,7 @@ namespace AcessLayer.SqLite
                         LastUpdate = Convert.ToDateTime(Retorno.GetWithNullableString(6)),
                         SubTitle = Retorno.GetWithNullableString(7),
                         Isbn = Retorno.GetWithNullableString(8),
-                        BooksSituations = new BookSituation() { Rate = Retorno.GetWithNullableInt(9), Situation = Retorno.GetInt32(10), Comment = Retorno.GetWithNullableString(11) },
+                        BooksSituations = new BookSituation() { Rate = Retorno.GetWithNullableInt(9), Situation = (Situation)Retorno.GetInt32(10), Comment = Retorno.GetWithNullableString(11) },
                         UserKey = Retorno.GetWithNullableString(12),
                         Key = Retorno.GetWithNullableString(13),
                         Inativo = Retorno.GetWithNullableBool(14)
@@ -325,8 +328,6 @@ namespace AcessLayer.SqLite
             catch (Exception ex) { throw ex; }
         }
 
-
-
         public static Book GetBook(string userKey, string bookKey)
         {
             try
@@ -339,7 +340,7 @@ namespace AcessLayer.SqLite
                 SqliteDataReader Retorno = selectCommand.ExecuteReader();
                 Retorno.Read();
 
-                var book = new Books.Book()
+                Book book = new Book()
                 {
                     Key = Retorno.GetWithNullableString(0),
                     Title = Retorno.GetWithNullableString(1),
@@ -351,7 +352,7 @@ namespace AcessLayer.SqLite
                     LastUpdate = Convert.ToDateTime(Retorno.GetWithNullableString(7)),
                     SubTitle = Retorno.GetWithNullableString(8),
                     Isbn = Retorno.GetWithNullableString(9),
-                    BooksSituations = new BookSituation() { Rate = Retorno.GetWithNullableInt(10), Situation = Retorno.GetInt32(11), Comment = Retorno.GetWithNullableString(12) }
+                    BooksSituations = new BookSituation() { Rate = Retorno.GetWithNullableInt(10), Situation = (Situation)Retorno.GetInt32(11), Comment = Retorno.GetWithNullableString(12) }
                 };
 
                 SqLiteFunctions.CloseIfOpen();

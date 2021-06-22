@@ -10,32 +10,55 @@ using static ModelLayer.Books;
 namespace AcessLayer.Firebase
 {
     /// <summary>
-    /// acesso às tabelas de books no firebase
+    /// Firebase Book Table access
     /// </summary>
-    public class ABooksFirebase
+    public class ABooksFirebase : IABooksFirebase
     {
         /// <summary>
-        /// Verify register of book in the database
+        /// Verify register of book in database by name of book
         /// </summary>
-        public async static Task<bool> VerRegBook(string bookName, string userKey)
+        /// <returns>true if it exists</returns>
+        public async Task<bool> VerifyBook(string bookName, string userKey)
         {
-            if ((await AcessFirebase.firebase
-               .Child("Books")
-               .OnceAsync<Book>()).Where(a => a.Object.Title == bookName && a.Object.UserKey == userKey).Select(item => new Books.Book
-               {
-                   Key = item.Key,
-               }).ToList().Count > 0)
+            if ((await AcessFirebase.firebase.Child("Books")
+               .OnceAsync<Book>()).Where(a => a.Object.Title == bookName && a.Object.UserKey == userKey).Select(item =>
+               new Book { Key = item.Key, }).ToList().Count > 0)
                 return false;
             else return true;
         }
 
-        public async static Task<string> RegisterBook(Books.Book book)
+        /// <summary>
+        /// Add a book
+        /// </summary>
+        /// <param name="book"></param>
+        /// <returns>Key of book added</returns>
+        public async Task<string> AddBook(Book book)
         {
-            var resp = await AcessFirebase.firebase.Child("Books").PostAsync(book);
-            return resp.Key;
+            return (await AcessFirebase.firebase.Child("Books").PostAsync(book)).Key;
         }
 
-        public async static Task<List<Book>> GetBooksByLastUpdate(string vUserKey, DateTime vLastUpdate)
+        /// <summary>
+        /// Modify a book
+        /// </summary>
+        /// <param name="book"></param>
+        public async Task UpdateBook(Book book)
+        {
+            //recover the complete object of the book to be modified
+            Book toUpdateBookStatus = (await AcessFirebase.firebase.Child("Books")
+             .OnceAsync<Book>()).Where(a => a.Key == book.Key && a.Object.UserKey == book.UserKey).FirstOrDefault().Object;
+
+            toUpdateBookStatus = book;
+
+            await AcessFirebase.firebase.Child("Books").Child(book.Key).PutAsync(toUpdateBookStatus);
+        }
+
+        /// <summary>
+        /// recover list of books by yours last update
+        /// </summary>
+        /// <param name="vUserKey"></param>
+        /// <param name="vLastUpdate"></param>
+        /// <returns></returns>
+        public async Task<List<Book>> GetBooksByLastUpdate(string vUserKey, DateTime vLastUpdate)
         {
             return (await AcessFirebase.firebase
              .Child("Books")
@@ -53,13 +76,16 @@ namespace AcessLayer.Firebase
                  Volume = item.Object.Volume,
                  LastUpdate = item.Object.LastUpdate,
                  Isbn = item.Object.Isbn,
-                 Inativo = item.Object.Inativo                 
+                 Inativo = item.Object.Inativo
              }).ToList();
         }
 
-        public async static void UpdateSituationBook(string Key, string UserKey, int Situation, int Rate, string Comment, DateTime lastUpdate)
+        /// <summary>
+        /// update a read situation of a book
+        /// </summary>
+        public async void UpdateBookSituation(string Key, string UserKey, Situation Situation, int Rate, string Comment, DateTime lastUpdate)
         {
-            Book toUpdateBookStatus = (await AcessFirebase.firebase.Child("Books").OnceAsync<Books.Book>()).Where(a => a.Key == Key && a.Object.UserKey == UserKey).FirstOrDefault().Object;
+            Book toUpdateBookStatus = (await AcessFirebase.firebase.Child("Books").OnceAsync<Book>()).FirstOrDefault(a => a.Key == Key && a.Object.UserKey == UserKey).Object;
             //
             toUpdateBookStatus.BooksSituations.Situation = Situation;
             toUpdateBookStatus.BooksSituations.Rate = Rate;
@@ -69,23 +95,12 @@ namespace AcessLayer.Firebase
             await AcessFirebase.firebase.Child("Books").Child(Key).PutAsync(toUpdateBookStatus);
         }
 
-        public async static Task UpdateBook(Book book)
-        {
-            var toUpdateBookStatus = (await AcessFirebase.firebase
-             .Child("Books")
-             .OnceAsync<Book>()).Where(a => a.Key == book.Key && a.Object.UserKey == book.UserKey).FirstOrDefault().Object;
-
-            toUpdateBookStatus = book;
-
-            await AcessFirebase.firebase.Child("Books").Child(book.Key).PutAsync(toUpdateBookStatus);
-        }
-
         /// <summary>
-        /// Inativa o livro, excluindo ele das listajens.
+        /// Inactivate the book, excluding a book from the listing
         /// </summary>
         /// <param name="book"></param>
         /// <returns></returns>
-        public async static Task InactivateBook(Book book)
+        public async Task InactivateBook(Book book)
         {
             var toUpdateBookStatus = (await AcessFirebase.firebase
              .Child("Books")

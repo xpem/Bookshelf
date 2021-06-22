@@ -1,4 +1,5 @@
-﻿using ModelLayer;
+﻿using AcessLayer.Firebase;
+using ModelLayer;
 using Plugin.Connectivity;
 using System;
 using System.Collections.Generic;
@@ -46,6 +47,7 @@ namespace BusinessLayer
                     Sincronizando = true;
                     if (CrossConnectivity.Current.IsConnected)
                     {
+                        IABooksFirebase _myService = new ABooksFirebase();
                         DateTime LastUptade = login.LastUpdate;
 
                         List<Books.Book> booksList = AcessLayer.SqLite.ABooksSqlite.GetBooksLocalByLastUpdate(login.Key, login.LastUpdate);
@@ -53,21 +55,23 @@ namespace BusinessLayer
                         //atualiza banco fb
                         foreach (Books.Book book in booksList)
                         {
+
                             //caso o livro esteja com uma chave temporária local, cadastrá-lo no firebase
                             if (Guid.TryParse(book.Key, out _))
                             {
                                 //seta a key como nula para cadastrar o livro no firebase
                                 book.Key = null;
-                                await AcessLayer.Firebase.ABooksFirebase.RegisterBook(book);
+                              
+                                await _myService.AddBook(book);
                             }
                             else
                             {
-                                await AcessLayer.Firebase.ABooksFirebase.UpdateBook(book);
+                                await _myService.UpdateBook(book);
                             }
                         }
 
                         //atualiza banco sql
-                        foreach (Books.Book book in await AcessLayer.Firebase.ABooksFirebase.GetBooksByLastUpdate(login.Key, login.LastUpdate))
+                        foreach (Books.Book book in await _myService.GetBooksByLastUpdate(login.Key, login.LastUpdate))
                         {
                             AcessLayer.SqLite.ABooksSqlite.SyncUpdateBookLocal(book);
 

@@ -20,7 +20,9 @@ namespace Bookshelf
         //
         private bool IsUpdate = false;
 
-        private string BookKey, bTitle, bSubTitle, bVolume, bAuthors, bYear, bIsbn, bPages, bGenre, bComment, bSituation, bRate;
+        private readonly string BookKey;
+
+        private string bTitle, bSubTitle, bVolume, bAuthors, bYear, bIsbn, bPages, bGenre, bComment, bSituation, bRate;
 
         public string BTitle { get => bTitle; set { bTitle = value; OnPropertyChanged(); } }
 
@@ -151,7 +153,7 @@ namespace Bookshelf
 
                     book.BooksSituations = new Books.BookSituation
                     {
-                        Situation = PkrSituation.SelectedIndex,
+                        Situation = (Books.Situation)PkrSituation.SelectedIndex,
                         Rate = rate,
                         Comment = EdtComment.Text,
                     };
@@ -165,7 +167,6 @@ namespace Bookshelf
                         Rate = 0,
                         Comment = "",
                     };
-
                     mensagem = "Livro";
                 }
 
@@ -173,7 +174,7 @@ namespace Bookshelf
                 {
                     book.Key = BookKey;
                     await BusinessLayer.BBooks.UpdateBook(book);
-                    mensagem += " Atualiados";
+                    mensagem += " Atualizados";
                 }
                 else
                 {
@@ -185,7 +186,7 @@ namespace Bookshelf
 
                 if (!resposta)
                 {
-                    Application.Current.MainPage = new MainPage();
+                   // Application.Current.MainPage = new MainPage();
                     Application.Current.MainPage = new NavigationPage(new MainPage())
                     {
                         BarBackgroundColor = Color.FromHex("#301810"),

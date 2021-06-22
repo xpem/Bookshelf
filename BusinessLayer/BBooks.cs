@@ -7,6 +7,7 @@ using AcessLayer.SqLite;
 using Plugin.Connectivity;
 using ModelLayer;
 using AcessLayer.Firebase;
+using static ModelLayer.Books;
 
 namespace BusinessLayer
 {
@@ -23,15 +24,15 @@ namespace BusinessLayer
             Books.Totals BTotais = new Books.Totals();
             if (login.Key != null)
             {
-                List<Books.BookSituation> lista = ABooksSqlite.GetBookshelfTotais(login.Key);
+                List<BookSituation> lista = ABooksSqlite.GetBookshelfTotais(login.Key);
 
                 if (lista.Count > 0)
                 {
                     //aqui filtro na lista counts por status
-                    BTotais.IllRead = lista.Where(a => a.Situation == 1).Count();
-                    BTotais.Reading = lista.Where(a => a.Situation == 2).Count();
-                    BTotais.Read = lista.Where(a => a.Situation == 3).Count();
-                    BTotais.Interrupted = lista.Where(a => a.Situation == 4).Count();
+                    BTotais.IllRead = lista.Where(a => a.Situation == Situation.IllRead).Count();
+                    BTotais.Reading = lista.Where(a => a.Situation == Situation.Reading).Count();
+                    BTotais.Read = lista.Where(a => a.Situation == Situation.Read).Count();
+                    BTotais.Interrupted = lista.Where(a => a.Situation == Situation.Interrupted).Count();
                 }
                 else
                 {
@@ -45,7 +46,8 @@ namespace BusinessLayer
         {
             Users login = SqLiteUser.RecAcesso();
             bool ret = false;
-            Task.Run(async () => ret = await ABooksFirebase.VerRegBook(BookName, login.Key)).Wait();
+            IABooksFirebase _myService = new ABooksFirebase();
+            Task.Run(async () => ret = await _myService.VerifyBook(BookName, login.Key)).Wait();
             return ret;
         }
 
@@ -58,7 +60,8 @@ namespace BusinessLayer
 
             if (CrossConnectivity.Current.IsConnected)
             {
-                book.Key = await ABooksFirebase.RegisterBook(book);
+                IABooksFirebase _myService = new ABooksFirebase();
+                book.Key = await _myService.AddBook(book);
             }
             else
             {
@@ -67,7 +70,7 @@ namespace BusinessLayer
             }
             ABooksSqlite.RegisterBookLocal(book);
 
-          
+
         }
 
         public static Books.Book GetBook(string bookKey)
@@ -76,7 +79,7 @@ namespace BusinessLayer
             return ABooksSqlite.GetBook(login.Key, bookKey);
         }
 
-        public static void UpdateSituationBook(string Key, int Situation, int Rate, string Comment)
+        public static void UpdateSituationBook(string Key, Situation Situation, int Rate, string Comment)
         {
             Users login = SqLiteUser.RecAcesso();
             DateTime lastUpdate = DateTime.Now;
@@ -84,7 +87,8 @@ namespace BusinessLayer
 
             if (CrossConnectivity.Current.IsConnected)
             {
-                ABooksFirebase.UpdateSituationBook(Key, login.Key, Situation, Rate, Comment, lastUpdate);
+                IABooksFirebase _myService = new ABooksFirebase();
+                _myService.UpdateBookSituation(Key, login.Key, Situation, Rate, Comment, lastUpdate);
             }
         }
 
@@ -98,19 +102,25 @@ namespace BusinessLayer
             ABooksSqlite.UpdateSituationBookLocal(book.Key, book.UserKey, book.BooksSituations.Situation, Convert.ToInt32(book.BooksSituations.Rate), book.BooksSituations.Comment, book.LastUpdate);
             //
             if (CrossConnectivity.Current.IsConnected)
-                await ABooksFirebase.UpdateBook(book);
+            {
+                IABooksFirebase _myService = new ABooksFirebase();
+                await _myService.UpdateBook(book);
+            }
         }
 
         public static async void InactivateBook(string bookKey)
         {
-            Users login =  SqLiteUser.RecAcesso();
+            Users login = SqLiteUser.RecAcesso();
             Books.Book book = ABooksSqlite.GetBook(login.Key, bookKey);
             book.UserKey = login.Key;
             book.LastUpdate = DateTime.Now;
             book.Inativo = true;
             ABooksSqlite.InactivateBookLocal(book);
             if (CrossConnectivity.Current.IsConnected)
-                await ABooksFirebase.InactivateBook(book);
+            {
+                IABooksFirebase _myService = new ABooksFirebase();
+                await _myService.InactivateBook(book);
+            }
 
         }
 
@@ -120,11 +130,11 @@ namespace BusinessLayer
         /// <param name="Situation"></param>
         /// <param name="index"></param>
         /// <returns></returns>
-        public List<Books.Book> GetBookSituationByStatus(int Situation, int index, string textoBusca = null)
+        public async Task<List<Books.Book>> GetBookSituationByStatus(int Situation, int index, string textoBusca = null)
         {
             Users login = SqLiteUser.RecAcesso();
 
-            List<Books.Book> lista = ABooksSqlite.GetBookSituationByStatus(Situation, login.Key, textoBusca);
+            List<Books.Book> lista = await ABooksSqlite.GetBookSituationByStatus(Situation, login.Key, textoBusca);
 
             Total = lista.Count;
 
