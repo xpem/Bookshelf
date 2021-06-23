@@ -34,8 +34,10 @@ namespace BusinessLayer
             try
             {
                 Users login = SqLiteUser.RecAcesso();
-
+                AcessLayer.SqLite.ABooksSqlite aBooksSqlite = new AcessLayer.SqLite.ABooksSqlite();
+                IABooksFirebase _myService = new ABooksFirebase();
                 bool ProcessoContinuo = true;
+
                 while (ProcessoContinuo)
                 {
                     //usuario nao está logado
@@ -46,11 +48,10 @@ namespace BusinessLayer
 
                     Sincronizando = true;
                     if (CrossConnectivity.Current.IsConnected)
-                    {
-                        IABooksFirebase _myService = new ABooksFirebase();
+                    {                      
                         DateTime LastUptade = login.LastUpdate;
 
-                        List<Books.Book> booksList = AcessLayer.SqLite.ABooksSqlite.GetBooksLocalByLastUpdate(login.Key, login.LastUpdate);
+                        List<Books.Book> booksList = await aBooksSqlite.GetBooksLocalByLastUpdate(login.Key, login.LastUpdate);
 
                         //atualiza banco fb
                         foreach (Books.Book book in booksList)

@@ -68,12 +68,12 @@
             <Setter Property="CornerRadius" Value="5"></Setter>
             <Setter Property="FontFamily" Value="FontAwesomeBold"></Setter>
             <Setter Property="FontSize" Value="15"></Setter>
-        </Style>    
+        </Style>
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout  VerticalOptions="Center"  >
             <Frame Style="{ StaticResource FramePrincipal }">
-                <StackLayout Style="{StaticResource StackLayoutPrincipal}">
+                <StackLayout Style="{StaticResource StackLayoutPrincipal}" >
                     <Frame  Style="{ StaticResource FrameCardItem }" >
                         <StackLayout Style="{ StaticResource StackLayoutPrincipal }" >
                             <Grid Style="{ StaticResource GridCardItem }">
@@ -165,54 +165,54 @@
                 </StackLayout>
             </Frame>
             <Frame  VerticalOptions="Start" BackgroundColor="#BDBDBD" HorizontalOptions="Start">
-                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                            <Grid HorizontalOptions="Center" VerticalOptions="Start">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition  Width ="*" />
-                                    <ColumnDefinition  Width ="*" />
-                                </Grid.ColumnDefinitions>
-                                <Button x:Name="BtnAcessa"  Text="Cadastrar Livro" Grid.Row="0" Grid.Column="0" Clicked="BtnRegisterBook_Clicked" Style="{StaticResource BtnPrincipal}" >
-                                    <Button.ImageSource>
-                                        <FontImageSource FontFamily="FontAwesomeBold" Color="White"  Glyph="{x:Static local:Icons.Book}" Size="15"></FontImageSource>
-                                    </Button.ImageSource>
-                                </Button>
-                                <Button Text="Arquivo" Grid.Row="0" Grid.Column="1" Clicked="BtnArchive_Clicked" Style="{StaticResource BtnPrincipal}" >
-                                    <Button.ImageSource>
-                                        <FontImageSource FontFamily="FontAwesomeBold" Color="White"  Glyph="{x:Static local:Icons.Archive}" Size="15"></FontImageSource>
-                                    </Button.ImageSource>
-                                </Button>
-                            </Grid>
-                            <Grid HorizontalOptions="FillAndExpand" >
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition  Width ="*" />
-                                    <ColumnDefinition  Width ="30" />
-                                    <ColumnDefinition  Width ="30" />
-                                </Grid.ColumnDefinitions>
-                                <Button Text="Sair"  Clicked="TbiSair_Clicked" Style="{ StaticResource BtnSair}" >
-                                    <Button.ImageSource>
-                                        <FontImageSource FontFamily="FontAwesomeBold" Color="Black"  Glyph="{x:Static local:Icons.SignOut}" Size="15"></FontImageSource>
-                                    </Button.ImageSource>
-                                </Button>
-                                <Button HorizontalOptions="End" VerticalOptions="End" BackgroundColor="Transparent" IsVisible="true" Grid.Row="0" Grid.Column="1" >
-                                    <Button.ImageSource>
-                                        <FontImageSource FontFamily="FontAwesomeBold" Color="{Binding IsConnected}" Glyph="{x:Static local:Icons.Connection}" Size="12"></FontImageSource>
-                                    </Button.ImageSource>
-                                </Button>
-                                <Button HorizontalOptions="End" x:Name="btnSync" VerticalOptions="End" BackgroundColor="Transparent" IsVisible="true" Clicked="btnSync_Clicked" Grid.Row="0" Grid.Column="2"  >
-                                    <Button.ImageSource>
-                                        <FontImageSource FontFamily="FontAwesomeBold" Color="{Binding IsSync}" Glyph="{x:Static local:Icons.Sync}" Size="12"></FontImageSource>
-                                    </Button.ImageSource>
-                                </Button>
-                            </Grid>
-                        </StackLayout>
-                    </Frame>
-      
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                    <Grid HorizontalOptions="Center" VerticalOptions="Start">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition  Width ="*" />
+                            <ColumnDefinition  Width ="*" />
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="BtnAcessa"  Text="Cadastrar Livro" Grid.Row="0" Grid.Column="0" Clicked="BtnRegisterBook_Clicked" Style="{StaticResource BtnPrincipal}" >
+                            <Button.ImageSource>
+                                <FontImageSource FontFamily="FontAwesomeBold" Color="White"  Glyph="{x:Static local:Icons.Book}" Size="15"></FontImageSource>
+                            </Button.ImageSource>
+                        </Button>
+                        <Button Text="Arquivo" Grid.Row="0" Grid.Column="1" Clicked="BtnArchive_Clicked" Style="{StaticResource BtnPrincipal}" >
+                            <Button.ImageSource>
+                                <FontImageSource FontFamily="FontAwesomeBold" Color="White"  Glyph="{x:Static local:Icons.Archive}" Size="15"></FontImageSource>
+                            </Button.ImageSource>
+                        </Button>
+                    </Grid>
+                    <Grid HorizontalOptions="FillAndExpand" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition  Width ="*" />
+                            <ColumnDefinition  Width ="30" />
+                            <ColumnDefinition  Width ="30" />
+                        </Grid.ColumnDefinitions>
+                        <Button Text="Sair"  Clicked="TbiSair_Clicked" Style="{ StaticResource BtnSair}" >
+                            <Button.ImageSource>
+                                <FontImageSource FontFamily="FontAwesomeBold" Color="Black"  Glyph="{x:Static local:Icons.SignOut}" Size="15"></FontImageSource>
+                            </Button.ImageSource>
+                        </Button>
+                        <Button HorizontalOptions="End" VerticalOptions="End" BackgroundColor="Transparent" IsVisible="true" Grid.Row="0" Grid.Column="1" >
+                            <Button.ImageSource>
+                                <FontImageSource FontFamily="FontAwesomeBold" Color="{Binding IsConnected}" Glyph="{x:Static local:Icons.Connection}" Size="12"></FontImageSource>
+                            </Button.ImageSource>
+                        </Button>
+                        <Button HorizontalOptions="End" x:Name="btnSync" VerticalOptions="End" BackgroundColor="Transparent" IsVisible="true" Clicked="btnSync_Clicked" Grid.Row="0" Grid.Column="2"  >
+                            <Button.ImageSource>
+                                <FontImageSource FontFamily="FontAwesomeBold" Color="{Binding IsSync}" Glyph="{x:Static local:Icons.Sync}" Size="12"></FontImageSource>
+                            </Button.ImageSource>
+                        </Button>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

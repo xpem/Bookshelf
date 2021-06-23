@@ -133,15 +133,11 @@ namespace BusinessLayer
         public async Task<List<Books.Book>> GetBookSituationByStatus(int Situation, int index, string textoBusca = null)
         {
             Users login = SqLiteUser.RecAcesso();
-
-            List<Books.Book> lista = await ABooksSqlite.GetBookSituationByStatus(Situation, login.Key, textoBusca);
+            List<Books.Book> lista = await new ABooksSqlite().GetBookSituationByStatus(Situation, login.Key, textoBusca);
 
             Total = lista.Count;
 
-            if (Total > (index + 10))
-                return lista.GetRange(index, 10);
-            else
-                return lista.GetRange(index, (Total - index));
+            return Total > (index + 10) ? lista.GetRange(index, 10) : lista.GetRange(index, Total - index);
         }
     }
 }

@@ -1,11 +1,7 @@
-﻿using Plugin.Connectivity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -36,7 +32,6 @@ namespace Bookshelf
 
         public readonly ObservableCollection<string> BBTSituation = new ObservableCollection<string> { "Nenhuma", "Vou ler", "Lendo", "Lido", "Interrompido" };
 
-        private bool bVisibleTexts;
         private string BSituationOri { get; set; }
 
         private string BRateOri { get; set; }
@@ -47,11 +42,7 @@ namespace Bookshelf
 
         public string BSubtitleAndVol { get => bSubtitleAndVol; set { bSubtitleAndVol = value; OnPropertyChanged(); } }
 
-        public string BVolume { get => bVolume; set { bVolume = value; OnPropertyChanged(); } }
-
         public string BLblSituationtext { get => bLblSituationtext; set { bLblSituationtext = value; OnPropertyChanged(); } }
-
-        public bool BVisibleTexts { get => bVisibleTexts; set { bVisibleTexts = value; OnPropertyChanged(); } }
 
         public string BRate { get => bRate; set { bRate = value; OnPropertyChanged(); } }
 
@@ -77,9 +68,10 @@ namespace Bookshelf
         {
             ModelLayer.Books.Book book = new ModelLayer.Books.Book();
 
-            await Task.Run(() => book = BusinessLayer.BBooks.GetBook(bookKey));
+            Task.Run(() => book = BusinessLayer.BBooks.GetBook(bookKey)).Wait();
 
             string SubtitleAndVol = "";
+
             if (!string.IsNullOrEmpty(book.SubTitle))
             {
                 SubtitleAndVol = book.SubTitle;
@@ -99,46 +91,42 @@ namespace Bookshelf
             BPages = book.Pages.ToString();
             BComment = book.BooksSituations.Comment;
             BSubtitleAndVol = SubtitleAndVol;
-            BLblSituationtext = BBTSituation[(((int)book.BooksSituations.Situation))];
-            lblSituation.IsVisible = lblHSituation.IsVisible = true;
+            BLblSituationtext = BBTSituation[(int)book.BooksSituations.Situation];
 
-            if (book.BooksSituations.Situation > 0)
+            if (book.BooksSituations.Situation != ModelLayer.Books.Situation.None)
             {
                 BSituation = BSituationOri = book.BooksSituations.Situation.ToString();
                 BRate = BRateOri = book.BooksSituations.Rate.ToString();
                 BComment = BCommentOri = book.BooksSituations.Comment;
+                PkrSituation.SelectedIndex = (int)book.BooksSituations.Situation;
+                //PkrSituation.IsVisible = false;
 
-                PkrSituation.IsVisible = false;
+                lblHComment.IsVisible = lblComment.IsVisible = !string.IsNullOrEmpty(BComment);
 
-                if (string.IsNullOrEmpty(BComment))
-                    lblHComment.IsVisible = lblComment.IsVisible = false;
-                else
-                    lblHComment.IsVisible = lblComment.IsVisible = true;
-            }
-            else
-            {
-                SldrRate.IsVisible = LblSdlrRate.IsVisible = EdtComment.IsVisible = BtnConf.IsVisible = false;
-
-                BSituation = "0";
-                BRate = "";
-                BComment = "";
-            }
-
-            if (PkrSituation.SelectedIndex != 0)
-            {
                 DisableUpdates = true;
-                PkrSituation.IsEnabled = EdtComment.IsEnabled = EdtComment.IsVisible = SldrRate.IsVisible = false;
+                lblSituation.IsVisible = lblHSituation.IsVisible = PkrSituation.IsEnabled = EdtComment.IsEnabled =
+                    EdtComment.IsVisible = SldrRate.IsVisible = LblSdlrRate.IsVisible = false;
 
-                if (PkrSituation.SelectedIndex == 3)
+                if (book.BooksSituations.Situation == ModelLayer.Books.Situation.Read)
                 {
+
                     if (!string.IsNullOrEmpty(EdtComment.Text))
                     {
                         EdtComment.IsVisible = true;
                     }
                     SldrRate.IsVisible = false;
+                    LblSdlrRate.IsVisible = true;
                 }
+
                 BtnConf.StyleClass = new List<string> { "button_secundary" };
                 BtnConf.Text = "Alterar";
+            }
+            else
+            {
+                SldrRate.IsVisible = LblSdlrRate.IsVisible = EdtComment.IsVisible = BtnConf.IsVisible = false;
+                lblSituation.IsVisible = lblHSituation.IsVisible = true;
+                BSituation = "0";
+                BRate = BComment = "";
             }
         }
 
@@ -179,7 +167,7 @@ namespace Bookshelf
             }
             if (alterou)
             {
-                _ = Task.Run(() => { BusinessLayer.BBooks.UpdateSituationBook(BookKey,(ModelLayer.Books.Situation)PkrSituation.SelectedIndex, rate, commment); return Task.CompletedTask; });
+                _ = Task.Run(() => { BusinessLayer.BBooks.UpdateSituationBook(BookKey, (ModelLayer.Books.Situation)PkrSituation.SelectedIndex, rate, commment); return Task.CompletedTask; });
 
                 if (!await DisplayAlert("Aviso", "Situação alterada", null, "Ok"))
                 {
@@ -207,11 +195,11 @@ namespace Bookshelf
 
                 if (PkrSituation.SelectedIndex == 3)
                 {
-                    SldrRate.IsVisible = LblSdlrRate.IsVisible = EdtComment.IsVisible = true;
+                    SldrRate.IsVisible = LblSdlrRate.IsVisible = EdtComment.IsVisible = lblHComment.IsVisible = true;
                 }
                 else
                 {
-                    SldrRate.IsVisible = LblSdlrRate.IsVisible = EdtComment.IsVisible = false;
+                    SldrRate.IsVisible = LblSdlrRate.IsVisible = EdtComment.IsVisible = lblHComment.IsVisible = false;
                 }
             }
         }

@@ -15,6 +15,7 @@ namespace Bookshelf
     public partial class MainPage : ContentPage
     {
         #region variaveis
+
         private bool isLoading;
         public bool IsLoading { get => isLoading; set { isLoading = value; OnPropertyChanged(); } }
 
@@ -29,9 +30,7 @@ namespace Bookshelf
         public string VInterrompido { get => vInterrompido; set { vInterrompido = value; OnPropertyChanged(); } }
 
         public string IsSync { get => isSync; set { isSync = value; OnPropertyChanged(); } }
-
         public string IsConnected { get => isConnected; set { isConnected = value; OnPropertyChanged(); } }
-
 
         /// <summary>
         /// variavel que define se a função que verifica a sincronização já está rodando ou não.
@@ -52,10 +51,13 @@ namespace Bookshelf
             base.OnAppearing();
             VVouLer = VLendo = VLido = VInterrompido = "...";
 
+
             CarregaBookshelfTotais();
 
             if (!VerificandoSync)
+            {
                 VerificaSync();
+            }
         }
 
         /// <summary>
@@ -69,7 +71,9 @@ namespace Bookshelf
             while (VerificandoSync)
             {
                 if (!CrossConnectivity.Current.IsConnected)
+                {
                     IsConnected = "#FF0000";
+                }
                 else
                 {
                     IsConnected = "#fff";
@@ -91,7 +95,7 @@ namespace Bookshelf
         {
             //
             ModelLayer.Books.Totals totais = new ModelLayer.Books.Totals();
-            await Task.Run(() => totais = BusinessLayer.BBooks.GetBookshelfTotais());
+            _ = await Task.Run(() => totais = BBooks.GetBookshelfTotais());
 
             if (totais.IllRead.ToString() != VVouLer) { VVouLer = totais.IllRead.ToString(); }
             if (totais.Reading.ToString() != VLendo) { VLendo = totais.Reading.ToString(); }

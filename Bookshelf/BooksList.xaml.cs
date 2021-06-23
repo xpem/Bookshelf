@@ -33,13 +33,13 @@ namespace Bookshelf
             base.OnAppearing();
             ObBooksList = new ObservableCollection<Books.ItemBookList>();
             LoadBooks(0);
-            Task.Run(() => PartialLoadBooks());
+            _ = Task.Run(() => PartialLoadBooks());
         }
 
         //Recupera os livros por status
         private async void LoadBooks(int Index)
         {
-            this.Title = "Carregando lista...";
+            Title = "Carregando lista...";
             IsLoading = true;
 
             BusinessLayer.BBooks bBooks = new BusinessLayer.BBooks();
@@ -81,7 +81,7 @@ namespace Bookshelf
             LstBooks.ItemsSource = ObBooksList;
 
             //Definição do título da interface
-            this.Title = "Lista de Livros";
+            Title = "Lista de Livros";
             switch (SituationIndex)
             {
                 case 0: this.Title += " (Arquivo)"; break;

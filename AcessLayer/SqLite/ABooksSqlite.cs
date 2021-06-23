@@ -233,7 +233,7 @@ namespace AcessLayer.SqLite
 
         }
 
-        public static async Task<List<Book>> GetBookSituationByStatus(int Situation, string UserKey, string textoBusca)
+        public async Task<List<Book>> GetBookSituationByStatus(int Situation, string UserKey, string textoBusca)
         {
             try
             {
@@ -287,7 +287,7 @@ namespace AcessLayer.SqLite
             catch (Exception ex) { throw ex; }
         }
 
-        public static List<Book> GetBooksLocalByLastUpdate(string userKey, DateTime lastUpdate)
+        public async Task<List<Book>> GetBooksLocalByLastUpdate(string userKey, DateTime lastUpdate)
         {
             try
             {
@@ -297,7 +297,7 @@ namespace AcessLayer.SqLite
                 selectCommand.Parameters.AddWithValue("@userKey", userKey);
                 selectCommand.Parameters.AddWithValue("@lastUpdate", lastUpdate);
 
-                SqliteDataReader Retorno = selectCommand.ExecuteReader();
+                SqliteDataReader Retorno = await selectCommand.ExecuteReaderAsync();
 
                 List<Book> lista = new List<Book>();
 

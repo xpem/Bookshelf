@@ -18,7 +18,7 @@ namespace AcessLayer.SqLite
         /// <summary>
         /// aumento da versao de alguma tabela força a atualização da mesma
         /// </summary>
-        public static DbVersions ActualDbVersions = new DbVersions() { ACESSADD = 1, BOOK = 14 };
+        public static DbVersions ActualDbVersions = new DbVersions() { ACESSADD = 1, BOOK = 15 };
 
         public static void CriaDb()
         {
