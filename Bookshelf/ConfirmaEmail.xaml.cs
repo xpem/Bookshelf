@@ -1,4 +1,5 @@
-﻿using ModelLayer;
+﻿using BusinessLayer;
+using ModelLayer;
 using Plugin.Connectivity;
 using System;
 using System.Collections.Generic;
@@ -31,14 +32,14 @@ namespace Bookshelf
                 DisplayAlert("Aviso", "Digite um email válido", null, "Ok");
                 return;
             }
-            else if (!BusinessLayer.BUser.Valida_email(EntEmail.Text.ToUpper()))
+            else if (!BusinessLayer.BUser.ValidateEmail(EntEmail.Text.ToUpper()))
             {
                 DisplayAlert("Aviso", "Digite um email válido", null, "Ok");
                 return;
             }
             else
             {
-                Users user = BusinessLayer.BUser.RecoverUserEmail(EntEmail.Text.ToUpper());
+                Users user = new BUser().GetUserByEmail(EntEmail.Text.ToUpper());
 
                 if (user == null)
                 {

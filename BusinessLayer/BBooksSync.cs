@@ -1,4 +1,5 @@
 ﻿using AcessLayer.Firebase;
+using AcessLayer.SqLite;
 using ModelLayer;
 using Plugin.Connectivity;
 using System;
@@ -33,9 +34,11 @@ namespace BusinessLayer
         {
             try
             {
-                Users login = SqLiteUser.RecAcesso();
-                AcessLayer.SqLite.ABooksSqlite aBooksSqlite = new AcessLayer.SqLite.ABooksSqlite();
-                IABooksFirebase _myService = new ABooksFirebase();
+                BUser bUser = new BUser();               
+                ABooksSqlite aBooksSqlite = new ABooksSqlite();
+                ABooksFirebase aBooksFirebase = new ABooksFirebase();
+
+                Users login = bUser.GetUserLocal();
                 bool ProcessoContinuo = true;
 
                 while (ProcessoContinuo)
@@ -63,22 +66,22 @@ namespace BusinessLayer
                                 //seta a key como nula para cadastrar o livro no firebase
                                 book.Key = null;
                               
-                                await _myService.AddBook(book);
+                                await aBooksFirebase.AddBook(book);
                             }
                             else
                             {
-                                await _myService.UpdateBook(book);
+                                await aBooksFirebase.UpdateBook(book);
                             }
                         }
 
                         //atualiza banco sql
-                        foreach (Books.Book book in await _myService.GetBooksByLastUpdate(login.Key, login.LastUpdate))
+                        foreach (Books.Book book in await aBooksFirebase.GetBooksByLastUpdate(login.Key, login.LastUpdate))
                         {
-                            AcessLayer.SqLite.ABooksSqlite.SyncUpdateBookLocal(book);
+                            aBooksSqlite.SyncUpdateBook(book);
 
                             if (LastUptade < book.LastUpdate) LastUptade = book.LastUpdate;
                         }
-                        SqLiteUser.AtualizaAcessoLastUpdade(login.Key, LastUptade);
+                        bUser.UpdateUserLastUpdadeLocal(login.Key, LastUptade);
 
                     }
 

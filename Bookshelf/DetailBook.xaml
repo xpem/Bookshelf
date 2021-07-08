@@ -16,6 +16,11 @@
             <Setter Property="TextColor" Value="Black"></Setter>
             <Setter Property="FontSize" Value="20"></Setter>
         </Style>
+        <Style x:Key="Pkr" TargetType="Picker">
+            <Setter Property="BackgroundColor" Value="#212121"></Setter>
+            <Setter Property="TextColor" Value="White"></Setter>
+            <Setter Property="FontSize" Value="20"></Setter>
+        </Style>
     </ContentPage.Resources>
     <ContentPage.ToolbarItems>
         <ToolbarItem Name="TbiEditarLivro" Order="Secondary"  Text="Editar Livro" Priority="0" Clicked="TbiEditarLivro_Clicked">
@@ -63,17 +68,16 @@
                     </Grid>
                     <BoxView  HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="Black" Color="Black"></BoxView>
                     <Label Text="Avaliação" VerticalOptions="Fill" HorizontalOptions="Center" Style="{StaticResource LblHeader}" FontSize="20" FontAttributes="Bold"/>
-                    
+
                     <Picker x:Name="PkrSituation"  SelectedIndexChanged="PkrSituation_SelectedIndexChanged" SelectedIndex="{ Binding BSituation }"
-                            HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="#212121" WidthRequest="250"
-                            TextColor="White" FontSize="20"/>
-                    
+                            HorizontalOptions="Center" VerticalOptions="Start" WidthRequest="250"  Style="{StaticResource Pkr}" />
+
                     <Label  x:Name="LblSdlrRate" Text="{Binding Source={x:Reference SldrRate}, Path=Value, StringFormat='Avaliação pessoal: {0:F0} de 5'}" TextColor="#5D4037" HorizontalTextAlignment="Center" FontSize="20" FontAttributes="Bold" Margin="0, 20, 0, 0" />
                     <Slider x:Name="SldrRate" Minimum="0" Maximum="5" Value="{ Binding BRate }" ThumbColor="#efebeb" BackgroundColor="#5D4037" HorizontalOptions="FillAndExpand" />
 
                     <Label  Text="Situação:" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" 
                                     Style="{StaticResource LblHeader}" x:Name="lblHSituation" />
-                    <Label  Text="{Binding BLblSituationtext}" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"
+                    <Label  Text="{Binding BLblSituationtext}" HorizontalTextAlignment="Center" VerticalTextAlignment="Start"
                                     Grid.Row="1" Grid.Column="1"  x:Name="lblSituation"  Style="{StaticResource LblText}" />
                     <Label  Text="Comentários:" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Start" 
                                     VerticalTextAlignment="Start"  Style="{StaticResource LblHeader}" x:Name="lblHComment" />

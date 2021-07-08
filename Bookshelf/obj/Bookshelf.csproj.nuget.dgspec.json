@@ -136,11 +136,19 @@
               "target": "Package",
               "version": "[4.0.4, )"
             },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Splat": {
+              "target": "Package",
+              "version": "[11.1.1, )"
             },
             "Xam.Plugin.Connectivity": {
               "target": "Package",
@@ -218,6 +226,10 @@
             "FirebaseDatabase.net": {
               "target": "Package",
               "version": "[4.0.4, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[5.0.1, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",

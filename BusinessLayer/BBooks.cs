@@ -18,13 +18,22 @@ namespace BusinessLayer
 
         public Users Login { get; set; }
 
-        public static Books.Totals GetBookshelfTotais()
+        readonly ABooksSqlite aBooksSqlite = new ABooksSqlite();
+        readonly ABooksFirebase aBooksFirebase = new ABooksFirebase();
+        readonly BUser bUser = new BUser();
+
+        public BBooks()
         {
-            Users login = SqLiteUser.RecAcesso();
-            Books.Totals BTotais = new Books.Totals();
-            if (login.Key != null)
+            Login = bUser.GetUserLocal();
+        }
+
+        public Totals GetBookshelfTotais()
+        {
+            Totals BTotais = new Totals();
+
+            if (Login.Key != null)
             {
-                List<BookSituation> lista = ABooksSqlite.GetBookshelfTotais(login.Key);
+                List<BookSituation> lista = aBooksSqlite.GetBookshelfTotals(Login.Key);
 
                 if (lista.Count > 0)
                 {
@@ -42,84 +51,82 @@ namespace BusinessLayer
             return BTotais;
         }
 
-        public static bool VerifyRegisterBook(string BookName)
+
+        /// <summary>
+        /// verifica se o livro existe no banco firebase
+        /// </summary>
+        /// <param name="BookName"></param>
+        /// <returns></returns>
+        public bool VerifyRegisterBook(string BookName)
         {
-            Users login = SqLiteUser.RecAcesso();
             bool ret = false;
-            IABooksFirebase _myService = new ABooksFirebase();
-            Task.Run(async () => ret = await _myService.VerifyBook(BookName, login.Key)).Wait();
+
+            Task.Run(async () => ret = await (aBooksFirebase).VerifyBook(BookName, Login.Key)).Wait();
             return ret;
         }
 
-        public static async Task RegisterBook(Books.Book book)
+        public async Task RegisterBook(Books.Book book)
         {
-            Users login = SqLiteUser.RecAcesso();
 
-            book.UserKey = login.Key;
+            book.UserKey = Login.Key;
             book.LastUpdate = DateTime.Now;
 
             if (CrossConnectivity.Current.IsConnected)
             {
-                IABooksFirebase _myService = new ABooksFirebase();
-                book.Key = await _myService.AddBook(book);
+                book.Key = await aBooksFirebase.AddBook(book);
             }
             else
             {
                 //gera um id local temporário único
                 book.Key = Guid.NewGuid().ToString();
             }
-            ABooksSqlite.RegisterBookLocal(book);
+
+            aBooksSqlite.AddBook(book);
 
 
         }
 
-        public static Books.Book GetBook(string bookKey)
-        {
-            Users login = SqLiteUser.RecAcesso();
-            return ABooksSqlite.GetBook(login.Key, bookKey);
-        }
+        public Book GetBook(string bookKey) => (aBooksSqlite).GetBook(Login.Key, bookKey);
 
-        public static void UpdateSituationBook(string Key, Situation Situation, int Rate, string Comment)
+        public void UpdateBookSituation(string Key, Situation Situation, int Rate, string Comment)
         {
-            Users login = SqLiteUser.RecAcesso();
             DateTime lastUpdate = DateTime.Now;
-            ABooksSqlite.UpdateSituationBookLocal(Key, login.Key, Situation, Rate, Comment, lastUpdate);
+
+            aBooksSqlite.UpdateBookSituation(Key, Login.Key, Situation, Rate, Comment, lastUpdate);
 
             if (CrossConnectivity.Current.IsConnected)
             {
-                IABooksFirebase _myService = new ABooksFirebase();
-                _myService.UpdateBookSituation(Key, login.Key, Situation, Rate, Comment, lastUpdate);
+                aBooksFirebase.UpdateBookSituation(Key, Login.Key, Situation, Rate, Comment, lastUpdate);
             }
         }
 
-        public static async Task UpdateBook(Books.Book book)
+        public async Task UpdateBook(Book book)
         {
-            Users login = SqLiteUser.RecAcesso();
-            book.UserKey = login.Key;
+            book.UserKey = Login.Key;
             book.LastUpdate = DateTime.Now;
 
-            ABooksSqlite.UpdateBookLocal(book);
-            ABooksSqlite.UpdateSituationBookLocal(book.Key, book.UserKey, book.BooksSituations.Situation, Convert.ToInt32(book.BooksSituations.Rate), book.BooksSituations.Comment, book.LastUpdate);
+            aBooksSqlite.UpdateBook(book);
+            aBooksSqlite.UpdateBookSituation(book.Key, book.UserKey, book.BooksSituations.Situation, Convert.ToInt32(book.BooksSituations.Rate), book.BooksSituations.Comment, book.LastUpdate);
             //
             if (CrossConnectivity.Current.IsConnected)
             {
-                IABooksFirebase _myService = new ABooksFirebase();
-                await _myService.UpdateBook(book);
+                await aBooksFirebase.UpdateBook(book);
             }
         }
 
-        public static async void InactivateBook(string bookKey)
+        public async void InactivateBook(string bookKey)
         {
-            Users login = SqLiteUser.RecAcesso();
-            Books.Book book = ABooksSqlite.GetBook(login.Key, bookKey);
-            book.UserKey = login.Key;
+            Book book = aBooksSqlite.GetBook(Login.Key, bookKey);
+
+            book.UserKey = Login.Key;
             book.LastUpdate = DateTime.Now;
             book.Inativo = true;
-            ABooksSqlite.InactivateBookLocal(book);
+
+            aBooksSqlite.InactivateBook(book);
+
             if (CrossConnectivity.Current.IsConnected)
             {
-                IABooksFirebase _myService = new ABooksFirebase();
-                await _myService.InactivateBook(book);
+                await aBooksFirebase.InactivateBook(book);
             }
 
         }
@@ -130,10 +137,9 @@ namespace BusinessLayer
         /// <param name="Situation"></param>
         /// <param name="index"></param>
         /// <returns></returns>
-        public async Task<List<Books.Book>> GetBookSituationByStatus(int Situation, int index, string textoBusca = null)
+        public async Task<List<Book>> GetBookSituationByStatus(int Situation, int index, string textoBusca = null)
         {
-            Users login = SqLiteUser.RecAcesso();
-            List<Books.Book> lista = await new ABooksSqlite().GetBookSituationByStatus(Situation, login.Key, textoBusca);
+            List<Book> lista = await aBooksSqlite.GetBookSituationByStatus(Situation, Login.Key, textoBusca);
 
             Total = lista.Count;
 

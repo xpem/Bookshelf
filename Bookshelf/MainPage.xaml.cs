@@ -16,9 +16,11 @@ namespace Bookshelf
     {
         #region variaveis
 
-        private bool isLoading;
-        public bool IsLoading { get => isLoading; set { isLoading = value; OnPropertyChanged(); } }
-
+        /// <summary>
+        /// define que o processo da primeira sincronização foi executado.
+        /// </summary>
+        private bool firstSync = false;
+      
         private string vVouLer, vLendo, vLido, vInterrompido, isSync, isConnected;
 
         public string VVouLer { get => vVouLer; set { vVouLer = value; OnPropertyChanged(); } }
@@ -51,11 +53,13 @@ namespace Bookshelf
             base.OnAppearing();
             VVouLer = VLendo = VLido = VInterrompido = "...";
 
-
             CarregaBookshelfTotais();
 
             if (!VerificandoSync)
             {
+                FrmPrincipal.Opacity = 0.7;
+                FrmPrincipal.IsEnabled = false;
+
                 VerificaSync();
             }
         }
@@ -85,6 +89,14 @@ namespace Bookshelf
                     {
                         CarregaBookshelfTotais();
                         IsSync = "#fff";
+
+                        //após tesminar primeira sincronia habilita o grid para acesso
+                        if (!firstSync)
+                        {
+                            FrmPrincipal.Opacity = 1;
+                            firstSync = true;
+                            FrmPrincipal.IsEnabled = true;
+                        }
                     }
                 }
                 await Task.Delay(10000);
@@ -95,14 +107,13 @@ namespace Bookshelf
         {
             //
             ModelLayer.Books.Totals totais = new ModelLayer.Books.Totals();
-            _ = await Task.Run(() => totais = BBooks.GetBookshelfTotais());
-
+            _ = await Task.Run(() => totais = new BBooks().GetBookshelfTotais());
+            //
             if (totais.IllRead.ToString() != VVouLer) { VVouLer = totais.IllRead.ToString(); }
             if (totais.Reading.ToString() != VLendo) { VLendo = totais.Reading.ToString(); }
             if (totais.Read.ToString() != VLido) { VLido = totais.Read.ToString(); }
             if (totais.Interrupted.ToString() != VInterrompido) { VInterrompido = totais.Interrupted.ToString(); }
             //
-
         }
 
         #region navegação
@@ -113,7 +124,7 @@ namespace Bookshelf
 
             if (resp)
             {
-                SqLiteUser.DelAcesso();
+              new BUser().DelAcesso();
                 Application.Current.MainPage = new Acessa();
                 Application.Current.MainPage = new NavigationPage(new Acessa())
                 {

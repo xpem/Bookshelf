@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
@@ -50,6 +51,7 @@ namespace Bookshelf
 
         private bool DisableUpdates { get; set; }
 
+        BBooks bBooks = new BBooks();
 
         public DetailBook(string bookKey)
         {
@@ -61,14 +63,14 @@ namespace Bookshelf
 
             PkrSituation.ItemsSource = BBTSituation;
 
-            Task.Run(() => { CarregaBook(bookKey); return Task.CompletedTask; }).Wait();
+            Task.Run(() => { GetBook(bookKey); return Task.CompletedTask; }).Wait();
         }
 
-        private async void CarregaBook(string bookKey)
+        private async void GetBook(string bookKey)
         {
             ModelLayer.Books.Book book = new ModelLayer.Books.Book();
 
-            Task.Run(() => book = BusinessLayer.BBooks.GetBook(bookKey)).Wait();
+            await Task.Run(() => book = bBooks.GetBook(bookKey));
 
             string SubtitleAndVol = "";
 
@@ -104,7 +106,7 @@ namespace Bookshelf
                 lblHComment.IsVisible = lblComment.IsVisible = !string.IsNullOrEmpty(BComment);
 
                 DisableUpdates = true;
-                lblSituation.IsVisible = lblHSituation.IsVisible = PkrSituation.IsEnabled = EdtComment.IsEnabled =
+                lblHSituation.IsVisible = PkrSituation.IsVisible = EdtComment.IsEnabled =
                     EdtComment.IsVisible = SldrRate.IsVisible = LblSdlrRate.IsVisible = false;
 
                 if (book.BooksSituations.Situation == ModelLayer.Books.Situation.Read)
@@ -167,7 +169,7 @@ namespace Bookshelf
             }
             if (alterou)
             {
-                _ = Task.Run(() => { BusinessLayer.BBooks.UpdateSituationBook(BookKey, (ModelLayer.Books.Situation)PkrSituation.SelectedIndex, rate, commment); return Task.CompletedTask; });
+                _ = Task.Run(() => { bBooks.UpdateBookSituation(BookKey, (ModelLayer.Books.Situation)PkrSituation.SelectedIndex, rate, commment); return Task.CompletedTask; });
 
                 if (!await DisplayAlert("Aviso", "Situação alterada", null, "Ok"))
                 {
@@ -213,7 +215,7 @@ namespace Bookshelf
         {
             if ((await DisplayAlert("Confirmação", "Deseja excluir esse livro?", "Sim", "Cancelar")))
             {
-                _ = Task.Run(() => { BusinessLayer.BBooks.InactivateBook(BookKey); });
+                _ = Task.Run(() => { bBooks.InactivateBook(BookKey); });
 
                 if (!(await DisplayAlert("Aviso", "Livro excluído!", null, "Ok")))
                 {

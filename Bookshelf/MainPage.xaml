@@ -72,7 +72,7 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout  VerticalOptions="Center"  >
-            <Frame Style="{ StaticResource FramePrincipal }">
+            <Frame Style="{ StaticResource FramePrincipal }" x:Name="FrmPrincipal">
                 <StackLayout Style="{StaticResource StackLayoutPrincipal}" >
                     <Frame  Style="{ StaticResource FrameCardItem }" >
                         <StackLayout Style="{ StaticResource StackLayoutPrincipal }" >

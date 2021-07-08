@@ -1,41 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Bookshelf.AcessLayer.SqLite;
+﻿using Bookshelf.AcessLayer.SqLite;
 //
-using Firebase.Database.Query;
 using Microsoft.Data.Sqlite;
-using ModelLayer;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using static ModelLayer.Books;
 
 namespace AcessLayer.SqLite
 {
     public class ABooksSqlite
     {
-        //data/user/0/com.companyname.bookshelf/files/.local/share/Bookshelf.db3
+        private readonly ASqLite ASqLite = new ASqLite();
 
         /// <summary>
         /// Atualiza o livro e sua situação do banco de dados local
         /// </summary>
         /// <param name="book"></param>
-        public static void SyncUpdateBookLocal(Book book)
+        public void SyncUpdateBook(Book book)
         {
             //verificar a data da ultima atualização
-
             DateTime? lastUpdate = GetLastUpdateBook(book.Key, book.Title);
 
             if (lastUpdate == null && !book.Inativo)
             {
-                RegisterBookLocal(book);
+                //add book local
+                AddBook(book);
             }
             else if (book.LastUpdate > lastUpdate)
             {
+                //update book local
+                UpdateBook(book);
 
-                UpdateBookLocal(book);
-
-                SqLiteFunctions.OpenIfClosed();
+                ASqLite.OpenIfClosed();
 
                 SqliteCommand UpdateCommand = new SqliteCommand
                 {
@@ -49,13 +45,13 @@ namespace AcessLayer.SqLite
                 UpdateCommand.Parameters.AddWithNullableValue("@Comment", book.BooksSituations.Comment);
                 UpdateCommand.ExecuteReader();
 
-                SqLiteFunctions.CloseIfOpen();
+                ASqLite.CloseIfOpen();
             }
         }
 
-        public static void RegisterBookLocal(Book book)
+        public void AddBook(Book book)
         {
-            SqLiteFunctions.OpenIfClosed();
+            ASqLite.OpenIfClosed();
 
             using (SqliteCommand insertCommand = new SqliteCommand
             {
@@ -91,18 +87,19 @@ namespace AcessLayer.SqLite
                 insertCommand.ExecuteReader();
             }
 
-            SqLiteFunctions.CloseIfOpen();
+            ASqLite.CloseIfOpen();
         }
 
-        public static void UpdateSituationBookLocal(string Key, string UserKey, Situation Situation, int Rate, string Comment, DateTime lastUpdate)
+        public void UpdateBookSituation(string Key, string UserKey, Situation Situation, int Rate, string Comment, DateTime lastUpdate)
         {
-            SqLiteFunctions.OpenIfClosed();
+            ASqLite.OpenIfClosed();
 
             SqliteCommand UpdateCommand = new SqliteCommand
             {
                 Connection = ASqLite.db,
                 CommandText = "update BOOKSITUATIONS set Situation = @Situation,Rate = @Rate,Comment = @Comment where BookKey = @Key and UserKey = @UserKey"
             };
+
             UpdateCommand.Parameters.AddWithNullableValue("@Key", Key);
             UpdateCommand.Parameters.AddWithNullableValue("@UserKey", UserKey);
             UpdateCommand.Parameters.AddWithNullableValue("@Situation", Situation);
@@ -120,12 +117,16 @@ namespace AcessLayer.SqLite
             UpdateCommand.Parameters.AddWithNullableValue("@LastUpdate", lastUpdate);
             UpdateCommand.ExecuteReader();
 
-            SqLiteFunctions.CloseIfOpen();
+            ASqLite.CloseIfOpen();
         }
 
-        public static void UpdateBookLocal(Book book)
+        /// <summary>
+        /// update book local
+        /// </summary>
+        /// <param name="book"></param>
+        public void UpdateBook(Book book)
         {
-            SqLiteFunctions.OpenIfClosed();
+            ASqLite.OpenIfClosed();
 
             SqliteCommand UpdateCommand = new SqliteCommand
             {
@@ -147,16 +148,16 @@ namespace AcessLayer.SqLite
             UpdateCommand.Parameters.AddWithNullableValue("@Inativo", (book.Inativo ? "1" : "0"));
             UpdateCommand.ExecuteReader();
 
-            SqLiteFunctions.CloseIfOpen();
+            ASqLite.CloseIfOpen();
         }
 
         /// <summary>
         /// Inativa o livro no banco local
         /// </summary>
         /// <param name="book"></param>
-        public static void InactivateBookLocal(Book book)
+        public void InactivateBook(Book book)
         {
-            SqLiteFunctions.OpenIfClosed();
+            ASqLite.OpenIfClosed();
 
             SqliteCommand UpdateCommand = new SqliteCommand
             {
@@ -168,7 +169,7 @@ namespace AcessLayer.SqLite
             UpdateCommand.Parameters.AddWithNullableValue("@LastUpdate", book.LastUpdate);
             UpdateCommand.ExecuteReader();
 
-            SqLiteFunctions.CloseIfOpen();
+            ASqLite.CloseIfOpen();
         }
 
         /// <summary>
@@ -177,9 +178,9 @@ namespace AcessLayer.SqLite
         /// <param name="KEY">nulo caso o livro esteja no momento cadastrado apenas localmente</param>
         /// <param name="Title"></param>
         /// <returns></returns>
-        public static DateTime? GetLastUpdateBook(string KEY, string Title)
+        public DateTime? GetLastUpdateBook(string KEY, string Title)
         {
-            SqLiteFunctions.OpenIfClosed();
+            ASqLite.OpenIfClosed();
             string query = "select LastUpdate from BOOK where";
 
             if (string.IsNullOrEmpty(KEY))
@@ -206,15 +207,15 @@ namespace AcessLayer.SqLite
 
             var resposta = (string)selectCommand.ExecuteScalar();
 
-            SqLiteFunctions.CloseIfOpen();
+            ASqLite.CloseIfOpen();
 
             if (string.IsNullOrEmpty(resposta)) return null;
             else return Convert.ToDateTime(resposta);
         }
 
-        public static List<BookSituation> GetBookshelfTotais(string userKey)
+        public List<BookSituation> GetBookshelfTotals(string userKey)
         {
-            SqLiteFunctions.OpenIfClosed();
+            ASqLite.OpenIfClosed();
 
             SqliteCommand selectCommand = new SqliteCommand("select bs.Situation from BOOKSITUATIONS bs inner join BOOK b on  bs.BookKey = b.Key where b.UserKey = @userKey and (b.Inativo is null or b.Inativo = '0')", ASqLite.db);
             selectCommand.Parameters.AddWithValue("@userKey", userKey);
@@ -227,7 +228,7 @@ namespace AcessLayer.SqLite
                 lista.Add(new BookSituation() { Situation = (Situation)query.GetInt32(0) });
             }
 
-            SqLiteFunctions.CloseIfOpen();
+            ASqLite.CloseIfOpen();
 
             return lista;
 
@@ -237,16 +238,22 @@ namespace AcessLayer.SqLite
         {
             try
             {
-                SqLiteFunctions.OpenIfClosed();
-                string query = "select b.key,b.title,b.Authors,b.Year,b.Volume,b.Pages,b.Genre,b.LastUpdate,b.SubTitle from BOOK b";
+                ASqLite.OpenIfClosed();
+                string query = "select b.key,b.title,b.Authors,b.Year,b.Volume,b.Pages,b.Genre,b.LastUpdate,b.SubTitle,bs.Rate,bs.situation from BOOK b";
 
                 if (Situation > 0)
+                {
                     query += " inner join BOOKSITUATIONS bs on bs.BookKey = b.key where b.UserKey = @userKey and bs.situation = @situation";
+                }
                 else
+                {
                     query += " where b.UserKey = @userKey";
+                }
 
                 if (!string.IsNullOrEmpty(textoBusca))
+                {
                     query += " and b.title like @textoBusca";
+                }
 
                 query += " and (b.Inativo is null or b.Inativo = '0') order by LastUpdate desc";
 
@@ -254,7 +261,9 @@ namespace AcessLayer.SqLite
                 selectCommand.Parameters.AddWithValue("@userKey", UserKey);
 
                 if (Situation > 0)
+                {
                     selectCommand.Parameters.AddWithValue("@situation", Situation);
+                }
 
                 if (!string.IsNullOrEmpty(textoBusca))
                     selectCommand.Parameters.AddWithValue("@textoBusca", "%" + textoBusca + "%");
@@ -266,7 +275,7 @@ namespace AcessLayer.SqLite
 
                 while (Retorno.Read())
                 {
-                    lista.Add(new Books.Book()
+                    lista.Add(new Book()
                     {
                         Key = Retorno.GetWithNullableString(0),
                         Title = Retorno.GetWithNullableString(1),
@@ -276,11 +285,12 @@ namespace AcessLayer.SqLite
                         Pages = Retorno.GetInt32(5),
                         Genre = Retorno.GetWithNullableString(6),
                         LastUpdate = Convert.ToDateTime(Retorno.GetWithNullableString(7)),
-                        SubTitle = Retorno.GetWithNullableString(8)
+                        SubTitle = Retorno.GetWithNullableString(8),
+                        BooksSituations = new BookSituation { Rate = Retorno.GetWithNullableInt(9) }
                     });
                 }
 
-                SqLiteFunctions.CloseIfOpen();
+                ASqLite.CloseIfOpen();
 
                 return lista;
             }
@@ -291,11 +301,11 @@ namespace AcessLayer.SqLite
         {
             try
             {
-                SqLiteFunctions.OpenIfClosed();
+                ASqLite.OpenIfClosed();
                 string query = "select b.title,b.Authors,b.Year,b.Volume,b.Pages,b.Genre,b.LastUpdate,b.SubTitle,b.Isbn,bs.Rate,bs.situation,bs.comment,b.userKey,b.Key,b.inativo from BOOK b inner join BOOKSITUATIONS bs on bs.BookKey = b.key where b.UserKey = @userKey and b.lastUpdate >= @lastUpdate";
                 SqliteCommand selectCommand = new SqliteCommand(query, ASqLite.db);
-                selectCommand.Parameters.AddWithValue("@userKey", userKey);
-                selectCommand.Parameters.AddWithValue("@lastUpdate", lastUpdate);
+                _ = selectCommand.Parameters.AddWithValue("@userKey", userKey);
+                _ = selectCommand.Parameters.AddWithValue("@lastUpdate", lastUpdate);
 
                 SqliteDataReader Retorno = await selectCommand.ExecuteReaderAsync();
 
@@ -303,7 +313,7 @@ namespace AcessLayer.SqLite
 
                 while (Retorno.Read())
                 {
-                    lista.Add(new Books.Book()
+                    lista.Add(new Book()
                     {
                         Title = Retorno.GetWithNullableString(0),
                         Authors = Retorno.GetWithNullableString(1),
@@ -321,18 +331,18 @@ namespace AcessLayer.SqLite
                     });
                 }
 
-                SqLiteFunctions.CloseIfOpen();
+                ASqLite.CloseIfOpen();
 
                 return lista;
             }
             catch (Exception ex) { throw ex; }
         }
 
-        public static Book GetBook(string userKey, string bookKey)
+        public Book GetBook(string userKey, string bookKey)
         {
             try
             {
-                SqLiteFunctions.OpenIfClosed();
+                ASqLite.OpenIfClosed();
                 string query = "select b.key,b.title,b.Authors,b.Year,b.Volume,b.Pages,b.Genre,b.LastUpdate,b.SubTitle,b.Isbn,bs.Rate,bs.situation,bs.comment from BOOK b inner join BOOKSITUATIONS bs on bs.BookKey = b.key where b.UserKey = @userKey and b.Key = @key";
                 SqliteCommand selectCommand = new SqliteCommand(query, ASqLite.db);
                 selectCommand.Parameters.AddWithValue("@userKey", userKey);
@@ -355,7 +365,7 @@ namespace AcessLayer.SqLite
                     BooksSituations = new BookSituation() { Rate = Retorno.GetWithNullableInt(10), Situation = (Situation)Retorno.GetInt32(11), Comment = Retorno.GetWithNullableString(12) }
                 };
 
-                SqLiteFunctions.CloseIfOpen();
+                ASqLite.CloseIfOpen();
 
                 return book;
             }

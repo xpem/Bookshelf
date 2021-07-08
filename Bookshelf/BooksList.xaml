@@ -39,8 +39,8 @@
                                                     FontSize="Subtitle" FontAttributes="Italic" 
                                                     TextColor="Black" VerticalOptions="StartAndExpand" />
                                                 <Label Text="{Binding AuthorsAndYear}" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" Grid.Row="2" Grid.Column="0"  Grid.ColumnSpan="2" FontSize="Small" LineBreakMode="TailTruncation" FontAttributes="Italic" TextColor="Gray"/>
-                                                <Label  Text="{Binding Pages, StringFormat='Páginas: {0:F0}'}" HorizontalTextAlignment="Start"  VerticalTextAlignment="Start" Grid.Row="3" Grid.Column="0" FontSize="Small" LineBreakMode="TailTruncation"  FontAttributes="Bold" TextColor="Black"/>
-                                                <Label  Text="{Binding Rate}" HorizontalTextAlignment="Start" HorizontalOptions="Fill" Grid.Row="3" Grid.Column="1"  FontSize="Small" FontAttributes="Bold" TextColor="Black"/>
+                                                <Label Text="{Binding Pages, StringFormat='Páginas: {0:F0}'}" HorizontalTextAlignment="Start"  VerticalTextAlignment="Start" Grid.Row="3" Grid.Column="0" FontSize="Small" LineBreakMode="TailTruncation"  FontAttributes="Bold" TextColor="Black"/>
+                                                <Label Text="{Binding Rate}" HorizontalTextAlignment="Start" HorizontalOptions="Fill" Grid.Row="3" Grid.Column="1"  FontSize="Small" FontAttributes="Italic" TextColor="Black" />
                                             </Grid>
                                         </StackLayout>
                                     </Frame>

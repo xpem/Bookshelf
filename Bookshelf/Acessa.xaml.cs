@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,7 +34,7 @@ namespace Bookshelf
                     bool resp = false;
 
                     //To upper para garantir que tudo esteja maiúsculo independente do dispositivo
-                    Task.Run(async () => resp = await BusinessLayer.BUser.RecoverUser(EntNomeAcesso.Text.ToUpper(), EntSenha.Text)).Wait();
+                    Task.Run(async () => resp = await  new BUser().GetUser(EntNomeAcesso.Text.ToUpper(), EntSenha.Text)).Wait();
 
                     if (resp)
                     {

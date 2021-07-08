@@ -1,29 +1,29 @@
 ﻿using Bookshelf.AcessLayer.SqLite;
 using Microsoft.Data.Sqlite;
 using ModelLayer;
-using SQLite;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using static ModelLayer.Books;
 
 namespace AcessLayer.SqLite
 {
-    public static class ASqLite
+    public class ASqLite
     {
 
-        public readonly static SqliteConnection db = new SqliteConnection($"Filename={System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Bookshelf.db3")}");
+        public readonly SqliteConnection db = new SqliteConnection($"Filename={System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Bookshelf.db3")}");
 
         /// <summary>
         /// aumento da versao de alguma tabela força a atualização da mesma
         /// </summary>
         public static DbVersions ActualDbVersions = new DbVersions() { ACESSADD = 1, BOOK = 15 };
 
-        public static void CriaDb()
+
+        public void OpenIfClosed() { if (db.State == System.Data.ConnectionState.Closed) { db.Open(); } }
+
+        public void CloseIfOpen() { if (db.State == System.Data.ConnectionState.Open) { db.Close(); } }
+
+        public void CreateDb()
         {
 
-            SqLiteFunctions.OpenIfClosed();
+            OpenIfClosed();
 
             VerDbVersions();
 
@@ -39,13 +39,13 @@ namespace AcessLayer.SqLite
             createTable = new SqliteCommand("create table if not exists Versiondb (ACESSADD integer,BOOK integer);", db);
             createTable.ExecuteReader();
 
-            SqLiteFunctions.CloseIfOpen();
+            CloseIfOpen();
         }
 
         /// <summary>
-        /// deleta as tabelas de versão anterior para serem recriadas.
+        /// delete tables of old versions and recreate it
         /// </summary>
-        public static void VerDbVersions()
+        public void VerDbVersions()
         {
             //SqliteCommand sqliteCommand = new SqliteCommand("drop table Versiondb", db);
             //sqliteCommand.ExecuteReader();
@@ -77,7 +77,7 @@ namespace AcessLayer.SqLite
                         ACESSADD = 0,
                         BOOK = 0
                     };
-                    InsereAtualizaVersiondb(false, dbVersions);
+                    AddorUpdateVersionDb(false, dbVersions);
                 }
             }
 
@@ -102,13 +102,12 @@ namespace AcessLayer.SqLite
             }
 
             if (atualizarVersaoDb)
-                InsereAtualizaVersiondb(true, ActualDbVersions);
+                AddorUpdateVersionDb(true, ActualDbVersions);
         }
 
-
-        public static void CadastraAcesso(string id, string login)
+        public void AddUserLocal(string id, string login)
         {
-            SqLiteFunctions.OpenIfClosed();
+            OpenIfClosed();
             SqliteCommand insertCommand = new SqliteCommand
             {
                 Connection = db,
@@ -118,20 +117,20 @@ namespace AcessLayer.SqLite
             insertCommand.Parameters.AddWithNullableValue("@LOGINNOME", login);
             insertCommand.Parameters.AddWithNullableValue("@LASTUPDATE", DateTime.MinValue);
             insertCommand.ExecuteReader();
-            SqLiteFunctions.CloseIfOpen();
+            CloseIfOpen();
         }
 
-        public static void DelAcesso()
+        public void DelUserLocal()
         {
-            SqLiteFunctions.OpenIfClosed();
+            OpenIfClosed();
             SqliteCommand insertCommand = new SqliteCommand { Connection = db, CommandText = "delete from ACESSADD" };
             insertCommand.ExecuteReader();
-            SqLiteFunctions.CloseIfOpen();
+            CloseIfOpen();
         }
 
-        public static Users RecAcesso()
+        public Users GetUserLocal()
         {
-            SqLiteFunctions.OpenIfClosed();
+            OpenIfClosed();
 
             SqliteCommand selectCommand = new SqliteCommand("select KEY,LOGINNOME,LASTUPDATE from ACESSADD", db);
             SqliteDataReader Retorno = selectCommand.ExecuteReader();
@@ -145,20 +144,20 @@ namespace AcessLayer.SqLite
                     Nick = Retorno.GetWithNullableString(1),
                     LastUpdate = Retorno.GetDateTime(2)
                 };
-                SqLiteFunctions.CloseIfOpen();
+                CloseIfOpen();
 
                 return user;
             }
             else
             {
-                SqLiteFunctions.CloseIfOpen();
+                CloseIfOpen();
                 return null;
             }
         }
 
-        public static void AtualizaAcessoLastUpdade(string Key, DateTime LastUpdate)
+        public void UpdateUserLastUpdadeLocal(string Key, DateTime LastUpdate)
         {
-            SqLiteFunctions.OpenIfClosed();
+            OpenIfClosed();
 
             SqliteCommand insertCommand = new SqliteCommand
             {
@@ -169,10 +168,10 @@ namespace AcessLayer.SqLite
             insertCommand.Parameters.AddWithNullableValue("@LastUpdate", LastUpdate);
             insertCommand.ExecuteReader();
 
-            SqLiteFunctions.CloseIfOpen();
+            CloseIfOpen();
         }
 
-        public static void InsereAtualizaVersiondb(bool isUpdate, DbVersions dbVersions)
+        public void AddorUpdateVersionDb(bool isUpdate, DbVersions dbVersions)
         {
             SqliteCommand Command;
 

@@ -31,7 +31,7 @@ namespace Bookshelf
             {
                 ValCampos = false;
             }
-            else if (!BUser.Valida_email(EntEmail.Text))
+            else if (!BUser.ValidateEmail(EntEmail.Text))
             {
                 DisplayAlert("Aviso", "Digite um email válido", null, "Ok");
                 return false;
@@ -64,7 +64,7 @@ namespace Bookshelf
             }
             else
             {
-                ValCampos = BUser.VerificaCadUsuario(EntNome.Text, EntEmail.Text.ToUpper());
+                ValCampos = new BUser().VerificaCadUsuario(EntNome.Text, EntEmail.Text.ToUpper());
                 if (!ValCampos)
                 {
                     DisplayAlert("Aviso", "Nome de Acesso/Email já cadastrados", null, "Ok");
@@ -93,7 +93,7 @@ namespace Bookshelf
 
                 };
                 //
-                await BUser.CadastraUsuario(user);
+                await new BUser().AddUser(user);
 
 
                 bool resposta = await DisplayAlert("Aviso", "Usuário cadastrado", null, "Ok");

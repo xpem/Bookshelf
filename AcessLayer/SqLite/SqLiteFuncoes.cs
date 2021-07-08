@@ -21,34 +21,21 @@ namespace Bookshelf.AcessLayer.SqLite
                 return collection.AddWithValue(parameterName, DBNull.Value);
             else
                 return collection.AddWithValue(parameterName, value);
-        }
-
-        public static void OpenIfClosed() { if (ASqLite.db.State == System.Data.ConnectionState.Closed) { ASqLite.db.Open(); } }
-
-        public static void CloseIfOpen() { if (ASqLite.db.State == System.Data.ConnectionState.Open) { ASqLite.db.Close(); } }
+        }      
 
         public static string GetWithNullableString(this SqliteDataReader sqliteDataReader, int ordinal)
         {
-            if (!sqliteDataReader.IsDBNull(ordinal))
-                return sqliteDataReader.GetString(ordinal);
-            else
-                return null;
+            return !sqliteDataReader.IsDBNull(ordinal) ? sqliteDataReader.GetString(ordinal) : null;
         }
 
         public static bool GetWithNullableBool(this SqliteDataReader sqliteDataReader, int ordinal)
         {
-            if (!sqliteDataReader.IsDBNull(ordinal))
-                return sqliteDataReader.GetBoolean(ordinal);
-            else
-                return false;
+            return !sqliteDataReader.IsDBNull(ordinal) ? sqliteDataReader.GetBoolean(ordinal) : false;
         }
 
         public static int? GetWithNullableInt(this SqliteDataReader sqliteDataReader, int ordinal)
         {
-            if (!sqliteDataReader.IsDBNull(ordinal))
-                return sqliteDataReader.GetInt32(ordinal);
-            else
-                return null;
+            return !sqliteDataReader.IsDBNull(ordinal) ? sqliteDataReader.GetInt32(ordinal) : (int?)null;
         }
     }
 }

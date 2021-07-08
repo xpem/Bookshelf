@@ -60,7 +60,7 @@ namespace Bookshelf
             }
             else
             {
-                await BusinessLayer.BUser.UpdateUserPassworld(vUserKey, EntConfSenha.Text);
+                await new BusinessLayer.BUser().UpdateUserPassworld(vUserKey, EntConfSenha.Text);
 
                 await DisplayAlert("Aviso", "Senha Alterada!", null, "Ok");
 

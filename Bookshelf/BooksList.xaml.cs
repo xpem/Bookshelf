@@ -12,6 +12,7 @@ namespace Bookshelf
     {
 
         public ObservableCollection<ModelLayer.Books.ItemBookList> ObBooksList;
+        public BusinessLayer.BBooks bBooks;
 
         private bool isLoading;
         public bool IsLoading { get => isLoading; set { isLoading = value; OnPropertyChanged(); } }
@@ -23,6 +24,7 @@ namespace Bookshelf
         public bool Efetuandobusca { get; set; }
         public BooksList(int situation)
         {
+            bBooks = new BusinessLayer.BBooks();
             BindingContext = this;
             SituationIndex = situation;
             InitializeComponent();
@@ -33,7 +35,7 @@ namespace Bookshelf
             base.OnAppearing();
             ObBooksList = new ObservableCollection<Books.ItemBookList>();
             LoadBooks(0);
-            _ = Task.Run(() => PartialLoadBooks());
+            Task.Run(() => PartialLoadBooks());
         }
 
         //Recupera os livros por status
@@ -42,7 +44,7 @@ namespace Bookshelf
             Title = "Carregando lista...";
             IsLoading = true;
 
-            BusinessLayer.BBooks bBooks = new BusinessLayer.BBooks();
+           
             string SubtitleAndVol;
 
             string textoBusca = "";
@@ -71,13 +73,15 @@ namespace Bookshelf
                 {
                     Key = book.Key,
                     Title = book.Title,
-                    AuthorsAndYear = (book.Authors + "; Ano: " + book.Year),
+                    AuthorsAndYear = book.Authors + "; Ano: " + book.Year,
                     Pages = book.Pages.ToString(),
-                    SubtitleAndVol = SubtitleAndVol
+                    SubtitleAndVol = SubtitleAndVol,
+                    Rate = book.BooksSituations.Rate > 0 ? string.Format("Avaliação pessoal: {0} de 5", book.BooksSituations.Rate.ToString()) : "",
                 };
 
                 ObBooksList.Add(itemBookList);
             }
+
             LstBooks.ItemsSource = ObBooksList;
 
             //Definição do título da interface
@@ -103,7 +107,9 @@ namespace Bookshelf
                     if (BusinessLayer.BBooks.Total > 10)
                     {
                         if (IsLoading || ObBooksList.Count == 0)
+                        {
                             return;
+                        }
 
                         //hit bottom!
                         if (e.Item == ObBooksList[ObBooksList.Count - 1])

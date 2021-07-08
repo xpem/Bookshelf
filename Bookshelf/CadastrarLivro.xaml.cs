@@ -1,4 +1,5 @@
-﻿using ModelLayer;
+﻿using BusinessLayer;
+using ModelLayer;
 using Plugin.Connectivity;
 using System;
 using System.Collections.Generic;
@@ -76,7 +77,7 @@ namespace Bookshelf
 
         private void GetBook(string BookKey)
         {
-            Books.Book book = BusinessLayer.BBooks.GetBook(BookKey);
+            Books.Book book = new BBooks().GetBook(BookKey);
             BTitle = book.Title;
             BSubTitle = book.SubTitle;
             BAuthors = book.Authors;
@@ -113,9 +114,7 @@ namespace Bookshelf
             }
 
             //StyleClass = "button_primary"
-            IList<string> vs = new List<string>();
-            vs.Add("button_secundary");
-            BtnCadastrar.StyleClass = vs;
+            BtnCadastrar.StyleClass = new List<string> { "button_secundary" };
             BtnCadastrar.Text = "Alterar";
             IsUpdate = true;
         }
@@ -170,15 +169,17 @@ namespace Bookshelf
                     mensagem = "Livro";
                 }
 
+                BBooks bBooks = new BBooks();
+
                 if (!string.IsNullOrEmpty(BookKey))
                 {
                     book.Key = BookKey;
-                    await BusinessLayer.BBooks.UpdateBook(book);
+                    await bBooks.UpdateBook(book);
                     mensagem += " Atualizados";
                 }
                 else
                 {
-                    await BusinessLayer.BBooks.RegisterBook(book);
+                    await bBooks.RegisterBook(book);
                     mensagem += " Cadastrados";
                 }
 
@@ -186,7 +187,7 @@ namespace Bookshelf
 
                 if (!resposta)
                 {
-                   // Application.Current.MainPage = new MainPage();
+                    // Application.Current.MainPage = new MainPage();
                     Application.Current.MainPage = new NavigationPage(new MainPage())
                     {
                         BarBackgroundColor = Color.FromHex("#301810"),
@@ -250,7 +251,9 @@ namespace Bookshelf
             else
             {
                 if (!IsUpdate)
-                    VerFields = BusinessLayer.BBooks.VerifyRegisterBook(EntTitle.Text);
+                {
+                    VerFields = new BBooks().VerifyRegisterBook(EntTitle.Text);
+                }
 
                 if (!VerFields)
                 {

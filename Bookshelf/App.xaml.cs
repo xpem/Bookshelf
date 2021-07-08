@@ -1,5 +1,9 @@
-﻿using Plugin.Connectivity;
+﻿using AcessLayer.Firebase;
+using Microsoft.Extensions.DependencyInjection;
+using Plugin.Connectivity;
+using Splat;
 using System;
+using System.ComponentModel;
 using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -9,22 +13,22 @@ namespace Bookshelf
 {
     public partial class App : Application
     {
+
         /// <summary>
         /// https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=5b3f36&secondary.color=00838F
         /// </summary>
         public App()
         {
-
-            BusinessLayer.SqLiteUser.CriaBD();
+            BusinessLayer.BUser bUser = new BusinessLayer.BUser();
+            bUser.CreateDbLocal();
 
             InitializeComponent();
 
-            if (BusinessLayer.SqLiteUser.RecAcesso() != null)
+
+            if (bUser.GetUserLocal() != null)
             {
                 Thread thread = new Thread(BusinessLayer.BBooksSync.AtualizaBancoLocal) { IsBackground = true };
                 thread.Start();
-            
-                //  Task.Run(async () => await BusinessLayer.BBooksSync.AtualizaBancoLocal());
 
                 Application.Current.MainPage = new MainPage();
                 Application.Current.MainPage = new NavigationPage(new MainPage())
@@ -44,9 +48,10 @@ namespace Bookshelf
             }
         }
 
+
         protected override void OnStart()
         {
-            
+
         }
 
         protected override void OnSleep()
